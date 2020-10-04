@@ -10,9 +10,9 @@ ____________
 
 |  #   |     Status     |  Release Date  |                         Change Logs                         
 | :--: | :------------: | :--------: | :----------------------------------------------------------: | 
-| 8.5 | ✔️ **RELEASED** | 2020-10-01 | [Release Notes](https://docs.abp.io/en/abp/latest)
+| 3.2.0 | ✔️ **RELEASED** | 2020-10-01 | [Release Notes](https://docs.abp.io/en/abp/latest)
 
 ## Current Milestone
 |  #   |    Status     | Due Date |                          Milestone                           |
 | :--: | :-----------: | :------: | :----------------------------------------------------------: |
-| 8.6  | 🚧 In Progress |2020-04-16| [Coming Soon]('')<br>
+| 3.2.x  | 🚧 In Progress |2020-04-16| [Coming Soon]('')<br>
