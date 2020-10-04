@@ -8,8 +8,8 @@ ____________
 
 ## Most Recent Release
 
-|  #   |     Status     |  Release Date  |                         Change Logs                          |                          Milestone                           |
-| :--: | :------------: | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  #   |     Status     |  Release Date  |                         Change Logs                         
+| :--: | :------------: | :--------: | :----------------------------------------------------------: | 
 | 8.5 | ✔️ **RELEASED** | 2020-10-01 | [Release Notes](https://docs.abp.io/en/abp/latest)
 
 ## Current Milestone
