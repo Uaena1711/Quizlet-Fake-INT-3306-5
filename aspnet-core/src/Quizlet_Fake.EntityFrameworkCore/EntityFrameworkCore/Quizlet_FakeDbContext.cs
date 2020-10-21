@@ -1,5 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Quizlet_Fake.Courses;
+using Quizlet_Fake.Learns;
+using Quizlet_Fake.Lessons;
+using Quizlet_Fake.Managers;
+using Quizlet_Fake.Participations;
 using Quizlet_Fake.Users;
+using Quizlet_Fake.Words;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -21,6 +27,15 @@ namespace Quizlet_Fake.EntityFrameworkCore
     public class Quizlet_FakeDbContext : AbpDbContext<Quizlet_FakeDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<Word> Words { get; set; }
+
+        public DbSet<ParticipationPermission> ParticipationPermissions { get; set; }
+        public DbSet<Learn> Learns { get; set; }
+        public DbSet<CourseInfoOfUser> CourseInfoOfUsers { get; set; }
+        public DbSet<LessonInfoOfUser> LessonInfoOfUsers { get; set; }
+
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside Quizlet_FakeDbContextModelCreatingExtensions.ConfigureQuizlet_Fake
