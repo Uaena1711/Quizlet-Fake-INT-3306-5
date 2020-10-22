@@ -15,6 +15,12 @@ function configureRoutes(routes: RoutesService) {
         order: 1,
         layout: eLayoutType.application,
       },
+      {
+        path: '/courses',
+        name: 'cakcak',
+        
+        layout: eLayoutType.application,
+      },
     ]);
   };
 }
