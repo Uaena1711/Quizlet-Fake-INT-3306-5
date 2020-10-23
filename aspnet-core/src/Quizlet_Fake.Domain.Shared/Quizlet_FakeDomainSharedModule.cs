@@ -43,7 +43,7 @@ namespace Quizlet_Fake
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
-                    .Add<Quizlet_FakeResource>("en")
+                    .Add<Quizlet_FakeResource>("vi")
                     .AddBaseTypes(typeof(AbpValidationResource))
                     .AddVirtualJson("/Localization/Quizlet_Fake");
 
