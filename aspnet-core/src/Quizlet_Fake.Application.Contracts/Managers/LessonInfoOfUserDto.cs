@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.Application.Dtos;
 
 namespace Quizlet_Fake.Managers
 {
-    public class LessonInfoOfUser : AuditedAggregateRoot<Guid>
+    public class LessonInfoOfUserDto : AuditedEntityDto<Guid>
     {
-        
+
         public Guid LessonId { get; set; }
 
         public Guid UserId { get; set; }
 
         public int Progress { get; set; }
-        //=sotudahoc*level cua moi tu /so bai*5
+
+        public string LessonName { get; set; }
     }
 }
