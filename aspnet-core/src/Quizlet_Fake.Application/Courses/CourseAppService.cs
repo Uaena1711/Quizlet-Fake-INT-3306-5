@@ -1,4 +1,6 @@
 ﻿using Abp.Runtime.Session;
+using Quizlet_Fake.LogCoursesPermission;
+using Quizlet_Fake.Participations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +23,27 @@ namespace Quizlet_Fake.Courses
         ICourseAppService, ITransientDependency
     {
         //public IAbpSession AbpSession { get; set; }
-        public CourseAppService(IRepository<Course, Guid> repository ,ICurrentUser currentUser) : base(repository)
+        public CourseAppService(IRepository<Course, Guid> repository ,ICurrentUser currentUser, IRepository<ParticipationPermission> y) : base(repository)
         {
             this._currentUser = currentUser;
             this._repository = repository;
+            this._parRepo = y;
         }
         private readonly ICurrentUser _currentUser;
         private readonly IRepository<Course, Guid> _repository;
-        public override Task<CourseDto> CreateAsync(CourseCreateUpdateDto input)
+        private readonly IRepository<ParticipationPermission> _parRepo;
+        public async override Task<CourseDto> CreateAsync(CourseCreateUpdateDto input)
         {
             input.UserId =(Guid)  _currentUser.Id;
             //input.UserId = AbpSession.UserId;
-            return base.CreateAsync(input);
+            var x = base.CreateAsync(input);
+            var rs = await x;
+            var per = new CoursesPermissionCreateUpdateDto();
+            per.UserId = input.UserId;
+            per.CourseId = rs.Id;
+            var ins = ObjectMapper.Map<CoursesPermissionCreateUpdateDto, ParticipationPermission>(per);
+            await _parRepo.InsertAsync(ins);
+            return rs;
         }
 
         public  List<Course> GetCoursesOfUser (String? text)

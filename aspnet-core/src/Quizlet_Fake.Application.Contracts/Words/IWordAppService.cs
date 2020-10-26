@@ -4,14 +4,14 @@ using System.Text;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Quizlet_Fake.Lesssion
+namespace Quizlet_Fake.Words
 {
-    public interface ILessionAppService :
+    public interface IWordAppService :
          ICrudAppService< //Defines CRUD methods
-            LessionDto, //Used to show 
+            WordDto, //Used to show 
             Guid, //Primary key of the  entity
             PagedAndSortedResultRequestDto, //Used for paging/sorting
-            LessionCreateorUpdateDto> //Used to create/update 
+            WordCreateOrUpdateDto> //Used to create/update 
     {
     }
 }

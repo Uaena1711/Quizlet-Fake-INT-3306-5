@@ -12,6 +12,7 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 using System.Linq;
+using Quizlet_Fake.Participations;
 
 namespace Quizlet_Fake.Lessions
 {
@@ -25,18 +26,18 @@ namespace Quizlet_Fake.Lessions
          ILessionAppService, ITransientDependency
     {
         //public IAbpSession AbpSession { get; set; }
-        public LessionAppService(IRepository<Lesson, Guid> repository, ICurrentUser currentUser, IRepository<Course, Guid> repo) : base(repository)
+        public LessionAppService(IRepository<Lesson, Guid> repository, ICurrentUser currentUser, IRepository<Course, Guid> repo,  IRepository<ParticipationPermission, Guid> x) : base(repository)
         {
             this._currentUser = currentUser;
             this._repository = repository;
-            this.courseRepo = repo;
+            this.courseRepo = x;
         }
         private readonly ICurrentUser _currentUser;
         private readonly IRepository<Lesson, Guid> _repository;
-        private readonly IRepository<Course, Guid> courseRepo;
+        private readonly IRepository<ParticipationPermission, Guid> courseRepo;
         public override Task<LessionDto> CreateAsync(LessionCreateorUpdateDto input)
         {
-            var course = courseRepo.FirstOrDefault(x => x.Id == input.CourseId);
+            var course = courseRepo.FirstOrDefault(x => x.CourseId == input.CourseId);
             if(course.UserId == (Guid) _currentUser.Id)
             {
                 return base.CreateAsync(input);
@@ -49,7 +50,7 @@ namespace Quizlet_Fake.Lessions
         {
             var lession = new List<Lesson>();
             Guid currentId = (Guid)_currentUser.Id;
-            var course = courseRepo.Where(x => x.Id == id).FirstOrDefault();
+            var course = courseRepo.Where(x => x.CourseId == id).FirstOrDefault();
             if(currentId == course.UserId)
             {
                 lession = _repository.Where(x => x.CourseId == id).ToList();
@@ -64,7 +65,7 @@ namespace Quizlet_Fake.Lessions
         {
             
             var lesson = _repository.FirstOrDefault(x => x.Id == id);
-            var course = courseRepo.FirstOrDefault(x => x.Id == lesson.CourseId);
+            var course = courseRepo.FirstOrDefault(x => x.CourseId == lesson.CourseId);
             if (course.UserId == _currentUser.Id)
             {
                 return base.DeleteAsync(id);
@@ -77,7 +78,7 @@ namespace Quizlet_Fake.Lessions
 
 
             var lesson = _repository.FirstOrDefault(x => x.Id == id);
-            var course = courseRepo.FirstOrDefault(x => x.Id == lesson.CourseId);
+            var course = courseRepo.FirstOrDefault(x => x.CourseId == lesson.CourseId);
             if (course.UserId == _currentUser.Id)
             {
                 return base.UpdateAsync(id, input);
