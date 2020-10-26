@@ -87,8 +87,30 @@ namespace Quizlet_Fake.Learns
             _lessonrepository.UpdateAsync(x);
 
         }
-        
+        public async Task<List<LearnDto>> GetMyWortdList(Guid learnid)
+        {
+            await CheckGetListPolicyAsync();
 
-        
+            Guid myid = (Guid)_currentUser.Id;
+            var query = from word1 in _repository
+                        join word in _word_rea_repository on word1.WordId equals word.Id
+                        where word1.LessonId == learnid && word1.UserId == myid
+                        select new { word1, word };
+
+            var queryResult = await AsyncExecuter.ToListAsync(query);
+
+            var DTos = queryResult.Select(x =>
+            {
+                var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
+                dto.VN = x.word.VN;
+                dto.EN = x.word.EN;
+                return dto;
+            }).ToList();
+
+
+            return new List<LearnDto>(DTos);
+        }
+
+
     }
 }
