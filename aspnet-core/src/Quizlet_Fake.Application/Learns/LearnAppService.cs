@@ -111,6 +111,31 @@ namespace Quizlet_Fake.Learns
             return new List<LearnDto>(DTos);
         }
 
+        public async Task<List<LearnDto>> GetMyReview()
+        {
+            await CheckGetListPolicyAsync();
+
+            Guid myid = (Guid)_currentUser.Id;
+
+            var query = from word1 in _repository
+                        join word in _word_rea_repository on word1.WordId equals word.Id
+                        where DateTime.Compare(word1.DateReview,DateTime.Now) <= 0 && word1.UserId == myid
+                        select new { word1, word };
+
+            var queryResult = await AsyncExecuter.ToListAsync(query);
+
+            var DTos = queryResult.Select(x =>
+            {
+                var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
+                dto.VN = x.word.VN;
+                dto.EN = x.word.EN;
+                return dto;
+            }).ToList();
+
+
+            return new List<LearnDto>(DTos);
+        }
+
 
     }
 }
