@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.Application.Dtos;
 
 namespace Quizlet_Fake.Learns
 {
-    public class Learn : AuditedAggregateRoot<Guid>
+    public class LearnDto : AuditedEntityDto<Guid>
     {
-       
-
-        public Guid UserId { get;  set; }
-        public Guid WordId { get;  set; }
-        public Guid LessonId { get;  set; }
+        public Guid UserId { get; private set; }
+        public Guid WordId { get; private set; }
         public DateTime DateReview { get; set; }
 
         public DateTime DateofLearn { get; set; }
@@ -20,6 +17,9 @@ namespace Quizlet_Fake.Learns
 
         public string Note { get; set; }
 
+        public string VN { get; set; }
+
+        public string EN { get; set; }
 
     }
 }
