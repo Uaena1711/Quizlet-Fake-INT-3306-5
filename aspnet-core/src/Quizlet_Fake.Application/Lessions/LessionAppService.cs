@@ -38,9 +38,13 @@ namespace Quizlet_Fake.Lessions
         public override Task<LessionDto> CreateAsync(LessionCreateorUpdateDto input)
         {
             var course = courseRepo.FirstOrDefault(x => x.CourseId == input.CourseId);
-            if(course.UserId == (Guid) _currentUser.Id)
+            if (course != null)
             {
-                return base.CreateAsync(input);
+
+                if (course.UserId == (Guid)_currentUser.Id)
+                {
+                    return base.CreateAsync(input);
+                }
             }
             //input.UserId = AbpSession.UserId;
             return base.CreateAsync(new LessionCreateorUpdateDto());
@@ -61,14 +65,18 @@ namespace Quizlet_Fake.Lessions
             return lession;
         }
 
-        public Task DeleteAsyncc(Guid id)
+        public override Task DeleteAsync(Guid id)
         {
             
             var lesson = _repository.FirstOrDefault(x => x.Id == id);
             var course = courseRepo.FirstOrDefault(x => x.CourseId == lesson.CourseId);
-            if (course.UserId == _currentUser.Id)
+            if (course != null)
             {
-                return base.DeleteAsync(id);
+
+                if (course.UserId == _currentUser.Id)
+                {
+                    return base.DeleteAsync(id);
+                }
             }
             return base.DeleteAsync(new Guid());
 
@@ -79,9 +87,13 @@ namespace Quizlet_Fake.Lessions
 
             var lesson = _repository.FirstOrDefault(x => x.Id == id);
             var course = courseRepo.FirstOrDefault(x => x.CourseId == lesson.CourseId);
-            if (course.UserId == _currentUser.Id)
+            if (course != null)
             {
-                return base.UpdateAsync(id, input);
+
+                if (course.UserId == _currentUser.Id)
+                {
+                    return base.UpdateAsync(id, input);
+                }
             }
             return base.UpdateAsync(new Guid(), input);
         }
