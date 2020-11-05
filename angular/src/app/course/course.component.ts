@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService, PagedResultDto } from '@abp/ng.core';
-import { CourseService, CourseDto } from '@proxy/courses';
+import { ServerHttpService } from '../CourseService/server-http.service';
+
 
 @Component({
   selector: 'app-course',
@@ -11,18 +12,14 @@ import { CourseService, CourseDto } from '@proxy/courses';
 })
 export class CourseComponent implements OnInit {
 
-  course = { items: [], totalCount: 0 } as PagedResultDto<CourseDto>;
-  constructor(public readonly list: ListService, private Service: CourseService) {
+  courses : [];
+  constructor(public readonly list: ListService, private Service: ServerHttpService) {
   }
 
   ngOnInit(): void {
-    const StreamCreator = (query) => this.Service.getList(query);
-  
-  this.list.hookToQuery(StreamCreator).subscribe((response) => {
-    this.course = response;
-    console.log('cou',this.course);
-    
-  });
-
-  }
+    this.Service.getCourses().subscribe((data =>{
+      console.log(data)
+      this.courses = data.items
+    }))
+  };
 }

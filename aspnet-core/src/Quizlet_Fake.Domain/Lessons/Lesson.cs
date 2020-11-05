@@ -7,7 +7,6 @@ namespace Quizlet_Fake.Lessons
 {
     public class Lesson : AuditedAggregateRoot<Guid>
     {
-        
         public string Name { get; set; }
 
         public Guid CourseId { get; private set; }

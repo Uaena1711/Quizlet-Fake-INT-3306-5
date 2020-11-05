@@ -1,0 +1,376 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: ghostwhite;
+
+    font-family: 'SeoulNamsan';
+
+    color: var(--black-color);
+
+    --ribbon-height: 5rem;
+
+    --black-color: rgb(55, 50, 70);
+    --box-shadow-rgb: 160, 160, 180;
+
+    --attr-color: darkturquoise;
+    --attr-hover-color: lightsalmon;
+    --item-hover-color: mistyrose;
+
+    --transition-attr:            color 200ms ease-out;
+    --transition-item: background-color 200ms ease-out;
+}
+
+.no-select {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+span.colorattr {
+    color: var(--attr-color);
+    fill: var(--attr-color);
+    transition: var(--transition-attr);
+    cursor: pointer;
+}
+
+span.colorattr:hover {
+    color: var(--attr-hover-color);
+}
+
+div {
+    transition: var(--transition-item);
+}
+
+div.head {
+    display: block;
+}
+
+div.body {
+    min-height: calc(100% - var(--ribbon-height));
+    display: flex;
+}
+
+div.va { /* vertical align */
+    display: flex;
+    align-items: center;
+}
+
+div.ha { /* horizontal align */
+    text-align: center;
+    justify-content: center;
+}
+
+div.ribbon-top {
+    width: 100%;
+    height: var(--ribbon-height);
+    background-color: darkslateblue;
+}
+
+div.ribbon-top svg {
+    fill: white;
+}
+
+div.ribbon-top button {
+    padding: 1.2rem 2.4rem;
+    margin: 0 .2rem;
+    border: none;
+    background: none;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+div.ribbon-top button:hover {
+    filter: opacity(60%);
+}
+
+div.ribbon-top button:focus {
+    outline: none;
+}
+
+div.ribbon-top button.quizlet {
+    filter: none;
+}
+
+div.ribbon-top span.pipe {
+    color: var(--black-color);
+    filter: opacity(20%);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+div.panel-left {
+    font-weight: 300;
+
+    min-width: 17rem;
+    font-size: .95rem;
+    background-color: white;
+    box-shadow: 0 0 2rem rgba(var(--box-shadow-rgb), .3);
+}
+
+div.panel-left svg {
+    fill: var(--black-color);
+    height: 1.2rem;
+}
+
+div.panel-left span.svgwrap {
+    padding-right: 1rem;
+}
+
+div.panel-left span.float {
+    padding-left: 2.17rem;
+}
+
+div.panel-left div.panel-list {
+    border-top: 1px solid rgba(var(--box-shadow-rgb), .3);
+    padding: 1rem 0;
+}
+
+div.panel-left div.panel-item {
+    padding: .6rem 2.4rem;
+    cursor: pointer;
+}
+
+div.panel-left div.panel-attr {
+    padding: .6rem 2.4rem;
+    color: var(--attr-color);
+    transition: var(--transition-attr);
+    background-color: none;
+    cursor: pointer;
+}
+
+div.panel-left div.panel-item:hover {
+    background-color: var(--item-hover-color);
+}
+
+div.panel-left div.panel-attr:hover {
+    color: var(--attr-hover-color);
+}
+
+div.panel-center {
+    display: block;
+    padding: 2.6rem;
+    width: 55%;
+    font-size: 1rem;
+    /* border: 1px dashed var(--black-color); */
+}
+
+div.panel-center div.panel-item {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2.2rem;
+}
+
+div.panel-center div.itemhead {
+    display: flex;
+}
+
+div.panel-center div.itemname {
+    width: 70%;
+    text-align: left;
+    /* border: 1px dashed goldenrod; */
+}
+
+div.panel-center div.itemmore {
+    width: 30%;
+    text-align: right;
+    font-weight: 300;
+    /* border: 1px dashed goldenrod; */
+}
+
+div.panel-center div.cardbox {
+    display: flex;
+    flex-flow: row wrap;
+
+    /* border: 1px solid coral; */
+    margin-top: 1rem;
+}
+
+div.panel-center div.cardset {
+    position: relative;
+    width: min(18rem, 45%);
+    height: 9.4rem;
+    margin: 0 .6rem .6rem 0;
+    padding: 1.6rem 1rem;
+    cursor: pointer;
+
+    background-color: white;
+    border-radius: .4rem;
+    box-shadow: .1rem .3rem .3rem rgba(var(--box-shadow-rgb), .2);
+
+    /* border: 1px dotted blueviolet; */
+}
+
+div.panel-center div.cardset-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+
+    /* border: 1px dotted; */
+}
+
+div.panel-center div.n-terms {
+    margin-top: .8rem;
+
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(var(--box-shadow-rgb), 1);
+
+    /* border: 1px dotted; */
+}
+
+div.panel-center div.cardset-creator {
+    position: absolute;
+    bottom: 1.5rem;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    /* border: 1px dotted hotpink; */
+}
+
+div.panel-center div.cardset-creator span.usericon {
+    margin-right: .5rem;
+}
+
+div.panel-center div.cardset-creator span.usericon svg {
+    width: 1.4rem;
+    fill: var(--black-color);
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: '서울남산체';
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 0;
+
+    --ribbon-height: 5rem;
+}
+
+div {
+    font-size: 1.2rem;
+}
+
+span.small {
+    font-size: .8rem;
+}
+.head, .body, .panel-left, .faux-center {
+    border: solid 1px;
+    font-size: .8rem;
+}
+
+.head {
+    display: block;
+    height: var(--ribbon-height);
+    border-color: blue;
+}
+
+.body {
+    display: flex;
+    min-height: calc(100% - var(--ribbon-height));
+    border-color: blue;
+}
+
+.panel-left {
+    width: 12rem;
+}
+
+.ribbon-top, .panel-left, .panel-center {
+    border-color: red;
+}
+
+div.faux-center {
+    border: 2px dashed gray;
+    display: block;
+    width: 55%;
+}
+
+div.panel-center {
+    display: block;
+    padding: 2.6rem;
+    /* padding: 2.6rem 0 0 max(2.6rem, 15%); */
+    margin: .1rem;
+    /* width: 55%; */
+}
+
+.panel-center .panel-list {
+    border: 1px dotted pink;
+    padding: .1rem;
+}
+
+div.panel-center div.panel-item {
+    display: block;
+    border: 1px dotted;
+    margin-bottom: 2.2rem;
+    /* width: 60vw; */
+}
+
+div.panel-center div.itemhead {
+    display: flex;
+}
+
+div.panel-center div.itemname {
+    width: 70%;
+    text-align: left;
+    border: 1px dashed goldenrod;
+}
+
+div.panel-center div.itemmore {
+    width: 30%;
+    text-align: right;
+    font-weight: 300;
+    border: 1px dashed goldenrod;
+}
+
+div.panel-center div.cardbox {
+    display: flex;
+    flex-flow: row wrap;
+    /* width: 80%; */
+    /* align-content: space-between; */
+    /* justify-content: space-between; */
+
+    border: 1px solid coral;
+    margin-top: 1rem;
+}
+
+div.panel-center div.cardset {
+    width: min(18rem, 45%);
+    /* width: 28vw; */
+    height: 9.4rem;
+    margin: 0 .6rem .6rem 0;
+    position: relative;
+
+    border: 1px dotted blueviolet;
+}
+
+div.panel-center div.cardset-title {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+
+    border: 1px dotted gray;
+}
+
+div.panel-center div.n-terms {
+    margin-top: .8rem;
+
+    font-size: 1rem;
+
+    border: 1px dotted gray;
+}
+
+div.panel-center div.cardset-creator {
+    position: absolute;
+    bottom: 1.5rem;
+
+    font-size: 1rem;
+
+    border: 1px dotted gray;
+}

@@ -1,15 +1,10 @@
 ﻿using AutoMapper;
 using Quizlet_Fake.Courses;
-
 using Quizlet_Fake.Lessons;
 using Quizlet_Fake.Lesssion;
 using Quizlet_Fake.LogCoursesPermission;
 using Quizlet_Fake.Participations;
 using Quizlet_Fake.Words;
-
-using Quizlet_Fake.Learns;
-using Quizlet_Fake.Managers;
-
 
 namespace Quizlet_Fake
 {
@@ -22,7 +17,6 @@ namespace Quizlet_Fake
              * into multiple profile classes for a better organization. */
             CreateMap<Course, CourseDto>();
             CreateMap<CourseCreateUpdateDto, Course>();
-
             CreateMap<ParticipationPermission, CoursesPermissionDto>();
             CreateMap<CoursesPermissionCreateUpdateDto, ParticipationPermission>();
             CreateMap<CourseCreateUpdateDto, CoursesPermissionDto>();
@@ -30,17 +24,6 @@ namespace Quizlet_Fake
             CreateMap<Lesson, LessionDto>();
             CreateMap<Word, WordDto>();
             CreateMap<WordCreateOrUpdateDto, Word>();
-
-
-            CreateMap<CourseInfoOfUser, CourseInfoOfUserDto>();
-            CreateMap<CourseInfoOfUserCreateUpdateDto, CourseInfoOfUser>();
-
-            CreateMap<LessonInfoOfUser, LessonInfoOfUserDto>();
-            CreateMap<LessonInfoOfUserCreateUpdateDto, LessonInfoOfUser>();
-
-            CreateMap<Learn, LearnDto>();
-            CreateMap<LearnCreateUpdateDto, Learn>();
-
         }
     }
 }

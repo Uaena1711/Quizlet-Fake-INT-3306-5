@@ -3,16 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 using System.Collections.Generic;
 using System.Text;
-using Volo.Abp.Application.Dtos;
 
 namespace Quizlet_Fake.Courses
 {
-    public class CourseCreateUpdateDto : AuditedEntityDto<Guid>
+    public class CourseCreateUpdateDto
     {
-    
         [Required]
         public string Name { get; set; }
-
+       
         public string Password { get; set; }
 
         [Required]

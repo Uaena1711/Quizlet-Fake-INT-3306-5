@@ -7,7 +7,6 @@ namespace Quizlet_Fake.Managers
 {
     public class LessonInfoOfUser : AuditedAggregateRoot<Guid>
     {
-        
         public Guid LessonId { get; set; }
 
         public Guid UserId { get; set; }

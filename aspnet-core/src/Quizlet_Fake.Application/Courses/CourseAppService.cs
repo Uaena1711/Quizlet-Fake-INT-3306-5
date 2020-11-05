@@ -79,9 +79,7 @@ namespace Quizlet_Fake.Courses
             }
         }
 
-
-        public   Task Xoa(Guid id)
-
+        public  Task DeleteAsyncc(Guid id)
         {
             var course =  _repository.FirstOrDefault(x =>x.Id == id);
             if (course.UserId == _currentUser.Id)
