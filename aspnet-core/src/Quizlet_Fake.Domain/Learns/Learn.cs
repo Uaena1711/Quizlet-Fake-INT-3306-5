@@ -7,9 +7,11 @@ namespace Quizlet_Fake.Learns
 {
     public class Learn : AuditedAggregateRoot<Guid>
     {
+       
 
-        public Guid UserId { get; private set; }
-        public Guid WordId { get; private set; }
+        public Guid UserId { get;  set; }
+        public Guid WordId { get;  set; }
+        public Guid LessonId { get;  set; }
         public DateTime DateReview { get; set; }
 
         public DateTime DateofLearn { get; set; }

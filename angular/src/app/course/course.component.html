@@ -1,0 +1,9 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+        <mat-card *ngFor="let item of courses">
+            <span class="course_name">{{item.name}}</span>
+            <mat-card-actions>
+                <button mat-button>Edit</button>
+                <button mat-button (click)="deleteCourse(item.id)" [routerLink]="['/courses']" routerLinkActive="router-link-active" >Delete</button>
+            </mat-card-actions>
+        </mat-card>
+  </mat-grid-list>

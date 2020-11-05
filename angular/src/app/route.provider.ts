@@ -17,8 +17,7 @@ function configureRoutes(routes: RoutesService) {
       },
       {
         path: '/courses',
-        name: 'cakcak',
-        
+        name: 'Courses',
         layout: eLayoutType.application,
       },
     ]);

@@ -26,6 +26,12 @@ export class ServerHttpService {
           .pipe(catchError(this.handleError));
     ;
   }
+  public deleteCourse(id: number) {
+    const url = `${this.REST_API_SERVER}/` + id;
+    return  this.httpClient
+            .delete<any>(url)
+            .pipe(catchError(this.handleError));
+  }
 
   constructor(private httpClient: HttpClient) { }
   private handleError(error: HttpErrorResponse) {
