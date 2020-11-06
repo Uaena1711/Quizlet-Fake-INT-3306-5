@@ -10,7 +10,7 @@ namespace Quizlet_Fake.Courses
         public string Name { get; set; }
 
         //public string Password { get; set; }
-        public Guid UserId { get; private set; }
+        public Guid UserId { get;  set; }
         public DateTime PublishDate { get; set; }
         public float Price { get; set; }
     }
