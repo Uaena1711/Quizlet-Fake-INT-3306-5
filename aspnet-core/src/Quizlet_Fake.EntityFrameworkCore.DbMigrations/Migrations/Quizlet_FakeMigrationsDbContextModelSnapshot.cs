@@ -238,6 +238,9 @@ namespace Quizlet_Fake.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreationTime")
                         .HasColumnName("CreationTime")
                         .HasColumnType("datetime2");

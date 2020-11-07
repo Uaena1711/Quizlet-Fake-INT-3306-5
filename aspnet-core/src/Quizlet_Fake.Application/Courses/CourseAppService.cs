@@ -98,6 +98,8 @@ namespace Quizlet_Fake.Courses
             var course = _repository.FirstOrDefault(x => x.Id == id);
             if (course.UserId == _currentUser.Id)
             {
+                input.PublishDate = course.PublishDate;
+                input.UserId = course.UserId;
                 return base.UpdateAsync(id, input);
             }
             return base.UpdateAsync(new Guid(), input);

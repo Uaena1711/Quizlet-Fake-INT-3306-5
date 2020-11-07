@@ -44,35 +44,39 @@ namespace Quizlet_Fake.Managers
             this._lesrepository = lesrepository;
         }
 
+        //khibam vao hoc lesson
         public override Task<LessonInfoOfUserDto> CreateAsync(LessonInfoOfUserCreateUpdateDto input)
         {
             input.Progress = 0;
+            input.UserId = (Guid)_currentUser.Id;
+            
             return base.CreateAsync(input);
         }
-        public  int Learn (Guid id ) /*dung khi nguoi dung bam hoc */
+       public  async Task  LearnLesson(Guid idlesson ) 
         {
             try
             {
                 Guid userid = (Guid)this._currentUser.Id;
                
 
-                _repository.InsertAsync(new LessonInfoOfUser {
-                    LessonId = id,
+                await _repository.InsertAsync(new LessonInfoOfUser {
+                    LessonId = idlesson,
                     UserId = userid,
                     Progress = 0
                 }, autoSave: true
                     );
-                List<Word> list = _wordrepository.Where(x => x.LessonId == id).ToList();
+
+                List<Word> list = _wordrepository.Where(x => x.LessonId == idlesson).ToList();
                 foreach( Word w in list)
                 {
-                    _learnrepository.InsertAsync(
+                    await _learnrepository.InsertAsync(
                         new Learn
                         {
                             UserId = userid,
                             WordId = w.Id,
-                            LessonId = id,
-                            Level = 1,
-                            DateReview = DateTime.Now.AddHours(4),
+                            LessonId = idlesson,
+                            Level = 0,
+                            DateReview = DateTime.Now.AddHours(400),
                             DateofLearn = DateTime.Now,
                             Note = ""
 
@@ -80,15 +84,17 @@ namespace Quizlet_Fake.Managers
 
                         }, autoSave: true); ; ;
                 }
-                return 1;
+                
             }
             catch (Exception e)
             {
-                return 0;
+               
             }
         }
+       
 
-        //layra khoa hoc cua toi 
+        
+        //layra lesson tu khoa hoc cua toi 
         public  async Task<List<LessonInfoOfUserDto>> GetMyLessonList(Guid idcourse)
         {
             await CheckGetListPolicyAsync();

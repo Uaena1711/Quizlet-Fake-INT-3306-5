@@ -6,14 +6,14 @@ using Volo.Abp.Application.Dtos;
 
 namespace Quizlet_Fake.Managers
 {
-    public class CourseInfoOfUserCreateUpdateDto : AuditedEntityDto<Guid>
+    public class CourseInfoOfUserCreateUpdateDto 
     {
         [Required]
         public Guid CourseId { get; set; }
 
         [Required]
         public Guid UserId { get; set; }
-
+        
         public int Progress { get; set; }
 
     }

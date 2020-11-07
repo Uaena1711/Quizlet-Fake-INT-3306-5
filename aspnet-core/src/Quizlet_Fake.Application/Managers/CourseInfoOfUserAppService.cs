@@ -1,4 +1,5 @@
 ﻿using Abp.Runtime.Session;
+using Microsoft.AspNetCore.Mvc;
 using Quizlet_Fake.Courses;
 using Quizlet_Fake.Managers;
 using System;
@@ -24,45 +25,46 @@ namespace Quizlet_Fake.Managers
     {
         private readonly ICurrentUser _currentUser;
         private readonly IRepository<CourseInfoOfUser, Guid> _repository;
-        //private readonly IRepository<Course, Guid> _Courserepository;
+        private readonly IRepository<Course, Guid> _Courserepository;
 
-        public CourseInfoOfUserAppService(IRepository<CourseInfoOfUser, Guid> repository,/* IRepository<Course, Guid> Courserepository,*/
+        public CourseInfoOfUserAppService(IRepository<CourseInfoOfUser, Guid> repository,IRepository<Course,Guid>courserepo,/* IRepository<Course, Guid> Courserepository,*/
             ICurrentUser currentUser)
              : base(repository)
         {
             this._currentUser = currentUser;
             this._repository = repository;
-            //this._Courserepository = Courserepository;
+            this._Courserepository = courserepo;
         }
         public override Task<CourseInfoOfUserDto> CreateAsync(CourseInfoOfUserCreateUpdateDto input)
         {
             input.Progress = 0;
             return base.CreateAsync(input);
         }
-       
-       /* public  Task DeleteForCreator(CourseInfoOfUserCreateUpdateDto input)
+
+        /* public  Task DeleteForCreator(CourseInfoOfUserCreateUpdateDto input)
+         {
+             Guid id_coureseCreator =(Guid) this._Courserepository.FirstOrDefault(x => x.CreatorId == input.CourseId).CreatorId; //layra_ id nguoi tao course 
+
+             if ((Guid)_currentUser.Id == id_coureseCreator)
+
+             {
+                 return base.DeleteAsync(input.Id);
+             }
+             else
+             {
+                 return new Task(null);
+             }
+         }*/
+
+        [HttpDelete]
+        public  Task OutCourse(Guid IdCOurse )
         {
-            Guid id_coureseCreator =(Guid) this._Courserepository.FirstOrDefault(x => x.CreatorId == input.CourseId).CreatorId; //layra_ id nguoi tao course 
 
-            if ((Guid)_currentUser.Id == id_coureseCreator)
-
-            {
-                return base.DeleteAsync(input.Id);
-            }
-            else
-            {
-                return new Task(null);
-            }
-        }*/
-
-        public  Task OutCourse(CourseInfoOfUserCreateUpdateDto input)
-        {
-
-
-            if ((Guid)_currentUser.Id == input.UserId)
+            var courseuser = _repository.FirstOrDefault(x => x.CourseId == IdCOurse && x.UserId == _currentUser.Id);
+            if ((Guid)_currentUser.Id == courseuser.UserId)
 
             {
-                return base.DeleteAsync(input.Id);
+                return base.DeleteAsync(courseuser.Id);
             }
             else
             {
@@ -71,13 +73,27 @@ namespace Quizlet_Fake.Managers
         }
 
         //layra danh sach hoc cua minh hoc
-        public async Task<ListResultDto<CourseInfoOfUserDto>> GetListCourse(PagedAndSortedResultRequestDto input, Guid Id)
+       
+
+
+        public async Task<List<CourseInfoOfUserDto>> GetmyLearningCourse ()
         {
+            var Dtos = from couruse in _repository
+                       join coursereal in _Courserepository on couruse.CourseId equals coursereal.Id
+                       where couruse.UserId == _currentUser.Id
+                       select new  { couruse, coursereal};
+            var queryresult = await AsyncExecuter.ToListAsync(Dtos);
 
-            List<CourseInfoOfUser> course =  _repository.Where(p => p.UserId == Id).ToList();
+            var result = queryresult.Select(x =>
+               {
+                   var dto = ObjectMapper.Map<CourseInfoOfUser, CourseInfoOfUserDto>(x.couruse);
+                   dto.coursename = x.coursereal.Name;
 
-            List<CourseInfoOfUserDto> courdto = ObjectMapper.Map<List<CourseInfoOfUser>, List<CourseInfoOfUserDto>>(course);
-            return new ListResultDto<CourseInfoOfUserDto>(courdto);
+                   return dto;
+               });
+
+                return new List<CourseInfoOfUserDto>(result);
+                
         }
     }
 }
