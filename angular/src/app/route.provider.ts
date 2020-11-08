@@ -16,11 +16,11 @@ function configureRoutes(routes: RoutesService) {
         layout: eLayoutType.application,
       },
       {
-        path: '/courses',
-        name: 'cakcak',
-        
+        path: '/search',
+        name: 'Menu::Search',
+        iconClass: 'fas fa-search',
         layout: eLayoutType.application,
-      },
+      }
     ]);
   };
 }
