@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService, PagedResultDto } from '@abp/ng.core';
 import { CourseService, CourseDto } from '@proxy/courses';
-import { query } from '@angular/animations';
+
 
 
 @Component({
   selector: 'app-course',
-  templateUrl: './course.component.html',
-  styleUrls: ['./course.component.scss'],
+  templateUrl: './search.conponent.html',
+  styleUrls: ['./search.conponent.css'],
   providers: [ListService],
 
 })
-export class CourseComponent implements OnInit {
+export class SearchComponent implements OnInit {
+  total: number;
   text: '';
   isSearch: boolean;
   course = { items: [], totalCount: 0 } as PagedResultDto<CourseDto>;
@@ -20,17 +21,15 @@ export class CourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.isSearch = false;
-  // const StreamCreator = (query) => this.Service.getListssssByInputAndText(query, this.text);
-  // this.list.hookToQuery(StreamCreator).subscribe((response) => {
-  //   this.course = response;
-  //   console.log(this.course);
-  // });
+
   }
   search(text: string){
     const StreamCreator = (query) => this.Service.getListssssByInputAndText(query, text);
     this.list.hookToQuery(StreamCreator).subscribe((response) => {
       this.course = response;
     });
+    this.total = this.course.totalCount;
+    console.log(this.course);
     this.isSearch = true;
   }
 }
