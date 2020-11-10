@@ -20,6 +20,7 @@ function configureRoutes(routes: RoutesService) {
         name: 'Courses',
         layout: eLayoutType.application,
       },
+      
     ]);
   };
 }

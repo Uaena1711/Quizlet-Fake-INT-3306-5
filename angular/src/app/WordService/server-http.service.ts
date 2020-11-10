@@ -17,41 +17,36 @@ const httpOptions = {
 })
 
 export class ServerHttpService {
-  private REST_API_SERVER = 'https://localhost:44340/api/app/course';
-  public idCourse = '';
-  public name;
-  public userId;
-  public publishDate;
-  public price;
-  public creationTime;
-  public creatorId;
+  private REST_API_SERVER = 'https://localhost:44340/api/app/word';
+  public idLession = '';
 
   public addMode = true;
-  public getCourses(): Observable<any>{
-    const url = `${this.REST_API_SERVER}/coursesOfUser`;
+  public getWordOfLession(id): Observable<any>{
+    const url = `${this.REST_API_SERVER}/` + id +`/wordOfLession`;
     return this.httpClient
           .get<any>(url, httpOptions)
           .pipe(catchError(this.handleError));
   }
-  public deleteCourse(id: number) {
+  public deleteWord(id) {
     const url = `${this.REST_API_SERVER}/` + id;
     return  this.httpClient
             .delete<any>(url)
             .pipe(catchError(this.handleError));
   }
-  public addCourse(course) {
+  public addWord(word) {
     const url = `${this.REST_API_SERVER}`;
     return  this.httpClient
-            .post<any>(url, course)
+            .post<any>(url, word)
             .pipe(catchError(this.handleError));
   }
-  public editCourse(course, id){
+  public editWord(word, id){
     const url = `${this.REST_API_SERVER}/` + id;
     return  this.httpClient
-            .put<any>(url, course)
+            .put<any>(url, word)
             .pipe(catchError(this.handleError));
   }
   constructor(private httpClient: HttpClient) { }
+  
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
