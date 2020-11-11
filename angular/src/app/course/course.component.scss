@@ -1,0 +1,70 @@
+mat-card{
+    margin: 10px 10px 10px 10px;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    cursor: pointer;
+}
+mat-card:hover{
+    background-color: #e1fcfa;
+}
+
+.course_name {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #999890;
+}
+.course_name:hover{
+    color: #f5e000;
+}
+.create_field{
+    padding: 10px;
+    max-width: 500px;
+    margin-bottom: 50px;
+    text-align: justify;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+.create_field:hover{
+    color: #f5e000;
+    cursor: pointer;
+}
+// .form_container{
+//     width: 100%;
+//     max-width: 500px;
+//     margin:auto;
+//     background-color: #fafafa;
+//     padding: 30px;
+//     border: 1px solid#fcba68;
+//     border-radius: 30px ;
+//     margin-bottom: 40px;
+// }
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  
+  .form_container {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .form-element {
+    padding: 25px 10px 25px 10px;
+    width: 100%;
+  }
+  .inputt{
+      font-size: 1.5rem;
+
+  }
+  .inputt::placeholder{
+      font-size: 1.5rem;
+  }

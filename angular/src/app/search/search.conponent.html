@@ -80,7 +80,7 @@
         <div class="SearchPage-filterControls SearchPage-query-header-buffer"></div>
       </div>
       <div class="SearchPage-results">
-        <h5 class="UIHeading UIHeading--five">H&#7884;C PH&#7846;N</h5>
+        <h5 class="UIHeading UIHeading--five">HỌC PHẦN</h5>
         <div class="SearchPage-result js-setResult" data-item-id="210854689"*ngFor="let item of course.items" >
           <div class="SetPreviewLink">
             <div class="UILinkBox">
@@ -92,7 +92,7 @@
                         <div class="UserLink">
                           <div class="UserLink-inner">
                             
-                            <div class="UserLink-content"><a class="UILink" href="/courses" title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"><span class="UserLink-username">quizlette7098644</span></a></div>
+                            <div class="UserLink-content"><a class="UILink" href="/courses/{{item.name}}/{{item.id}}" title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"><span class="UserLink-username">quizlette7098644</span></a></div>
                           </div>
                         </div>
                       </div>
@@ -108,7 +108,7 @@
               </div>
               <div class="TermsPreview">
                
-              <div class="UILinkBox-link"><a class="UILink" data-sourcename="" href="/" title=" {{item.name}} "></a></div>
+              <div class="UILinkBox-link"><a class="UILink" data-sourcename="" href="/courses/{{item.name}}/{{item.id}}" title=" {{item.name}} "></a></div>
             </div>
           </div>
         </div>
