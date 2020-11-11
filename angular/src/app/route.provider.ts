@@ -20,7 +20,13 @@ function configureRoutes(routes: RoutesService) {
         name: 'Menu::Search',
         iconClass: 'fas fa-search',
         layout: eLayoutType.application,
-      }
+      },
+      {
+        path: '/courses',
+        name: 'Courses',
+        layout: eLayoutType.application,
+      },
     ]);
   };
 }
+
