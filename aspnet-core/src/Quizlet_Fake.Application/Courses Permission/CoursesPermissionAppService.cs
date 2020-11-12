@@ -33,17 +33,18 @@ namespace Quizlet_Fake.Courses
 
         }
 
-        public StatusResult CheckCoursesPermission(Guid id)
+        public StatusResult CheckCoursesPermission(Guid id, string? pass)
         {
             var res = new StatusResult() { Result = BaseResult.NeedPermission };
             var x = CoursesRepository.FirstOrDefault(x => x.Id == id);
             if(x.CreatorId == (Guid) _currentUser.Id)
             {
                  res.Result = BaseResult.Ok;
-                return res;
+                 return res;
             }
             if(x.Password == null)
             {
+                AddPermission(id, null);
                 res.Result = BaseResult.Ok;
                 return res;
             }
@@ -52,7 +53,7 @@ namespace Quizlet_Fake.Courses
                 res.Result = BaseResult.NeedPermission;
                 return res;
             }
-
+           
             res.Result = BaseResult.Ok;
             return res;
 

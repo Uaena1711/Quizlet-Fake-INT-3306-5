@@ -54,8 +54,8 @@ namespace Quizlet_Fake.Lessions
         {
             var lession = new List<Lesson>();
             Guid currentId = (Guid)_currentUser.Id;
-            var course = courseRepo.Where(x => x.CourseId == id).FirstOrDefault();
-            if(currentId == course.UserId)
+            var course = courseRepo.Where(x => x.CourseId == id).Where(x=> x.UserId == currentId).FirstOrDefault();
+            if(course != null)
             {
                 lession = _repository.Where(x => x.CourseId == id).ToList();
                 return lession;

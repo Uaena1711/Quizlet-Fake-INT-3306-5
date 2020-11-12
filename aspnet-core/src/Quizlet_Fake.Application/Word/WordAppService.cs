@@ -41,15 +41,12 @@ namespace Quizlet_Fake.Words
         public override Task<WordDto> CreateAsync(WordCreateOrUpdateDto input)
         {
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == input.LessonId);
-            var per = perRepository.FirstOrDefault(x => x.CourseId == lession.CourseId);
+            var per = perRepository.Where(x => x.CourseId == lession.CourseId).Where(x => x.UserId == _currentUser.Id).FirstOrDefault();
 
             if (per != null)
             {
-
-                if (per.UserId == _currentUser.Id)
-                {
                     return base.CreateAsync(input);
-                }
+                
             }
             //input.UserId = AbpSession.UserId;
             return base.CreateAsync(new WordCreateOrUpdateDto());
@@ -60,8 +57,8 @@ namespace Quizlet_Fake.Words
             var word = new List<Word>();
             Guid currentId = (Guid)_currentUser.Id;
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == id);
-            var per = perRepository.Where(x => x.CourseId == lession.CourseId).FirstOrDefault();
-            if (currentId == per.UserId)
+            var per = perRepository.Where(x => x.CourseId == lession.CourseId).Where(x => x.UserId == currentId).FirstOrDefault();
+            if (per != null)
             {
                 word = _repository.Where(x => x.LessonId == id).ToList();
                 return word;
