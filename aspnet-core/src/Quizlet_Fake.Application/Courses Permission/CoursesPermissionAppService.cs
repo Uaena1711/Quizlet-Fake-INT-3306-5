@@ -39,30 +39,30 @@ namespace Quizlet_Fake.Courses
             var x = CoursesRepository.FirstOrDefault(x => x.Id == id);
             if (x.CreatorId == (Guid)_currentUser.Id)
             {
-                res.Result = BaseResult.Ok;
-                return res;
-            }
-            if (x.Password == null)
-            {
-                await AddPermission(id, null);
+
+
                 var news = new CoursesPermissionCreateUpdateDto();
                 news.UserId = (Guid)_currentUser.Id;
                 news.CourseId = id;
                
                 var ins = ObjectMapper.Map<CoursesPermissionCreateUpdateDto, ParticipationPermission>(news);
                 await _repository.InsertAsync(ins);
+
+                res.Result = BaseResult.Ok;
+                return res;
+            }
+            if (x.Password == null)
+            {
+
+                await AddPermission(id, null);
+              
                 res.Result = BaseResult.Ok;
                 return res;
             }
             if (x.Password == "")
             {
                 await AddPermission(id, "");
-                var news = new CoursesPermissionCreateUpdateDto();
-                news.UserId = (Guid)_currentUser.Id;
-                news.CourseId = id;
-               
-                var ins = ObjectMapper.Map<CoursesPermissionCreateUpdateDto, ParticipationPermission>(news);
-                await _repository.InsertAsync(ins);
+
                 res.Result = BaseResult.Ok;
                 return res;
             }
@@ -72,7 +72,7 @@ namespace Quizlet_Fake.Courses
                 res.Result = BaseResult.NeedPermission;
                 return res;
             }
-
+           
             res.Result = BaseResult.Ok;
             return  res;
 
