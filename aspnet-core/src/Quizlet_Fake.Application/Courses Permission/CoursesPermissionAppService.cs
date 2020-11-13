@@ -37,31 +37,38 @@ namespace Quizlet_Fake.Courses
         {
             var res = new StatusResult() { Result = BaseResult.NeedPermission };
             var x = CoursesRepository.FirstOrDefault(x => x.Id == id);
-            if(x.CreatorId == (Guid) _currentUser.Id)
+            if (x.CreatorId == (Guid)_currentUser.Id)
             {
+
+
                 var news = new CoursesPermissionCreateUpdateDto();
                 news.UserId = (Guid)_currentUser.Id;
                 news.CourseId = id;
                
                 var ins = ObjectMapper.Map<CoursesPermissionCreateUpdateDto, ParticipationPermission>(news);
                 await _repository.InsertAsync(ins);
+
                 res.Result = BaseResult.Ok;
                 return res;
             }
-            if(x.Password == null)
+            if (x.Password == null)
             {
-               await AddPermission(id, null);
+
+                await AddPermission(id, null);
+              
                 res.Result = BaseResult.Ok;
                 return res;
             }
             if (x.Password == "")
             {
                 await AddPermission(id, "");
+
                 res.Result = BaseResult.Ok;
                 return res;
             }
             var y = _repository.Where(x => x.CourseId == id).Where(x => x.UserId == _currentUser.Id).FirstOrDefault();
-            if(y == null) { 
+            if (y == null)
+            {
                 res.Result = BaseResult.NeedPermission;
                 return res;
             }
@@ -69,7 +76,6 @@ namespace Quizlet_Fake.Courses
             res.Result = BaseResult.Ok;
             return  res;
 
-            
         }
 
         public async Task<StatusResult> AddPermission (Guid id, String? pass) 

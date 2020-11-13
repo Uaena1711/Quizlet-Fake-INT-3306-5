@@ -17,44 +17,19 @@ const httpOptions = {
 })
 
 export class ServerHttpService {
-  private REST_API_SERVER = 'https://localhost:44340/api/app/course';
-  public idCourse = '';
-  public name;
-  public userId;
-  public publishDate;
-  public price;
-  public creationTime;
-  public creatorId;
-
-  public addMode = true;
-  public getCourses(): Observable<any>{
-    const url = `${this.REST_API_SERVER}/coursesOfUser`;
+  private REST_API_SERVER = 'https://localhost:44340/api/app/coursesPermission';
+  nameCourse;
+  idCourse;
+  public checkPermission(id): Observable<any>{
+    const url = `${this.REST_API_SERVER}/` +id +`/checkCoursesPermission`;
     return this.httpClient
-          .get<any>(url, httpOptions)
+          .post<any>(url, {})
           .pipe(catchError(this.handleError));
   }
-  public getAllCourses(): Observable<any>{
-    const url = `${this.REST_API_SERVER}`;
-    return this.httpClient
-          .get<any>(url, httpOptions)
-          .pipe(catchError(this.handleError));
-  }
-  public deleteCourse(id: number) {
-    const url = `${this.REST_API_SERVER}/` + id;
+  public addPermission(id, password) {
+    const url = `${this.REST_API_SERVER}/` +id +`/permission?pass=` + password;
     return  this.httpClient
-            .delete<any>(url)
-            .pipe(catchError(this.handleError));
-  }
-  public addCourse(course) {
-    const url = `${this.REST_API_SERVER}`;
-    return  this.httpClient
-            .post<any>(url, course)
-            .pipe(catchError(this.handleError));
-  }
-  public editCourse(course, id){
-    const url = `${this.REST_API_SERVER}/` + id;
-    return  this.httpClient
-            .put<any>(url, course)
+            .post<any>(url, {})
             .pipe(catchError(this.handleError));
   }
   constructor(private httpClient: HttpClient) { }

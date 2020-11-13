@@ -15,11 +15,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LessionComponent, LessionCreateComponent } from './lession.component';
 import { WordComponent } from './word.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AllCourseComponent, CourseCheckPassComponent } from './all-course.component';
 
 
 
 @NgModule({
-  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, WordComponent],
+  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, WordComponent, AllCourseComponent, CourseCheckPassComponent],
   imports: [
     CommonModule,
     CourseRoutingModule,
