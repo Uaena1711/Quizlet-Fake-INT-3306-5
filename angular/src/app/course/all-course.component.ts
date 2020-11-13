@@ -13,15 +13,25 @@ import { Router } from '@angular/router';
 export class AllCourseComponent implements OnInit {
   AllCourses: [];
   checkRes: number;
+  searchForm: FormGroup;
   constructor(private Service : ServerHttpService,
               private PermissionService : Permission,
               private dialog : MatDialog,
-              private route: Router
+              private route: Router,
+              private fb: FormBuilder
     ) { 
   }
 
   ngOnInit(): void {
     this.Service.getAllCourses().subscribe((data=>{
+      this.AllCourses = data.items;
+    }))
+    this.searchForm = this.fb.group({
+      name: ''
+    })
+  }
+  public search(){
+    this.Service.searchCourses(this.searchForm.controls.name.value).subscribe((data=>{
       this.AllCourses = data.items;
     }))
   }
@@ -73,6 +83,7 @@ export class CourseCheckPassComponent implements OnInit {
   public closeDialog() {
     this.dialog.closeAll();
   }
+
   public save(){
     this.Service.addPermission(this.Service.idCourse, this.form.controls.password.value).subscribe((data=>{
       this.res = data.result;

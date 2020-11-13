@@ -33,6 +33,12 @@ export class ServerHttpService {
           .get<any>(url, httpOptions)
           .pipe(catchError(this.handleError));
   }
+  public searchCourses(text): Observable<any>{
+    const url = `${this.REST_API_SERVER}/ssss?text=`+ text;
+    return this.httpClient
+          .get<any>(url, httpOptions)
+          .pipe(catchError(this.handleError));
+  }
   public getAllCourses(): Observable<any>{
     const url = `${this.REST_API_SERVER}`;
     return this.httpClient
