@@ -33,30 +33,49 @@ namespace Quizlet_Fake.Courses
 
         }
 
-        public StatusResult CheckCoursesPermission(Guid id)
+        public async Task<StatusResult> CheckCoursesPermission(Guid id)
         {
             var res = new StatusResult() { Result = BaseResult.NeedPermission };
             var x = CoursesRepository.FirstOrDefault(x => x.Id == id);
-            if(x.CreatorId == (Guid) _currentUser.Id)
-            {
-                 res.Result = BaseResult.Ok;
-                return res;
-            }
-            if(x.Password == null)
+            if (x.CreatorId == (Guid)_currentUser.Id)
             {
                 res.Result = BaseResult.Ok;
                 return res;
             }
+            if (x.Password == null)
+            {
+                await AddPermission(id, null);
+                var news = new CoursesPermissionCreateUpdateDto();
+                news.UserId = (Guid)_currentUser.Id;
+                news.CourseId = id;
+               
+                var ins = ObjectMapper.Map<CoursesPermissionCreateUpdateDto, ParticipationPermission>(news);
+                await _repository.InsertAsync(ins);
+                res.Result = BaseResult.Ok;
+                return res;
+            }
+            if (x.Password == "")
+            {
+                await AddPermission(id, "");
+                var news = new CoursesPermissionCreateUpdateDto();
+                news.UserId = (Guid)_currentUser.Id;
+                news.CourseId = id;
+               
+                var ins = ObjectMapper.Map<CoursesPermissionCreateUpdateDto, ParticipationPermission>(news);
+                await _repository.InsertAsync(ins);
+                res.Result = BaseResult.Ok;
+                return res;
+            }
             var y = _repository.Where(x => x.CourseId == id).Where(x => x.UserId == _currentUser.Id).FirstOrDefault();
-            if(y == null) { 
+            if (y == null)
+            {
                 res.Result = BaseResult.NeedPermission;
                 return res;
             }
 
             res.Result = BaseResult.Ok;
-            return res;
+            return  res;
 
-            
         }
 
         public async Task<StatusResult> AddPermission (Guid id, String? pass) 

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
+
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +29,8 @@ const routes: Routes = [
       import('@abp/ng.setting-management').then((m) => m.SettingManagementModule.forLazy()),
   },
   { path: 'courses', loadChildren: () => import('./course/course.module').then(m => m.CourseModule) },
+  { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
+ 
 ];
 
 @NgModule({

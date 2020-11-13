@@ -13,10 +13,15 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
+import { HttpClientModule } from '@angular/common/http';
+
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule.forRoot({
@@ -29,6 +34,8 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     SettingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeBasicModule.forRoot(),
+    MatDialogModule,
+    MatFormFieldModule
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],

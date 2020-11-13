@@ -22,6 +22,8 @@ namespace Quizlet_Fake
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+           
+
             context.Services.AddHttpClientProxies(
                 typeof(Quizlet_FakeApplicationContractsModule).Assembly,
                 RemoteServiceName

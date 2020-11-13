@@ -3,6 +3,1222 @@
     "app"
   ],
   "modules": {
+    "app": {
+      "rootPath": "app",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "Quizlet_Fake.Words.WordAppService": {
+          "controllerName": "Word",
+          "type": "Quizlet_Fake.Words.WordAppService",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Validation.IValidationEnabled"
+            },
+            {
+              "type": "Volo.Abp.Auditing.IAuditingEnabled"
+            },
+            {
+              "type": "Quizlet_Fake.Words.IWordAppService"
+            }
+          ],
+          "actions": {
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/word",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.Words.WordCreateOrUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Words.WordDto",
+                "typeSimple": "Quizlet_Fake.Words.WordDto"
+              }
+            },
+            "GetWordOfLessionById": {
+              "uniqueName": "GetWordOfLessionById",
+              "name": "GetWordOfLession",
+              "httpMethod": "GET",
+              "url": "api/app/word/{id}/wordOfLession",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<Quizlet_Fake.Words.Word>",
+                "typeSimple": "[Quizlet_Fake.Words.Word]"
+              }
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/word/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/word/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.Words.WordCreateOrUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Words.WordCreateOrUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Words.WordDto",
+                "typeSimple": "Quizlet_Fake.Words.WordDto"
+              }
+            },
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/word/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Words.WordDto",
+                "typeSimple": "Quizlet_Fake.Words.WordDto"
+              }
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/word",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Words.WordDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Words.WordDto>"
+              }
+            }
+          }
+        },
+        "Quizlet_Fake.Lessions.LessionAppService": {
+          "controllerName": "Lession",
+          "type": "Quizlet_Fake.Lessions.LessionAppService",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Validation.IValidationEnabled"
+            },
+            {
+              "type": "Volo.Abp.Auditing.IAuditingEnabled"
+            },
+            {
+              "type": "Quizlet_Fake.Lesssion.ILessionAppService"
+            }
+          ],
+          "actions": {
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/lession",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Lesssion.LessionDto",
+                "typeSimple": "Quizlet_Fake.Lesssion.LessionDto"
+              }
+            },
+            "GetLessionOfCoursesById": {
+              "uniqueName": "GetLessionOfCoursesById",
+              "name": "GetLessionOfCourses",
+              "httpMethod": "GET",
+              "url": "api/app/lession/{id}/lessionOfCourses",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<Quizlet_Fake.Lessons.Lesson>",
+                "typeSimple": "[Quizlet_Fake.Lessons.Lesson]"
+              }
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/lession/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/lession/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Lesssion.LessionDto",
+                "typeSimple": "Quizlet_Fake.Lesssion.LessionDto"
+              }
+            },
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/lession/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Lesssion.LessionDto",
+                "typeSimple": "Quizlet_Fake.Lesssion.LessionDto"
+              }
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/lession",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Lesssion.LessionDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Lesssion.LessionDto>"
+              }
+            }
+          }
+        },
+        "Quizlet_Fake.Courses.CoursesPermissionAppService": {
+          "controllerName": "CoursesPermission",
+          "type": "Quizlet_Fake.Courses.CoursesPermissionAppService",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Validation.IValidationEnabled"
+            },
+            {
+              "type": "Volo.Abp.Auditing.IAuditingEnabled"
+            },
+            {
+              "type": "Quizlet_Fake.LogCoursesPermission.ICoursesPermissionAppService"
+            }
+          ],
+          "actions": {
+            "CheckCoursesPermissionById": {
+              "uniqueName": "CheckCoursesPermissionById",
+              "name": "CheckCoursesPermission",
+              "httpMethod": "POST",
+              "url": "api/app/coursesPermission/{id}/checkCoursesPermission",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.LogCoursesPermission.StatusResult",
+                "typeSimple": "Quizlet_Fake.LogCoursesPermission.StatusResult"
+              }
+            },
+            "AddPermissionByIdAndPass": {
+              "uniqueName": "AddPermissionByIdAndPass",
+              "name": "AddPermission",
+              "httpMethod": "POST",
+              "url": "api/app/coursesPermission/{id}/permission",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "pass",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "pass",
+                  "name": "pass",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.LogCoursesPermission.StatusResult",
+                "typeSimple": "Quizlet_Fake.LogCoursesPermission.StatusResult"
+              }
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/coursesPermission/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto",
+                "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto"
+              }
+            },
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/coursesPermission",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto",
+                "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto"
+              }
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/coursesPermission/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/coursesPermission/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto",
+                "typeSimple": "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto"
+              }
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/coursesPermission",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto>"
+              }
+            }
+          }
+        },
+        "Quizlet_Fake.Courses.CourseAppService": {
+          "controllerName": "Course",
+          "type": "Quizlet_Fake.Courses.CourseAppService",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Validation.IValidationEnabled"
+            },
+            {
+              "type": "Volo.Abp.Auditing.IAuditingEnabled"
+            },
+            {
+              "type": "Quizlet_Fake.Courses.ICourseAppService"
+            }
+          ],
+          "actions": {
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/course",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.Courses.CourseCreateUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Courses.CourseDto",
+                "typeSimple": "Quizlet_Fake.Courses.CourseDto"
+              }
+            },
+            "GetCoursesOfUserByText": {
+              "uniqueName": "GetCoursesOfUserByText",
+              "name": "GetCoursesOfUser",
+              "httpMethod": "GET",
+              "url": "api/app/course/coursesOfUser",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "text",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "text",
+                  "name": "text",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<Quizlet_Fake.Courses.Course>",
+                "typeSimple": "[Quizlet_Fake.Courses.Course]"
+              }
+            },
+            "GetListssssByInputAndText": {
+              "uniqueName": "GetListssssByInputAndText",
+              "name": "GetListssss",
+              "httpMethod": "GET",
+              "url": "api/app/course/ssss",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "text",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "text",
+                  "name": "text",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<Quizlet_Fake.Courses.CourseDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Quizlet_Fake.Courses.CourseDto>"
+              }
+            },
+            "DeleteAsynccById": {
+              "uniqueName": "DeleteAsynccById",
+              "name": "DeleteAsyncc",
+              "httpMethod": "DELETE",
+              "url": "api/app/course/{id}/asyncc",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/course/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Quizlet_Fake.Courses.CourseCreateUpdateDto, Quizlet_Fake.Application.Contracts",
+                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Courses.CourseDto",
+                "typeSimple": "Quizlet_Fake.Courses.CourseDto"
+              }
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/course/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/course/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Quizlet_Fake.Courses.CourseDto",
+                "typeSimple": "Quizlet_Fake.Courses.CourseDto"
+              }
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/course",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Courses.CourseDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Courses.CourseDto>"
+              }
+            }
+          }
+        }
+      }
+    },
     "featureManagement": {
       "rootPath": "featureManagement",
       "remoteServiceName": "AbpFeatureManagement",
@@ -139,156 +1355,6 @@
               "returnValue": {
                 "type": "System.Void",
                 "typeSimple": "System.Void"
-              }
-            }
-          }
-        }
-      }
-    },
-    "abp": {
-      "rootPath": "abp",
-      "remoteServiceName": "abp",
-      "controllers": {
-        "Pages.Abp.MultiTenancy.AbpTenantController": {
-          "controllerName": "AbpTenant",
-          "type": "Pages.Abp.MultiTenancy.AbpTenantController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.IAbpTenantAppService"
-            }
-          ],
-          "actions": {
-            "FindTenantByNameAsyncByName": {
-              "uniqueName": "FindTenantByNameAsyncByName",
-              "name": "FindTenantByNameAsync",
-              "httpMethod": "GET",
-              "url": "api/abp/multi-tenancy/tenants/by-name/{name}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "name",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "name",
-                  "name": "name",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
-                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
-              }
-            },
-            "FindTenantByIdAsyncById": {
-              "uniqueName": "FindTenantByIdAsyncById",
-              "name": "FindTenantByIdAsync",
-              "httpMethod": "GET",
-              "url": "api/abp/multi-tenancy/tenants/by-id/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
-                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
-              }
-            }
-          }
-        },
-        "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController": {
-          "controllerName": "AbpApplicationConfiguration",
-          "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.IAbpApplicationConfigurationAppService"
-            }
-          ],
-          "actions": {
-            "GetAsync": {
-              "uniqueName": "GetAsync",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/abp/application-configuration",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto",
-                "typeSimple": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto"
-              }
-            }
-          }
-        },
-        "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController": {
-          "controllerName": "AbpApiDefinition",
-          "type": "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController",
-          "interfaces": [],
-          "actions": {
-            "GetByModel": {
-              "uniqueName": "GetByModel",
-              "name": "Get",
-              "httpMethod": "GET",
-              "url": "api/abp/api-definition",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "model",
-                  "typeAsString": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto, Volo.Abp.Http",
-                  "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
-                  "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "model",
-                  "name": "IncludeTypes",
-                  "type": "System.Boolean",
-                  "typeSimple": "boolean",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "model"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel",
-                "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel"
               }
             }
           }
@@ -1209,100 +2275,282 @@
         }
       }
     },
-    "app": {
-      "rootPath": "app",
-      "remoteServiceName": "Default",
+    "abp": {
+      "rootPath": "abp",
+      "remoteServiceName": "abp",
       "controllers": {
-        "Quizlet_Fake.Courses.CourseAppService": {
-          "controllerName": "Course",
-          "type": "Quizlet_Fake.Courses.CourseAppService",
+        "Pages.Abp.MultiTenancy.AbpTenantController": {
+          "controllerName": "AbpTenant",
+          "type": "Pages.Abp.MultiTenancy.AbpTenantController",
           "interfaces": [
             {
-              "type": "Volo.Abp.Validation.IValidationEnabled"
-            },
-            {
-              "type": "Volo.Abp.Auditing.IAuditingEnabled"
-            },
-            {
-              "type": "Quizlet_Fake.Courses.ICourseAppService"
+              "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.IAbpTenantAppService"
             }
           ],
           "actions": {
-            "CreateAsyncByInput": {
-              "uniqueName": "CreateAsyncByInput",
-              "name": "CreateAsync",
-              "httpMethod": "POST",
-              "url": "api/app/course",
+            "FindTenantByNameAsyncByName": {
+              "uniqueName": "FindTenantByNameAsyncByName",
+              "name": "FindTenantByNameAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/multi-tenancy/tenants/by-name/{name}",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "input",
-                  "typeAsString": "Quizlet_Fake.Courses.CourseCreateUpdateDto, Quizlet_Fake.Application.Contracts",
-                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
-                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "name": "name",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
-                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "nameOnMethod": "name",
+                  "name": "name",
+                  "type": "System.String",
+                  "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
                   "descriptorName": ""
                 }
               ],
               "returnValue": {
-                "type": "Quizlet_Fake.Courses.CourseDto",
-                "typeSimple": "Quizlet_Fake.Courses.CourseDto"
+                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
               }
             },
-            "UpdateAsyncByIdAndInput": {
-              "uniqueName": "UpdateAsyncByIdAndInput",
+            "FindTenantByIdAsyncById": {
+              "uniqueName": "FindTenantByIdAsyncById",
+              "name": "FindTenantByIdAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/multi-tenancy/tenants/by-id/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
+              }
+            }
+          }
+        },
+        "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController": {
+          "controllerName": "AbpApplicationConfiguration",
+          "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.IAbpApplicationConfigurationAppService"
+            }
+          ],
+          "actions": {
+            "GetAsync": {
+              "uniqueName": "GetAsync",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/application-configuration",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto"
+              }
+            }
+          }
+        },
+        "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController": {
+          "controllerName": "AbpApiDefinition",
+          "type": "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController",
+          "interfaces": [],
+          "actions": {
+            "GetByModel": {
+              "uniqueName": "GetByModel",
+              "name": "Get",
+              "httpMethod": "GET",
+              "url": "api/abp/api-definition",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "model",
+                  "typeAsString": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto, Volo.Abp.Http",
+                  "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
+                  "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "model",
+                  "name": "IncludeTypes",
+                  "type": "System.Boolean",
+                  "typeSimple": "boolean",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "model"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel",
+                "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel"
+              }
+            }
+          }
+        }
+      }
+    },
+    "permissionManagement": {
+      "rootPath": "permissionManagement",
+      "remoteServiceName": "AbpPermissionManagement",
+      "controllers": {
+        "Volo.Abp.PermissionManagement.PermissionsController": {
+          "controllerName": "Permissions",
+          "type": "Volo.Abp.PermissionManagement.PermissionsController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.PermissionManagement.IPermissionAppService"
+            }
+          ],
+          "actions": {
+            "GetAsyncByProviderNameAndProviderKey": {
+              "uniqueName": "GetAsyncByProviderNameAndProviderKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/permission-management/permissions",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.PermissionManagement.GetPermissionListResultDto",
+                "typeSimple": "Volo.Abp.PermissionManagement.GetPermissionListResultDto"
+              }
+            },
+            "UpdateAsyncByProviderNameAndProviderKeyAndInput": {
+              "uniqueName": "UpdateAsyncByProviderNameAndProviderKeyAndInput",
               "name": "UpdateAsync",
               "httpMethod": "PUT",
-              "url": "api/app/course/{id}",
+              "url": "api/permission-management/permissions",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
                 },
                 {
                   "name": "input",
-                  "typeAsString": "Quizlet_Fake.Courses.CourseCreateUpdateDto, Quizlet_Fake.Application.Contracts",
-                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
-                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "typeAsString": "Volo.Abp.PermissionManagement.UpdatePermissionsDto, Volo.Abp.PermissionManagement.Application.Contracts",
+                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "type": "System.Guid",
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
                   "descriptorName": ""
                 },
                 {
                   "nameOnMethod": "input",
                   "name": "input",
-                  "type": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
-                  "typeSimple": "Quizlet_Fake.Courses.CourseCreateUpdateDto",
+                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1311,36 +2559,175 @@
                 }
               ],
               "returnValue": {
-                "type": "Quizlet_Fake.Courses.CourseDto",
-                "typeSimple": "Quizlet_Fake.Courses.CourseDto"
+                "type": "System.Void",
+                "typeSimple": "System.Void"
               }
-            },
-            "DeleteAsyncById": {
-              "uniqueName": "DeleteAsyncById",
-              "name": "DeleteAsync",
-              "httpMethod": "DELETE",
-              "url": "api/app/course/{id}",
+            }
+          }
+        }
+      }
+    },
+    "account": {
+      "rootPath": "account",
+      "remoteServiceName": "AbpAccount",
+      "controllers": {
+        "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController": {
+          "controllerName": "Account",
+          "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController",
+          "interfaces": [],
+          "actions": {
+            "LoginByLogin": {
+              "uniqueName": "LoginByLogin",
+              "name": "Login",
+              "httpMethod": "POST",
+              "url": "api/account/login",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
+                  "name": "login",
+                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
+                  "nameOnMethod": "login",
+                  "name": "login",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
+                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
+              }
+            },
+            "Logout": {
+              "uniqueName": "Logout",
+              "name": "Logout",
+              "httpMethod": "GET",
+              "url": "api/account/logout",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "CheckPasswordByLogin": {
+              "uniqueName": "CheckPasswordByLogin",
+              "name": "CheckPassword",
+              "httpMethod": "POST",
+              "url": "api/account/checkPassword",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "login",
+                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "login",
+                  "name": "login",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
+                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
+              }
+            }
+          }
+        },
+        "Volo.Abp.Account.AccountController": {
+          "controllerName": "Account",
+          "type": "Volo.Abp.Account.AccountController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Account.IAccountAppService"
+            }
+          ],
+          "actions": {
+            "RegisterAsyncByInput": {
+              "uniqueName": "RegisterAsyncByInput",
+              "name": "RegisterAsync",
+              "httpMethod": "POST",
+              "url": "api/account/register",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.RegisterDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.RegisterDto",
+                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Volo.Abp.Account.RegisterDto",
+                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+              }
+            },
+            "SendPasswordResetCodeAsyncByInput": {
+              "uniqueName": "SendPasswordResetCodeAsyncByInput",
+              "name": "SendPasswordResetCodeAsync",
+              "httpMethod": "POST",
+              "url": "api/account/send-password-reset-code",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.SendPasswordResetCodeDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
                   "descriptorName": ""
                 }
               ],
@@ -1349,52 +2736,18 @@
                 "typeSimple": "System.Void"
               }
             },
-            "GetAsyncById": {
-              "uniqueName": "GetAsyncById",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/app/course/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Quizlet_Fake.Courses.CourseDto",
-                "typeSimple": "Quizlet_Fake.Courses.CourseDto"
-              }
-            },
-            "GetListAsyncByInput": {
-              "uniqueName": "GetListAsyncByInput",
-              "name": "GetListAsync",
-              "httpMethod": "GET",
-              "url": "api/app/course",
+            "ResetPasswordAsyncByInput": {
+              "uniqueName": "ResetPasswordAsyncByInput",
+              "name": "ResetPasswordAsync",
+              "httpMethod": "POST",
+              "url": "api/account/reset-password",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
-                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeAsString": "Volo.Abp.Account.ResetPasswordDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.ResetPasswordDto",
+                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -1402,41 +2755,19 @@
               "parameters": [
                 {
                   "nameOnMethod": "input",
-                  "name": "Sorting",
-                  "type": "System.String",
-                  "typeSimple": "string",
+                  "name": "input",
+                  "type": "Volo.Abp.Account.ResetPasswordDto",
+                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "SkipCount",
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "MaxResultCount",
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Courses.CourseDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Quizlet_Fake.Courses.CourseDto>"
+                "type": "System.Void",
+                "typeSimple": "System.Void"
               }
             }
           }
@@ -1791,355 +3122,6 @@
                   "defaultValue": null,
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            }
-          }
-        }
-      }
-    },
-    "permissionManagement": {
-      "rootPath": "permissionManagement",
-      "remoteServiceName": "AbpPermissionManagement",
-      "controllers": {
-        "Volo.Abp.PermissionManagement.PermissionsController": {
-          "controllerName": "Permissions",
-          "type": "Volo.Abp.PermissionManagement.PermissionsController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.PermissionManagement.IPermissionAppService"
-            }
-          ],
-          "actions": {
-            "GetAsyncByProviderNameAndProviderKey": {
-              "uniqueName": "GetAsyncByProviderNameAndProviderKey",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/permission-management/permissions",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.PermissionManagement.GetPermissionListResultDto",
-                "typeSimple": "Volo.Abp.PermissionManagement.GetPermissionListResultDto"
-              }
-            },
-            "UpdateAsyncByProviderNameAndProviderKeyAndInput": {
-              "uniqueName": "UpdateAsyncByProviderNameAndProviderKeyAndInput",
-              "name": "UpdateAsync",
-              "httpMethod": "PUT",
-              "url": "api/permission-management/permissions",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.PermissionManagement.UpdatePermissionsDto, Volo.Abp.PermissionManagement.Application.Contracts",
-                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            }
-          }
-        }
-      }
-    },
-    "account": {
-      "rootPath": "account",
-      "remoteServiceName": "AbpAccount",
-      "controllers": {
-        "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController": {
-          "controllerName": "Account",
-          "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController",
-          "interfaces": [],
-          "actions": {
-            "LoginByLogin": {
-              "uniqueName": "LoginByLogin",
-              "name": "Login",
-              "httpMethod": "POST",
-              "url": "api/account/login",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "login",
-                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "login",
-                  "name": "login",
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
-                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
-              }
-            },
-            "Logout": {
-              "uniqueName": "Logout",
-              "name": "Logout",
-              "httpMethod": "GET",
-              "url": "api/account/logout",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            },
-            "CheckPasswordByLogin": {
-              "uniqueName": "CheckPasswordByLogin",
-              "name": "CheckPassword",
-              "httpMethod": "POST",
-              "url": "api/account/checkPassword",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "login",
-                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "login",
-                  "name": "login",
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
-                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
-              }
-            }
-          }
-        },
-        "Volo.Abp.Account.AccountController": {
-          "controllerName": "Account",
-          "type": "Volo.Abp.Account.AccountController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.Account.IAccountAppService"
-            }
-          ],
-          "actions": {
-            "RegisterAsyncByInput": {
-              "uniqueName": "RegisterAsyncByInput",
-              "name": "RegisterAsync",
-              "httpMethod": "POST",
-              "url": "api/account/register",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Account.RegisterDto, Volo.Abp.Account.Application.Contracts",
-                  "type": "Volo.Abp.Account.RegisterDto",
-                  "typeSimple": "Volo.Abp.Account.RegisterDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "type": "Volo.Abp.Account.RegisterDto",
-                  "typeSimple": "Volo.Abp.Account.RegisterDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Identity.IdentityUserDto",
-                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
-              }
-            },
-            "SendPasswordResetCodeAsyncByInput": {
-              "uniqueName": "SendPasswordResetCodeAsyncByInput",
-              "name": "SendPasswordResetCodeAsync",
-              "httpMethod": "POST",
-              "url": "api/account/send-password-reset-code",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Account.SendPasswordResetCodeDto, Volo.Abp.Account.Application.Contracts",
-                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            },
-            "ResetPasswordAsyncByInput": {
-              "uniqueName": "ResetPasswordAsyncByInput",
-              "name": "ResetPasswordAsync",
-              "httpMethod": "POST",
-              "url": "api/account/reset-password",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Account.ResetPasswordDto, Volo.Abp.Account.Application.Contracts",
-                  "type": "Volo.Abp.Account.ResetPasswordDto",
-                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "type": "Volo.Abp.Account.ResetPasswordDto",
-                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
                   "descriptorName": ""
                 }
               ],
@@ -4430,7 +5412,7 @@
         }
       ]
     },
-    "Quizlet_Fake.Courses.CourseCreateUpdateDto": {
+    "Quizlet_Fake.Words.WordCreateOrUpdateDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -4443,28 +5425,23 @@
           "typeSimple": "string"
         },
         {
-          "name": "Password",
+          "name": "VN",
           "type": "System.String",
           "typeSimple": "string"
         },
         {
-          "name": "PublishDate",
-          "type": "System.DateTime",
+          "name": "EN",
+          "type": "System.String",
           "typeSimple": "string"
         },
         {
-          "name": "UserId",
+          "name": "LessonId",
           "type": "System.Guid",
           "typeSimple": "string"
-        },
-        {
-          "name": "Price",
-          "type": "System.Single",
-          "typeSimple": "number"
         }
       ]
     },
-    "Quizlet_Fake.Courses.CourseDto": {
+    "Quizlet_Fake.Words.WordDto": {
       "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -4477,24 +5454,19 @@
           "typeSimple": "string"
         },
         {
-          "name": "Password",
+          "name": "VN",
           "type": "System.String",
           "typeSimple": "string"
         },
         {
-          "name": "UserId",
+          "name": "EN",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "LessonId",
           "type": "System.Guid",
           "typeSimple": "string"
-        },
-        {
-          "name": "PublishDate",
-          "type": "System.DateTime",
-          "typeSimple": "string"
-        },
-        {
-          "name": "Price",
-          "type": "System.Single",
-          "typeSimple": "number"
         }
       ]
     },
@@ -4563,6 +5535,359 @@
       "enumValues": null,
       "genericArguments": null,
       "properties": []
+    },
+    "Quizlet_Fake.Words.Word": {
+      "baseType": "Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "VN",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "EN",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "LessonId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<T0>": {
+      "baseType": "Volo.Abp.Domain.Entities.Auditing.CreationAuditedAggregateRoot<TKey>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TKey"
+      ],
+      "properties": [
+        {
+          "name": "LastModificationTime",
+          "type": "System.DateTime?",
+          "typeSimple": "string?"
+        },
+        {
+          "name": "LastModifierId",
+          "type": "System.Guid?",
+          "typeSimple": "string?"
+        }
+      ]
+    },
+    "Volo.Abp.Domain.Entities.Auditing.CreationAuditedAggregateRoot<T0>": {
+      "baseType": "Volo.Abp.Domain.Entities.AggregateRoot<TKey>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TKey"
+      ],
+      "properties": [
+        {
+          "name": "CreationTime",
+          "type": "System.DateTime",
+          "typeSimple": "string"
+        },
+        {
+          "name": "CreatorId",
+          "type": "System.Guid?",
+          "typeSimple": "string?"
+        }
+      ]
+    },
+    "Volo.Abp.Domain.Entities.AggregateRoot<T0>": {
+      "baseType": "Volo.Abp.Domain.Entities.BasicAggregateRoot<TKey>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TKey"
+      ],
+      "properties": [
+        {
+          "name": "ExtraProperties",
+          "type": "{System.String:System.Object}",
+          "typeSimple": "{string:object}"
+        },
+        {
+          "name": "ConcurrencyStamp",
+          "type": "System.String",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Volo.Abp.Domain.Entities.BasicAggregateRoot<T0>": {
+      "baseType": "Volo.Abp.Domain.Entities.Entity<TKey>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TKey"
+      ],
+      "properties": []
+    },
+    "Volo.Abp.Domain.Entities.Entity<T0>": {
+      "baseType": "Volo.Abp.Domain.Entities.Entity",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TKey"
+      ],
+      "properties": [
+        {
+          "name": "Id",
+          "type": "TKey",
+          "typeSimple": "TKey"
+        }
+      ]
+    },
+    "Volo.Abp.Domain.Entities.Entity": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": []
+    },
+    "Quizlet_Fake.Lesssion.LessionCreateorUpdateDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "CourseId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Quizlet_Fake.Lesssion.LessionDto": {
+      "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "CourseId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Quizlet_Fake.Lessons.Lesson": {
+      "baseType": "Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "CourseId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Quizlet_Fake.LogCoursesPermission.StatusResult": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Result",
+          "type": "Quizlet_Fake.LogCoursesPermission.BaseResult",
+          "typeSimple": "Quizlet_Fake.LogCoursesPermission.BaseResult"
+        }
+      ]
+    },
+    "Quizlet_Fake.LogCoursesPermission.BaseResult": {
+      "baseType": "System.Enum",
+      "isEnum": true,
+      "enumNames": [
+        "NeedPermission",
+        "NoPermission",
+        "Ok"
+      ],
+      "enumValues": [
+        0,
+        1,
+        2
+      ],
+      "genericArguments": null,
+      "properties": null
+    },
+    "Quizlet_Fake.LogCoursesPermission.CoursesPermissionCreateUpdateDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "CourseId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        },
+        {
+          "name": "UserId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Quizlet_Fake.LogCoursesPermission.CoursesPermissionDto": {
+      "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "CourseId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        },
+        {
+          "name": "UserId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        }
+      ]
+    },
+    "Quizlet_Fake.Courses.CourseCreateUpdateDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "Password",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "PublishDate",
+          "type": "System.DateTime",
+          "typeSimple": "string"
+        },
+        {
+          "name": "UserId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        },
+        {
+          "name": "Price",
+          "type": "System.Single",
+          "typeSimple": "number"
+        }
+      ]
+    },
+    "Quizlet_Fake.Courses.CourseDto": {
+      "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "Password",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "UserId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        },
+        {
+          "name": "PublishDate",
+          "type": "System.DateTime",
+          "typeSimple": "string"
+        },
+        {
+          "name": "Price",
+          "type": "System.Single",
+          "typeSimple": "number"
+        }
+      ]
+    },
+    "Quizlet_Fake.Courses.Course": {
+      "baseType": "Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "Password",
+          "type": "System.String",
+          "typeSimple": "string"
+        },
+        {
+          "name": "UserId",
+          "type": "System.Guid",
+          "typeSimple": "string"
+        },
+        {
+          "name": "PublishDate",
+          "type": "System.DateTime",
+          "typeSimple": "string"
+        },
+        {
+          "name": "Price",
+          "type": "System.Single",
+          "typeSimple": "number"
+        }
+      ]
     }
   }
 }

@@ -3,6 +3,14 @@
   "texts": {
     "Menu:Home": "Trang chủ",
     "Welcome": "Chào mừng bạn",
-    "LongWelcomeMessage": "Chào mừng bạn đến ứng dụng. Đây là một dự án khởi nghiệp dựa trên khung ABP. Để biết thêm thông tin, hãy truy cập abp.io."
+    "LongWelcomeMessage": "Chào mừng bạn đến ứng dụng. Đây là một dự án khởi nghiệp dựa trên khung ABP. Để biết thêm thông tin, hãy truy cập abp.io.",
+    "Permission:BookStore": "Khóa học",
+    "Permission:GetCourses": "Quản lý khóa học",
+    "Permission:Books.Create": "Tạo khóa học mới",
+    "Permission:Books.Edit": "Chỉnh sửa khóa học",
+    "Permission:Books.Delete": "xóa khóa học",
+    "Permission:GetLessons": "Quản lý Bài học",
+    "Permission:GetWords": "Quản lý từ"
+
   }
 }

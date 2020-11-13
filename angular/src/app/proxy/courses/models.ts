@@ -1,4 +1,13 @@
+import type { AuditedAggregateRoot } from '../volo/abp/domain/entities/auditing/models';
 import type { AuditedEntityDto } from '@abp/ng.core';
+
+export interface Course extends AuditedAggregateRoot<string> {
+  name: string;
+  password: string;
+  userId: string;
+  publishDate: string;
+  price: number;
+}
 
 export interface CourseCreateUpdateDto {
   name: string;
