@@ -30,28 +30,40 @@ namespace Quizlet_Fake.Words
         private readonly IRepository<Word, Guid> _repository;
         private readonly IRepository<ParticipationPermission, Guid> perRepository;
         private readonly IRepository<Lesson, Guid> lessonsRepo;
-        public WordAppService(IRepository<Word, Guid> repository, ICurrentUser currentUser, IRepository<ParticipationPermission, Guid> xrepo, IRepository<Lesson,Guid> yrepo) : base(repository)
+        private readonly IRepository<Course, Guid> _courserepo;
+        public WordAppService(IRepository<Word, Guid> repository, ICurrentUser currentUser, IRepository<ParticipationPermission, Guid> xrepo, IRepository<Lesson,Guid> yrepo,
+            IRepository<Course, Guid> zrepo) : base(repository)
         {
             this._currentUser = currentUser;
             this._repository = repository;
             this.perRepository = xrepo;
             this.lessonsRepo = yrepo;
+
+            this._courserepo = zrepo;
         }
 
         public override Task<WordDto> CreateAsync(WordCreateOrUpdateDto input)
         {
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == input.LessonId);
-            var per = perRepository.FirstOrDefault(x => x.CourseId == lession.CourseId);
+            var cour = _courserepo.FirstOrDefault(x => x.Id == lession.CourseId);
+            // var per = perRepository.FirstOrDefault(x => x.CourseId == lession.CourseId);
 
-            if (per != null)
-            {
+            //if (per != null)
+            //{
 
-                if (per.UserId == _currentUser.Id)
+            if (lession.CreatorId == _currentUser.Id)//per.UserId == _currentUser.Id)
                 {
+                   // Course cour = (Course)_courserepo.Where(x => x.Id == lession.CourseId);
+                    cour.wordnumber += 1;
+                   _courserepo.UpdateAsync(cour);
+                    lession.wordnumber += 1;
+                    lessonsRepo.UpdateAsync(lession);
+
                     return base.CreateAsync(input);
                 }
-            }
+           // }
             //input.UserId = AbpSession.UserId;
+            
             return base.CreateAsync(new WordCreateOrUpdateDto());
         }
 

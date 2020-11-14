@@ -9,7 +9,7 @@ namespace Quizlet_Fake.Learns
     {
         public Guid UserId { get;  set; }
         public Guid WordId { get;  set; }
-        public Guid LessonId { get;  private set; }
+        public Guid LessonId { get;   set; }
         public DateTime DateReview { get; set; }
 
         public DateTime DateofLearn { get; set; }

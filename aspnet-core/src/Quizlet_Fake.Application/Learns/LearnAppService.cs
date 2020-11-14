@@ -49,7 +49,7 @@ namespace Quizlet_Fake.Learns
         private readonly IRepository<Word, Guid> _word_rea_repository;
 
 
-        public override Task<LearnDto> CreateAsync(LearnCreateUpdateDto input)//dung khi xemlan dau 
+        public override Task<LearnDto> CreateAsync(LearnCreateUpdateDto input)
             
         {
             input.Level = 0;
@@ -58,55 +58,48 @@ namespace Quizlet_Fake.Learns
             
             return base.CreateAsync(input);
         }
-        public async Task UpdateProgess(Guid LessonId)
-        {
-            try
-            {
-                var lernprogess = _lessonrepository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == LessonId);
-                List<Learn> learns = _repository.Where(x => x.LessonId == LessonId && x.UserId == _currentUser.Id).ToList();
-                int soluong = learns.Count();
+        
 
-                int sum = 0;
-                foreach (Learn lean in learns)
-                {
-                    sum += lean.Level;
-                }
-                lernprogess.Progress = (int)sum * 100 / (5 * soluong);
-
-                await _lessonrepository.UpdateAsync(lernprogess, autoSave: true);
-
-                
-               
-            }
-            catch ( Exception e)
-            {
-                
-            }
-        }
-
-        public  async Task<LearnDto> UpdateLevelLearningWord( Guid idword, bool b)//dung khi kiem tra review
+        public async  Task<LearnDto> UpdateLevelLearningWord( Guid idword, bool b)//dung khi kiem tra review
         {
             var wordinput = _repository.FirstOrDefault(x => x.Id == idword && x.UserId == _currentUser.Id);
+            var lessonlearn = _lessonrepository.FirstOrDefault(x => x.LessonId == wordinput.LessonId && x.UserId == _currentUser.Id);
+            int wordnumber = _lesson_rea_repository.FirstOrDefault(x => x.Id == lessonlearn.LessonId ).wordnumber;
+
+
             if( wordinput != null)
             {
                 LearnCreateUpdateDto input = new LearnCreateUpdateDto();
-                input = ObjectMapper.Map<Learn, LearnCreateUpdateDto>(wordinput);
-                
+                //input = ObjectMapper.Map<Learn, LearnCreateUpdateDto>(wordinput);
+
+                input.LessonId = wordinput.LessonId;
+                input.Note = wordnumber.ToString();
+                input.UserId = wordinput.UserId;
+                input.DateofLearn = wordinput.DateofLearn;
+                input.DateReview = wordinput.DateReview;
+                input.WordId = wordinput.WordId; 
 
                 if( b)
                 {
                     
                         input.Level = wordinput.Level + 1;
                         input.DateReview = DateTime.Now.AddHours(4 * input.Level);
+                       lessonlearn.Progress = (int)((lessonlearn.Progress * 5 * wordnumber + 100) /(5 * wordnumber));
+                       await  _lessonrepository.UpdateAsync(lessonlearn);
                 }
                 else
                 {
                     if (wordinput.Level > 1)
                     {
-                        wordinput.Level -= 1;
+                            
+                        input.Level = wordinput.Level - 1;
+                        
+                         lessonlearn.Progress = (int)((lessonlearn.Progress * 5 * wordnumber - 100)/(5 * wordnumber));
+                        await _lessonrepository.UpdateAsync(lessonlearn);
 
                     }
                     input.DateReview = DateTime.Now.AddHours(4 * input.Level);
+
                 }
                 
                 return await base.UpdateAsync(idword, input);
@@ -115,7 +108,7 @@ namespace Quizlet_Fake.Learns
             {
                 return await base.UpdateAsync(new Guid(), new LearnCreateUpdateDto() );
             }
-
+            
         }
 
         
@@ -184,30 +177,7 @@ namespace Quizlet_Fake.Learns
             return true;
             
         }
-        public async Task<List<LearnDto>> GetMyLessonTest(Guid LessonId, int from )
-        {
-            await CheckGetListPolicyAsync();
-
-            Guid myid = (Guid)_currentUser.Id;
-
-            var query = from word1 in _repository
-                        join word in _word_rea_repository on word1.WordId equals word.Id
-                        where word1.LessonId ==LessonId && word1.UserId == myid
-                        select new { word1, word };
-            query = query.Skip(from).Take(20);
-            var queryResult = await AsyncExecuter.ToListAsync(query);
-
-            var DTos = queryResult.Select(x =>
-            {
-                var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
-                dto.VN = x.word.VN;
-                dto.EN = x.word.EN;
-                return dto;
-            }).ToList();
-
-
-            return new List<LearnDto>(DTos);
-        }
+        
 
     }
 }

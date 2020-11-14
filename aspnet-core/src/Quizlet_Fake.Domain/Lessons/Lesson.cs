@@ -12,5 +12,7 @@ namespace Quizlet_Fake.Lessons
 
         public Guid CourseId { get; private set; }
 
+        public int wordnumber { get; set; } = 0;
+
     }
 }
