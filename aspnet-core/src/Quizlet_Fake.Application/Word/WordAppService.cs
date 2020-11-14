@@ -112,7 +112,7 @@ namespace Quizlet_Fake.Words
 
                 if (per.UserId == _currentUser.Id)
                 {
-                    return base.UpdateAsync(id, input);
+                    return  base.UpdateAsync(id, input);
                 }
             }
             return base.UpdateAsync(new Guid(), input);

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { Observable, pipe } from 'rxjs';
 import { throwError } from 'rxjs/internal/observable/throwError';
-import { catchError } from 'rxjs/operators'; 
+import { catchError } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -27,6 +27,12 @@ export class ServerHttpService {
   public addMode = true;
   public getLessionOfCourse(id): Observable<any>{
     const url = `${this.REST_API_SERVER}/` + id +`/lessionOfCourses`;
+    return this.httpClient
+          .get<any>(url, httpOptions)
+          .pipe(catchError(this.handleError));
+  }
+  public isOwner(id): Observable<any> {
+    const url = `${this.REST_API_SERVER}/` + id +`/isOwner`;
     return this.httpClient
           .get<any>(url, httpOptions)
           .pipe(catchError(this.handleError));

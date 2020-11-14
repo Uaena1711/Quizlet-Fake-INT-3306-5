@@ -14,40 +14,43 @@ export class AllCourseComponent implements OnInit {
   AllCourses: [];
   checkRes: number;
   searchForm: FormGroup;
-  constructor(private Service : ServerHttpService,
-              private PermissionService : Permission,
-              private dialog : MatDialog,
+  isSearch: boolean;
+  constructor(private Service: ServerHttpService,
+              private PermissionService: Permission,
+              private dialog: MatDialog,
               private route: Router,
               private fb: FormBuilder
-    ) { 
+    ) {
   }
 
   ngOnInit(): void {
-    this.Service.getAllCourses().subscribe((data=>{
-      this.AllCourses = data.items;
-    }))
+    this.isSearch = false;
+    // this.Service.getAllCourses().subscribe((data=>{
+    //   this.AllCourses = data.items;
+    // }))
     this.searchForm = this.fb.group({
       name: ''
-    })
+    });
   }
   public search(){
-    this.Service.searchCourses(this.searchForm.controls.name.value).subscribe((data=>{
+    this.Service.searchCourses(this.searchForm.controls.name.value).subscribe((data => {
       this.AllCourses = data.items;
-    }))
+    }));
+    this.isSearch = true;
   }
 
   public check(id, name){
-    this.PermissionService.checkPermission(id).subscribe((data=>{
+    this.PermissionService.checkPermission(id).subscribe((data =>{
       console.log(data);
       this.checkRes = data.result;
-      if (this.checkRes == 2){
-        this.route.navigateByUrl('courses/'+name+'/'+id);
+      if (this.checkRes === 2){
+        this.route.navigateByUrl('courses/' + name + '/' + id);
       } else {
         this.PermissionService.idCourse = id;
         this.PermissionService.nameCourse = name;
         this.openDialog();
       }
-    }))
+    }));
 
   }
   public openDialog(){
@@ -55,7 +58,7 @@ export class AllCourseComponent implements OnInit {
       height: '300px' ,
       width: '500px'
     });
-  } 
+  }
 }
 
 @Component({
@@ -85,14 +88,14 @@ export class CourseCheckPassComponent implements OnInit {
   }
 
   public save(){
-    this.Service.addPermission(this.Service.idCourse, this.form.controls.password.value).subscribe((data=>{
+    this.Service.addPermission(this.Service.idCourse, this.form.controls.password.value).subscribe((data => {
       this.res = data.result;
       if (this.res == 2){
-        this.route.navigateByUrl('courses/'+this.Service.nameCourse+'/'+this.Service.idCourse);
+        this.route.navigateByUrl('courses/' + this.Service.nameCourse + '/' + this.Service.idCourse);
         this.closeDialog();
       } else {
         alert("sai mật khẩu");
       }
-    }))
+    }));
   }
  }

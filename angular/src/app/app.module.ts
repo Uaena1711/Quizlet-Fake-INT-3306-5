@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AllCourseComponent } from './course/all-course.component';
+
 
 @NgModule({
   imports: [

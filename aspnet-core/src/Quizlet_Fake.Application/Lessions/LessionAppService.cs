@@ -14,6 +14,7 @@ using Volo.Abp.Domain.Repositories;
 using System.Linq;
 using Quizlet_Fake.Participations;
 using Quizlet_Fake.Permissions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Quizlet_Fake.Lessions
 {
@@ -100,6 +101,12 @@ namespace Quizlet_Fake.Lessions
                 return base.GetAsync(id);
             }
             return base.GetAsync(new Guid());
+        }
+        [HttpGet]
+        public bool isOwner(Guid id)
+        {
+            var lesson = _repository.Where(x => x.Id == id).FirstOrDefault();
+            return lesson.CreatorId == _currentUser.Id ? true : false;
         }
 
         public override Task DeleteAsync(Guid id)
