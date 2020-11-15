@@ -24,9 +24,9 @@ export class WordComponent implements OnInit {
   cardWords: Array<any>;
   isOwner: boolean;
   constructor(private fb: FormBuilder,
-    private Service: ServerHttpService,
-    private route: ActivatedRoute,
-    private lessonSer: LessonServe
+              private Service: ServerHttpService,
+              private route: ActivatedRoute,
+              private lessonSer: LessonServe
   ) { }
 
   ngOnInit(): void {

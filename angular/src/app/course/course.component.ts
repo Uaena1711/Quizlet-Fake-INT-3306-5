@@ -39,8 +39,6 @@ export class CourseComponent implements OnInit {
     this.Service.addMode = true;
     this.Service.idCourse = '';
     this.Service.name = '';
-    console.log(this.Service.addMode)
-    console.log(this.Service.idCourse)
   }
   public openDialogEdit(id,name, userId, publishDate, price, creationTime, creatorId){
     this.dialog.open(CourseCreateComponent, {

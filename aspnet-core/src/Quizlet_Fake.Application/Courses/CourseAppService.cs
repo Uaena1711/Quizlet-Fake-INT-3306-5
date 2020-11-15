@@ -1,7 +1,9 @@
 ﻿using Abp.Runtime.Session;
+using Quizlet_Fake.Lessons;
 using Quizlet_Fake.LogCoursesPermission;
 using Quizlet_Fake.Participations;
 using Quizlet_Fake.Permissions;
+using Quizlet_Fake.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,17 +27,21 @@ namespace Quizlet_Fake.Courses
         ICourseAppService, ITransientDependency
     {
         //public IAbpSession AbpSession { get; set; }
-        public CourseAppService(IRepository<Course, Guid> repository ,ICurrentUser currentUser, IRepository<ParticipationPermission> y) : base(repository)
+        public CourseAppService(IRepository<Course, Guid> repository ,ICurrentUser currentUser, IRepository<ParticipationPermission> y, IRepository<AppUser, Guid> z, IRepository<Lesson, Guid> m) : base(repository)
         {
             this._currentUser = currentUser;
             this._repository = repository;
             this._parRepo = y;
+            this.usersRepository = z;
+            this.lessonrepository = m;
             GetPolicyName = Quizlet_FakePermissions.Courses.Default;
             GetListPolicyName = Quizlet_FakePermissions.Courses.Default;
         }
         private readonly ICurrentUser _currentUser;
         private readonly IRepository<Course, Guid> _repository;
         private readonly IRepository<ParticipationPermission> _parRepo;
+        private readonly IRepository<AppUser, Guid> usersRepository;
+        private readonly IRepository<Lesson, Guid> lessonrepository;
         public async override Task<CourseDto> CreateAsync(CourseCreateUpdateDto input)
         {
             input.UserId =(Guid)  _currentUser.Id;
@@ -50,36 +56,75 @@ namespace Quizlet_Fake.Courses
             return rs;
         }
 
-        public  List<Course> GetCoursesOfUser (String? text)
+        
+
+        public  ListResultDto<CourseDto> GetCoursesOfUser (String? text)
         {
             var course = new List<Course>();
+            var res = new List<CourseDto>();
             Guid id = (Guid)_currentUser.Id;
             if (text == null)
             {
 
-                course = _repository.Where(p => p.UserId == id).ToList();
+                 course = _repository.Where(p => p.UserId == id).ToList();
+                 res = ObjectMapper.Map<List<Course>, List<CourseDto>>(course);
             }
             else
             {
                 course = _repository.Where(p => p.UserId == id && p.Name.Contains(text)).ToList();
+                 res = ObjectMapper.Map<List<Course>, List<CourseDto>>(course);
             }
-            return course;
+            return new ListResultDto<CourseDto>(res);
         }
         public async Task<ListResultDto<CourseDto>> GetListssss(PagedAndSortedResultRequestDto input, String? text)
         {
             if (text == null)
             {
-                List<Course> course =  await _repository.GetListAsync();
+                var query = from course in Repository
+                            join
+                    user in usersRepository on course.CreatorId equals user.Id
+                            select new { course, user };
 
-                List<CourseDto> courdto = ObjectMapper.Map<List<Course>, List<CourseDto>>(course);
-                return new ListResultDto<CourseDto>(courdto);
+                query = query
+                .Skip(input.SkipCount)
+                .Take(input.MaxResultCount);
+                var queryResult = await AsyncExecuter.ToListAsync(query);
+                var courseDtos = queryResult.Select(x =>
+                {
+                    var courseDto  = ObjectMapper.Map<Course, CourseDto>(x.course);
+                    courseDto.AuthorName = x.user.UserName;
+                    var lesson = lessonrepository.Where(m => m.CourseId == x.course.Id).Count();
+                    courseDto.LessonNumber = lesson;
+                    return courseDto;
+                }).ToList();
+                return new ListResultDto<CourseDto>(courseDtos);
+                //List<Course> course =  await _repository.GetListAsync();
+
+                //List<CourseDto> courdto = ObjectMapper.Map<List<Course>, List<CourseDto>>(course);
+                //return new ListResultDto<CourseDto>(courdto);
             }
             else
             {
-               var  course = _repository.Where( p => p.Name.Contains(text)).ToList();
+                
+                var query = from course in Repository
+                            join
+               user in usersRepository on course.CreatorId equals user.Id
+                                       where course.Name.Contains(text)
+                            select new { course, user };
 
-                List<CourseDto> courdto = ObjectMapper.Map<List<Course>, List<CourseDto>>(course);
-                return new ListResultDto<CourseDto>(courdto);
+                query = query
+                .Skip(input.SkipCount)
+                .Take(input.MaxResultCount);
+                var queryResult = await AsyncExecuter.ToListAsync(query);
+                var courseDtos = queryResult.Select(x =>
+                {
+                    var courseDto = ObjectMapper.Map<Course, CourseDto>(x.course);
+                    courseDto.AuthorName = x.user.UserName;
+                    var lesson = lessonrepository.Where(m => m.CourseId == x.course.Id).Count();
+                    courseDto.LessonNumber = lesson;
+                    return courseDto;
+                }).ToList();
+                return new ListResultDto<CourseDto>(courseDtos);
             }
         }
 
