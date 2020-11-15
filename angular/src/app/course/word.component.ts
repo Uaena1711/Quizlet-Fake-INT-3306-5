@@ -18,6 +18,10 @@ export class WordComponent implements OnInit {
   vn: '';
   en: '';
   words: [];
+  cardname: '';
+  cardvn: '';
+  cardid: number;
+  cardWords: Array<any>;
   isOwner: boolean;
   constructor(private fb: FormBuilder,
     private Service: ServerHttpService,
@@ -31,6 +35,10 @@ export class WordComponent implements OnInit {
     this.nameLession = this.route.snapshot.params.nameLession;
     this.Service.getWordOfLession(this.Service.idLession).subscribe((data => {
       this.words = data;
+      this.cardWords = data;
+      this.cardname = this.cardWords[0].name;
+      this.cardvn = this.cardWords[0].vn;
+      this.cardid = 0;
     }));
     this.form = this.fb.group({
       name: this.name,
@@ -47,6 +55,32 @@ export class WordComponent implements OnInit {
           }
         )
       );
+  }
+  public next(){
+    if (this.cardid < this.cardWords.length-1){
+      this.cardid += 1;
+      this.cardname = this.cardWords[this.cardid].name;
+      this.cardvn = this.cardWords[this.cardid].vn;
+    } else {
+      this.cardid = 0;
+      this.cardname = this.cardWords[this.cardid].name;
+      this.cardvn = this.cardWords[this.cardid].vn;
+    }
+  }
+  public prev(){
+    if (this.cardid > 0){
+      this.cardid -= 1;
+      this.cardname = this.cardWords[this.cardid].name;
+      this.cardvn = this.cardWords[this.cardid].vn;
+    } else {
+      this.cardid = this.cardWords.length -1;
+      this.cardname = this.cardWords[this.cardid].name;
+      this.cardvn = this.cardWords[this.cardid].vn;
+    }
+  }
+  public flip(id){
+    var cardtu = document.querySelector('#'+id);
+    cardtu.classList.toggle('is-flipped');
   }
   public Save() {
     if (this.addMode === true) {
@@ -95,6 +129,5 @@ export class WordComponent implements OnInit {
       vn: this.vn,
       en: this.en
     });
-    window.scrollTo(0, 0);
   }
 }
