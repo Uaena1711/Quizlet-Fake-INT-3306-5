@@ -15,7 +15,7 @@
   }
   
   .form-element {
-    padding: 25px 10px 25px 10px;
+    padding: 25px 10px 0px 10px;
     width: 33.33%;
   }
   
@@ -3401,3 +3401,1020 @@ html.cursor .UILink--inverted:hover:visited {
       format("woff");
   unicode-range: u+2070-209f;
 }
+
+/*! CSS Used from: https://assets.quizlet.com/a/c/global.9e070d4cb29c739.css */
+button,
+h4,
+input {
+  margin: 0;
+  padding: 0;
+}
+section {
+  display: block;
+}
+::selection {
+  background: #c5f1f1;
+}
+::-moz-selection {
+  background: #c5f1f1;
+}
+a,
+a:visited {
+  color: var(--blue_color);
+}
+input {
+  font: 12px/18px hurme_no2-webfont, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+.TermText {
+  -webkit-font-smoothing: antialiased;
+}
+/*! CSS Used from: https://assets.quizlet.com/a/c/set.ac2b1ff9ddbf5ba.css */
+.SetPage-termsList {
+  position: relative;
+}
+.SetPageTaggingEmbedded {
+  max-height: 15.625rem;
+  overflow: hidden;
+  transition: max-height 0.2s linear;
+}
+.SetPageTaggingEmbedded--hidden {
+  max-height: 0;
+}
+.SetPageTermChunk-title .UIHeading {
+  display: inline-block;
+  margin-right: 0.625rem;
+}
+.SetPageTermChunk--stillLearning .SetPageTermChunk-title {
+  display: block;
+  font-weight: var(--typography-heading-weight);
+  font-size: 1.25rem;
+  letter-spacing: normal;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermChunk--stillLearning .SetPageTermChunk-title {
+    font-weight: var(--typography-heading-weight);
+    font-size: 1.125rem;
+    letter-spacing: normal;
+    line-height: 1.333333333333333;
+  }
+}
+.SetPageTermChunk--stillLearning .SetPageTermChunk-title {
+  color: #f08700;
+}
+.SetPageTermChunk-selectAll {
+  display: table-cell;
+  min-width: 11.25rem;
+  text-align: right;
+}
+.SetPageTermChunk--stillLearning .SetPageTermChunk-selectAll {
+  vertical-align: middle;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermChunk-selectAll {
+    min-width: 10rem;
+  }
+}
+@media print {
+  .SetPageTermChunk-selectAll {
+    display: none;
+  }
+}
+.SetPageTermChunk-heading {
+  display: table-cell;
+  margin-right: 2rem;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermChunk-heading {
+    vertical-align: middle;
+  }
+}
+.SetPageTermChunk-subtitle {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.866666666666667;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermChunk-subtitle {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.714285714285714;
+  }
+}
+.SetPageTermChunk--stillLearning .SetPageTermChunk-subtitle {
+  font-weight: var(--typography-body-weight);
+  font-size: 1rem;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermChunk--stillLearning .SetPageTermChunk-subtitle {
+    font-weight: var(--typography-body-weight);
+    font-size: 0.875rem;
+    letter-spacing: normal;
+    line-height: 1.428571428571429;
+  }
+}
+@media screen and (max-width: 48em) {
+  .SetPageTermChunk-subtitle {
+    display: block;
+  }
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermChunk-subtitle {
+    display: none;
+  }
+}
+.SetPageTermChunk-header {
+  display: table;
+  margin-bottom: 0.625rem;
+  width: 100%;
+}
+.SetPageTermChunk--stillLearning .SetPageTermChunk-header {
+  margin-bottom: 1.5rem;
+}
+.SetPageTerm {
+  background: var(--card-background);
+  border-radius: 0.25rem;
+  min-height: 3.625rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+}
+@media print {
+  .SetPageTerm {
+    border-bottom: 0.0625rem solid var(--ui_color_gray_60);
+    min-height: 1.25rem;
+  }
+}
+.SetPageTerm-inner {
+  *zoom: 1;
+  padding: 1.25rem 2rem;
+  position: relative;
+  width: 100%;
+}
+.SetPageTerm-inner:after,
+.SetPageTerm-inner:before {
+  content: "";
+  display: table;
+}
+.SetPageTerm-inner:after {
+  clear: both;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-inner {
+    display: block;
+    padding: 1rem;
+  }
+}
+@media print {
+  .SetPageTerm-inner {
+    padding: 0;
+  }
+}
+.SetPageTerm-contentWrapper {
+  display: inline-block;
+  float: left;
+  width: calc(100% - 4.5rem);
+}
+.SetPageTerm.has-threeActions:not(.has-score) .SetPageTerm-contentWrapper {
+  width: calc(100% - 6.75rem);
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-contentWrapper {
+    width: 100% !important;
+  }
+}
+@media print {
+  .SetPageTerm-contentWrapper {
+    width: calc(100% - 2.25rem);
+  }
+}
+.SetPageTerm-content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: -2.5rem;
+  margin-left: -2rem;
+  text-align: left;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-content {
+    margin-top: -1rem;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.SetPageTerm-side {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  position: relative;
+  vertical-align: top;
+  width: 33%;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-side {
+    border-right: 0;
+    margin-top: 1rem;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+@media print {
+  .SetPageTerm-side {
+    border-right: 0.0625rem solid var(--ui_color_gray_60);
+  }
+}
+.SetPageTerm-sideContent {
+  padding: 0 2rem;
+}
+.SetPageTerm-sideContent {
+  border-right: 0.125rem solid var(--ui_divider_color_black);
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+.SetPageTerm-largeSide .SetPageTerm-sideContent,
+.SetPageTerm-side:last-child .SetPageTerm-sideContent {
+  border-right: none;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-sideContent {
+    border-right: none;
+  }
+}
+.SetPageTerm-largeSide {
+  position: relative;
+  width: 67%;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-largeSide {
+    padding: 0;
+    width: 100%;
+  }
+}
+.SetPageTerm-wordText {
+  color: var(--ui_color_gray_20);
+  word-wrap: break-word;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-wordText {
+    color: var(--ui_color_default_foreground);
+  }
+}
+.SetPageTerm-definitionText {
+  color: var(--ui_color_gray_20);
+  display: block;
+  word-wrap: break-word;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-definitionText {
+    color: var(--ui_color_default_foreground);
+  }
+}
+.SetPageTerm-actions {
+  display: inline-block;
+  height: 1.625rem;
+  width: 4.5rem;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm-actions {
+    display: block;
+    position: relative;
+    right: -0.3125rem;
+    text-align: right;
+    top: -0.3125rem;
+    width: 100%;
+  }
+}
+.SetPageTerm.has-threeActions .SetPageTerm-actions {
+  width: 6.75rem;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTerm.has-threeActions .SetPageTerm-actions {
+    width: 100%;
+  }
+}
+.SetPageTerm-actions .UIButton-wrapper {
+  padding-top: 0.25rem !important;
+  vertical-align: middle;
+}
+@media print {
+  .SetPageTerm-actions {
+    float: right;
+    width: 2.25rem;
+  }
+}
+@media print {
+  .SetPageTerm-audio,
+  .SetPageTerm-edit {
+    display: none;
+  }
+}
+.SetPageTermsHeader-termsListTitle {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.SetPageTermsHeader-termsListTitle h4 {
+  -webkit-flex: 100 0 auto;
+  -ms-flex: 100 0 auto;
+  flex: 100 0 auto;
+  margin-bottom: 0.625rem;
+  font-weight: var(--typography-heading-weight);
+  font-size: 1.25rem;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermsHeader-termsListTitle h4 {
+    font-weight: var(--typography-heading-weight);
+    font-size: 1.125rem;
+    letter-spacing: normal;
+    line-height: 1.333333333333333;
+  }
+}
+.SetPageTermsHeader-controls {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.SetPageTermsHeader-controls .UIFieldset-fields {
+  height: 2.625rem;
+  margin-top: 0 !important;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPageTermsHeader-controls .UIFieldset-fields {
+    height: 2.25rem;
+  }
+}
+@media print {
+  .SetPageTermsHeader-controls {
+    display: none;
+  }
+}
+.SetPageTermsHeader-controls--main {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.SetPageTermsHeader-sortDropdown {
+  display: inline-block;
+  margin-bottom: 0.625rem;
+  margin-left: 1.5rem;
+}
+@media print {
+  .SetPageTermsHeader-sortDropdown {
+    display: none;
+  }
+}
+.SetPageTerms-term + .SetPageTerms-term {
+  margin-top: 0.625rem;
+}
+.SetPageTerms-editButtonWrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+.SetPageTerms-termsList {
+  position: relative;
+}
+.SetPageTerms-termsWrapper {
+  margin-top: 2.1875rem;
+}
+@media print {
+  .SetPageTerms-termsWrapper {
+    background: var(--ui_color_white_background);
+  }
+}
+.SetPage .SetPage-setDetailsTerms {
+  margin: 0 auto;
+  max-width: 54.5625rem;
+  padding: 2.5rem;
+  position: relative;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPage .SetPage-setDetailsTerms {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 64.0625em) {
+  .SetPage.has-adz .SetPage-setDetailsTerms {
+    max-width: 77.125rem;
+  }
+  .SetPage.has-adz .SetPage-setDetailsTerms .SetPage-content {
+    margin-right: 21.25rem;
+  }
+}
+@media screen and (max-width: 64em) {
+  .SetPage.has-adz .SetPage-setDetailsTerms {
+    max-width: none;
+  }
+  .SetPage.has-adz .SetPage-setDetailsTerms .SetPage-content {
+    margin-right: 12.5rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  .SetPage.has-adz .SetPage-setDetailsTerms .SetPage-content {
+    margin-right: 0;
+  }
+}
+.SetPage .SetPage-terms {
+  padding: 0;
+}
+.SetPage .SetPageTerms-termsWrapper {
+  margin: 0;
+}
+.SetPage .SetPageTermsHeader-termsListTitle {
+  margin-bottom: 0.625rem;
+}
+.SetPage .SetPageTerm-side {
+  width: 33%;
+}
+.SetPage .SetPageTerm-smallSide {
+  width: 40%;
+}
+.SetPage .SetPageTerm-largeSide {
+  width: 60%;
+}
+@media screen and (max-width: 38.75em) {
+  .SetPage .SetPageTerm-side {
+    width: 100%;
+  }
+}
+.SetPage .SetPageTermsHeader-controls .UIDropdown {
+  border: none;
+  border-radius: 0.125rem;
+}
+.theme-default .SetPage .SetPageTermsHeader-controls .UIDropdown {
+  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.16);
+}
+.SetPage .SetPageTermsHeader-controls .UIDropdown-select {
+  color: var(--set_page_dropdown_color);
+}
+.SetPage .SetPageTerm-inner {
+  padding: 1rem;
+}
+/*! CSS Used from: https://assets.quizlet.com/a/c/ui.5adfc349e6febde.css */
+*,
+:after,
+:before {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+[class^="UI"] {
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.UIButton {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.285714285714286;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: auto;
+}
+.UIButton,
+.UIButton:visited {
+  background-color: var(--primary-button-background);
+  color: var(--primary-button-text);
+}
+.UIButton:active,
+html.cursor .UIButton:hover,
+html.cursor .UIButton:hover:visited {
+  background-color: var(--primary-button-hover-background);
+  color: var(--primary-button-text);
+}
+.UIButton:focus {
+  outline: none;
+}
+@media screen and (max-width: 38.75em) {
+  .UIButton {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.333333333333333;
+    padding: 0.625rem 1.25rem;
+  }
+}
+.UIButton::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.UIButton-wrapper {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  white-space: pre-wrap;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+.UIButton--borderless,
+.UIButton--borderless:visited {
+  background-color: initial;
+  color: var(--ui_color_default_foreground);
+}
+.UIButton--borderless:active,
+html.cursor .UIButton--borderless:hover,
+html.cursor .UIButton--borderless:hover:visited {
+  background-color: initial;
+  color: #ffcd1f;
+}
+.UIButton--hero {
+  padding: 1.5rem 5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1.222222222222222;
+}
+@media screen and (max-width: 38.75em) {
+  .UIButton--hero {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.0625rem;
+    line-height: 1.1875;
+  }
+}
+@media screen and (max-width: 38.75em) {
+  .UIButton--hero {
+    padding: 1.25rem 2.5rem;
+  }
+}
+.UIDropdown {
+  background: var(--ui_color_default_background);
+  border: 0.125rem solid var(--ui_color_gray_80_foreground);
+  border-radius: 0.25rem;
+  color: #3ccfcf;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 2.5rem 0 0;
+  position: relative;
+  vertical-align: middle;
+  width: auto;
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown {
+    padding-right: 1.75rem;
+  }
+}
+.UIDropdown .UIDropdown-icon {
+  background: inherit;
+  display: block;
+  height: 100%;
+  padding: 0 0.8125rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: 2.375rem;
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown .UIDropdown-icon {
+    padding: 0 0.4375rem;
+    width: 1.625rem;
+  }
+}
+.UIDropdown:hover:not([aria-disabled="true"]) .UIDropdown-icon {
+  color: #ffcd1f;
+}
+.UIDropdown-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0.25rem;
+  color: #3ccfcf;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0.625rem 0 0.625rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.285714285714286;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: calc(100% + 100px);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown-select {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.333333333333333;
+  }
+}
+.UIDropdown-select option {
+  font: inherit;
+}
+.UIDropdown-select:focus option {
+  background: var(--ui_color_default_background);
+  color: var(--ui_color_default_foreground);
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown-select {
+    padding: 0.5rem 2.125rem 0.5rem 0.5rem;
+  }
+}
+.UIDropdown-select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #3ccfcf;
+}
+.UIFieldset {
+  border: none;
+  margin: 0;
+  min-width: 0;
+  padding: 0.01em 0 0;
+}
+.UIFieldset.UIFieldset--inline {
+  display: inline-block;
+}
+.UIFieldset--inline {
+  display: inline-block;
+}
+.UIFieldset--inline {
+  margin-top: 0 !important;
+}
+.UIFieldset--inline .UIFieldset-fields {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0 !important;
+}
+.UIHeading--four {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+@media screen and (max-width: 38.75em) {
+  .UIHeading--four {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.111111111111111;
+  }
+}
+.UIHeading {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.UIHeading--assembly.UIHeading--four {
+  font-weight: var(--typography-heading-weight);
+  font-size: 1.25rem;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+@media screen and (max-width: 38.75em) {
+  .UIHeading--assembly.UIHeading--four {
+    font-weight: var(--typography-heading-weight);
+    font-size: 1.125rem;
+    letter-spacing: normal;
+    line-height: 1.333333333333333;
+  }
+}
+.UIIconButton {
+  display: inline-block;
+}
+.UIIconButton .UIButton {
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+.UIIconButton .UIButton-wrapper {
+  padding: 0.5625rem;
+}
+.UIIconButton .UIIcon {
+  display: block;
+  pointer-events: none;
+  height: 1.125rem;
+  width: 1.125rem;
+}
+@media screen and (max-width: 38.75em) {
+  .UIIconButton .UIIcon {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+}
+.UIIcon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1rem;
+  width: 1rem;
+}
+.UISwitch {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  vertical-align: middle;
+  width: auto;
+}
+.UISwitch-input {
+  cursor: inherit;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.UISwitch-label {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: var(--ui_color_white_background);
+  border: 0.125rem solid var(--ui_color_gray_80_foreground);
+  border-radius: 0.25rem;
+  color: #3ccfcf;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.285714285714286;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+@media screen and (max-width: 38.75em) {
+  .UISwitch-label {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.333333333333333;
+    padding: 0.5rem;
+  }
+}
+.UISwitch-label .UIIcon + * {
+  margin-left: 0.625rem;
+}
+@media screen and (max-width: 38.75em) {
+  .UISwitch-label .UIIcon + * {
+    margin-left: 0.5rem;
+  }
+}
+/*! CSS Used fontfaces */
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-400.fceb7fa657e6aa7.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-400.8d9738c6b66ccd1.woff)
+      format("woff");
+  unicode-range: u+00a0-00ff, u+0131, u+0152-0153, u+02c6, u+02da, u+02dc,
+    u+2000-2018, u+201a-206f, u+2070-209f, u+20ac, u+2212;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-600.df51690e7e65560.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-600.3ebe1f77c946598.woff)
+      format("woff");
+  unicode-range: u+00a0-00ff, u+0131, u+0152-0153, u+02c6, u+02da, u+02dc,
+    u+2000-2018, u+201a-206f, u+2070-209f, u+20ac, u+2212;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-700.12c06977008dd01.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-700.0b441f0a4b98a72.woff)
+      format("woff");
+  unicode-range: u+00a0-00ff, u+0131, u+0152-0153, u+02c6, u+02da, u+02dc,
+    u+2000-2018, u+201a-206f, u+2070-209f, u+20ac, u+2212;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-400.b0d1fa6ac7268f9.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-400.0d7ffca8e0d154f.woff)
+      format("woff");
+  unicode-range: u+0000-007f, u+2019;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-600.c3230d124a38c02.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-600.617d65b335b4d10.woff)
+      format("woff");
+  unicode-range: u+0000-007f, u+2019;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-700.f964c59f80946ba.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-700.a2549fbf8a90f5b.woff)
+      format("woff");
+  unicode-range: u+0000-007f, u+2019;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-400.26210157740efb6.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-400.239e9a2996960a4.woff)
+      format("woff");
+  unicode-range: u+0100-024f, u+20a0-20ab, u+20ad-20cf, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-600.0e10a35b1c1470e.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-600.02ea8dc66a1212a.woff)
+      format("woff");
+  unicode-range: u+0100-024f,  u+20a0-20ab, u+20ad-20cf, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-700.6f4a55c53c2396e.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-700.56052daa0d1ea84.woff)
+      format("woff");
+  unicode-range: u+0100-024f,  u+20a0-20ab, u+20ad-20cf, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.34800d1f9cfdaf7.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.fc0bd5e633209d3.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-600.1e74bd3800f1436.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-600.5587c0315b8c31a.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-700.1e74bd3800f1436.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-700.5587c0315b8c31a.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  font-family: Libertinus Sans;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.34800d1f9cfdaf7.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.fc0bd5e633209d3.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+.scene {
+  width: 560px;
+  height: 340px;
+  perspective: 600px;
+}
+
+.cardtu {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardtu.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.cardtul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardtul.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+.cardtu__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cardtu__face--front {
+  background:#ffffff;
+}
+
+.cardtu__face--back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+}
+.word-meaning-flip{
+  height: 70%;
+  width: 70%;
+  margin: auto;
+  margin-top: 51px;
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+}
+
