@@ -7,7 +7,9 @@ using Volo.Abp.Application.Dtos;
 
 namespace Quizlet_Fake.Courses
 {
-    public class CourseCreateUpdateDto 
+
+    public class CourseCreateUpdateDto
+
     {
     
         [Required]

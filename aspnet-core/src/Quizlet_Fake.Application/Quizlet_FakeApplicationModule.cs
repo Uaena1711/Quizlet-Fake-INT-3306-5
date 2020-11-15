@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Account;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -24,6 +25,14 @@ namespace Quizlet_Fake
             Configure<AbpAutoMapperOptions>(options =>
             {
                 options.AddMaps<Quizlet_FakeApplicationModule>();
+            });
+            context.Services.AddAuthentication()
+            .AddFacebook(facebook =>
+            {
+                facebook.AppId = "4123686247648546";
+                facebook.AppSecret = "9433ea430168dade9c310171a70fe9f3";
+                facebook.Scope.Add("email");
+                facebook.Scope.Add("public_profile");
             });
         }
     }

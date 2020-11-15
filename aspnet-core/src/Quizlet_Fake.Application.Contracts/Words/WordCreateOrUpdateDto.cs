@@ -15,6 +15,9 @@ namespace Quizlet_Fake.Words
         public string EN { get; set; }
         [Required]
 
+
         public Guid LessonId { get;  set; }
+
+        
     }
 }

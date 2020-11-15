@@ -62,7 +62,7 @@ namespace Quizlet_Fake.Learns
 
         public async  Task<LearnDto> UpdateLevelLearningWord( Guid idword, bool b)//dung khi kiem tra review
         {
-            var wordinput = _repository.FirstOrDefault(x => x.Id == idword && x.UserId == _currentUser.Id);
+            var wordinput = _repository.FirstOrDefault(x => x.WordId == idword && x.UserId == _currentUser.Id);
             var lessonlearn = _lessonrepository.FirstOrDefault(x => x.LessonId == wordinput.LessonId && x.UserId == _currentUser.Id);
             int wordnumber = _lesson_rea_repository.FirstOrDefault(x => x.Id == lessonlearn.LessonId ).wordnumber;
 
@@ -102,7 +102,7 @@ namespace Quizlet_Fake.Learns
 
                 }
                 
-                return await base.UpdateAsync(idword, input);
+                return await base.UpdateAsync(wordinput.Id, input);
             }
             else
             {

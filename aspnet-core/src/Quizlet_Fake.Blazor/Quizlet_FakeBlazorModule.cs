@@ -40,6 +40,7 @@ namespace Quizlet_Fake.Blazor
             ConfigureUI(builder);
             ConfigureMenu(context);
             ConfigureAutoMapper(context);
+
         }
 
         private void ConfigureRouter(ServiceConfigurationContext context)
