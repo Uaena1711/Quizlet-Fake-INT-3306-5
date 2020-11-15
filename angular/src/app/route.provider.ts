@@ -16,11 +16,12 @@ function configureRoutes(routes: RoutesService) {
         layout: eLayoutType.application,
       },
       {
-        path: '/search',
-        name: 'Menu::Search',
-        iconClass: 'fas fa-search',
+        path: '/courses',
+        name: 'Courses',
+        requiredPolicy: 'Quizlet_Fake.Courses',
         layout: eLayoutType.application,
-      }
+      },
     ]);
   };
 }
+

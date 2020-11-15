@@ -1,6 +1,7 @@
 ﻿using Abp.Runtime.Session;
 using Quizlet_Fake.LogCoursesPermission;
 using Quizlet_Fake.Participations;
+using Quizlet_Fake.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Users;
+
 
 namespace Quizlet_Fake.Courses
 {
@@ -28,6 +30,8 @@ namespace Quizlet_Fake.Courses
             this._currentUser = currentUser;
             this._repository = repository;
             this._parRepo = y;
+            GetPolicyName = Quizlet_FakePermissions.Courses.Default;
+            GetListPolicyName = Quizlet_FakePermissions.Courses.Default;
         }
         private readonly ICurrentUser _currentUser;
         private readonly IRepository<Course, Guid> _repository;
@@ -80,7 +84,7 @@ namespace Quizlet_Fake.Courses
         }
 
 
-        public   Task Xoa(Guid id)
+        public Task Xoa(Guid id)
 
         {
             var course =  _repository.FirstOrDefault(x =>x.Id == id);
@@ -98,6 +102,8 @@ namespace Quizlet_Fake.Courses
             var course = _repository.FirstOrDefault(x => x.Id == id);
             if (course.UserId == _currentUser.Id)
             {
+                input.PublishDate = course.PublishDate;
+                input.UserId = course.UserId;
                 return base.UpdateAsync(id, input);
             }
             return base.UpdateAsync(new Guid(), input);

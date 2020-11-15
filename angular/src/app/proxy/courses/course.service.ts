@@ -17,17 +17,10 @@ export class CourseService {
     },
     { apiName: this.apiName });
 
-  // delete = (id: string) =>
-  //   this.restService.request<any, void>({
-  //     method: 'DELETE',
-  //     url: `/api/app/course/${id}`,
-  //   },
-  //   { apiName: this.apiName });
-
   delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
-      url: `/api/app/course/${id}/asyncc`,
+      url: `/api/app/course/${id}`,
     },
     { apiName: this.apiName });
 
@@ -67,6 +60,13 @@ export class CourseService {
       method: 'PUT',
       url: `/api/app/course/${id}`,
       body: input,
+    },
+    { apiName: this.apiName });
+
+  xoaById = (id: string) =>
+    this.restService.request<any, void>({
+      method: 'POST',
+      url: `/api/app/course/${id}/xoa`,
     },
     { apiName: this.apiName });
 

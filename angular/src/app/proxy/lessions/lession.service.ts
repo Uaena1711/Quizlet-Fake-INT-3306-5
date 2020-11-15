@@ -1,7 +1,6 @@
 import { RestService } from '@abp/ng.core';
 import type { PagedAndSortedResultRequestDto, PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
-import type { Lesson } from '../lessons/models';
 import type { LessionCreateorUpdateDto, LessionDto } from '../lesssion/models';
 
 @Injectable({
@@ -33,7 +32,7 @@ export class LessionService {
     { apiName: this.apiName });
 
   getLessionOfCoursesById = (id: string) =>
-    this.restService.request<any, Lesson[]>({
+    this.restService.request<any, LessionDto[]>({
       method: 'GET',
       url: `/api/app/lession/${id}/lessionOfCourses`,
     },
@@ -47,11 +46,26 @@ export class LessionService {
     },
     { apiName: this.apiName });
 
+  getListLessonOfUserByInput = (input: PagedAndSortedResultRequestDto) =>
+    this.restService.request<any, LessionDto[]>({
+      method: 'GET',
+      url: `/api/app/lession/lessonOfUser`,
+      params: { sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+    },
+    { apiName: this.apiName });
+
   update = (id: string, input: LessionCreateorUpdateDto) =>
     this.restService.request<any, LessionDto>({
       method: 'PUT',
       url: `/api/app/lession/${id}`,
       body: input,
+    },
+    { apiName: this.apiName });
+
+  isOwnerById = (id: string) =>
+    this.restService.request<any, boolean>({
+      method: 'GET',
+      url: `/api/app/lession/${id}/isOwner`,
     },
     { apiName: this.apiName });
 
