@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Quizlet_Fake.LogCoursesPermission
 {
-    public class CoursesPermissionCreateUpdateDto
+    public class CoursesPermissionCreateUpdateDto 
     {
         [Required]
         public Guid CourseId { get; set; }

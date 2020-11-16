@@ -17,10 +17,11 @@ function configureRoutes(routes: RoutesService) {
       },
       {
         path: '/courses',
-        name: 'cakcak',
-        
+        name: 'Courses',
+        requiredPolicy: 'Quizlet_Fake.Courses',
         layout: eLayoutType.application,
       },
     ]);
   };
 }
+

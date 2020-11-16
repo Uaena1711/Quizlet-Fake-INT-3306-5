@@ -1,0 +1,41 @@
+<div class="create_field" style="font-size: 1.5rem;">
+    KHÓA HỌC: {{nameCourse}}
+</div>
+<div class="create_field" (click)="openDialog()">
+    Create a Lession
+</div>
+
+<div class="SearchPage-result js-setResult" data-item-id="210854689" *ngFor="let item of lession" style="background-color: #ffffff;">
+    <div class="SetPreviewLink">
+      <div class="UILinkBox">
+        <div class="UILinkBox-inner">
+          <div class="SetPreview">
+            <div class="SetPreview-inner">
+              <div class="PreviewCardByline"><span class="SetPreview-cardBylineTermsCount">lesson</span><span class="UIVerticalRule UIVerticalRule--onWhite"></span>
+                <div class="SetPreview-cardBylineCreator">
+                  <div class="UserLink">
+                    <div class="UserLink-inner">
+                      <div class="UserLink-content"><a class="UILink"  [routerLink]="['lession/' + item.name + '/' + item.id]" routerLinkActive="router-link-active" title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"><span class="UserLink-username">quizlette7098644</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <header class="SetPreview-cardHeader"><span class="SetPreview-cardHeaderTitle">{{item.name}}</span></header>
+              <div class="SetPreviewLink-metadata">
+                <div class="SetPreviewLink-priceTag">
+                  <h4 class="UIHeading UIHeading--four"></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="TermsPreview">
+        <div class="UILinkBox-link"><a class="UILink" data-sourcename=""  [routerLink]="['lession/' + item.name + '/' + item.id]" routerLinkActive="router-link-active" title=" {{item.name}} "></a></div>
+      </div>
+    </div>
+    <button mat-button (click)="openDialogEdit(
+                        item.id,
+                        item.name
+                    )">Edit</button>
+    <button mat-button (click)="deleteLession(item.id)">Delete</button>
+  </div>

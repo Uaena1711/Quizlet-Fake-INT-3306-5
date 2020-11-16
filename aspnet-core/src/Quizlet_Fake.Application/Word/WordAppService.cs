@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Quizlet_Fake.Participations;
 using System.Collections.Generic;
+using Quizlet_Fake.Permissions;
 
 namespace Quizlet_Fake.Words
 {
@@ -36,20 +37,19 @@ namespace Quizlet_Fake.Words
             this._repository = repository;
             this.perRepository = xrepo;
             this.lessonsRepo = yrepo;
+           
+            GetListPolicyName = Quizlet_FakePermissions.Word.Default;
         }
 
         public override Task<WordDto> CreateAsync(WordCreateOrUpdateDto input)
         {
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == input.LessonId);
-            var per = perRepository.FirstOrDefault(x => x.CourseId == lession.CourseId);
+            var per = perRepository.Where(x => x.CourseId == lession.CourseId).Where(x => x.UserId == _currentUser.Id).FirstOrDefault();
 
             if (per != null)
             {
-
-                if (per.UserId == _currentUser.Id)
-                {
                     return base.CreateAsync(input);
-                }
+                
             }
             //input.UserId = AbpSession.UserId;
             return base.CreateAsync(new WordCreateOrUpdateDto());
@@ -60,8 +60,8 @@ namespace Quizlet_Fake.Words
             var word = new List<Word>();
             Guid currentId = (Guid)_currentUser.Id;
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == id);
-            var per = perRepository.Where(x => x.CourseId == lession.CourseId).FirstOrDefault();
-            if (currentId == per.UserId)
+            var per = perRepository.Where(x => x.CourseId == lession.CourseId).Where(x => x.UserId == currentId).FirstOrDefault();
+            if (per != null)
             {
                 word = _repository.Where(x => x.LessonId == id).ToList();
                 return word;
@@ -75,7 +75,7 @@ namespace Quizlet_Fake.Words
 
             var word = _repository.FirstOrDefault(x => x.Id == id);
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == word.LessonId);
-            var per = perRepository.FirstOrDefault(x => x.CourseId == lession.CourseId);
+            var per = perRepository.Where(x => x.CourseId == lession.CourseId).Where(x => x.UserId == _currentUser.Id).FirstOrDefault();
             if (per != null)
             {
                 if (per.UserId == _currentUser.Id)
@@ -85,6 +85,18 @@ namespace Quizlet_Fake.Words
             }
             return base.DeleteAsync(new Guid());
 
+        }
+
+        public override Task<WordDto> GetAsync(Guid id)
+        {
+            var word = _repository.FirstOrDefault(x => x.Id == id);
+            var lesson = lessonsRepo.FirstOrDefault(x => x.Id == word.LessonId);
+            var per = perRepository.Where(x => x.CourseId == lesson.CourseId).Where(x => x.UserId == _currentUser.Id).FirstOrDefault();
+            if (per != null)
+            {
+                return base.GetAsync(id);
+            }
+            return base.GetAsync(new Guid());
         }
 
         public override Task<WordDto> UpdateAsync(Guid id, WordCreateOrUpdateDto input)
@@ -100,7 +112,7 @@ namespace Quizlet_Fake.Words
 
                 if (per.UserId == _currentUser.Id)
                 {
-                    return base.UpdateAsync(id, input);
+                    return  base.UpdateAsync(id, input);
                 }
             }
             return base.UpdateAsync(new Guid(), input);
