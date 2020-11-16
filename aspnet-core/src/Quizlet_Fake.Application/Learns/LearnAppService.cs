@@ -128,8 +128,8 @@ namespace Quizlet_Fake.Learns
             var DTos = queryResult.Select(x =>
             {
                 var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
-                dto.VN = x.word.VN;
-                dto.EN = x.word.EN;
+                dto.Vn = x.word.Vn;
+                dto.En = x.word.En;
                 return dto;
             }).ToList();
 
@@ -153,8 +153,8 @@ namespace Quizlet_Fake.Learns
             var DTos = queryResult.Select(x =>
             {
                 var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
-                dto.VN = x.word.VN;
-                dto.EN = x.word.EN;
+                dto.Vn = x.word.Vn;
+                dto.En = x.word.En;
                 return dto;
             }).ToList();
 
