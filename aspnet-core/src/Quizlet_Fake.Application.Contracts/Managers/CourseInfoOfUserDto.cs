@@ -10,7 +10,7 @@ namespace Quizlet_Fake.Managers
         public Guid CourseId { get; set; }
 
         public Guid UserId { get; set; }
-
+        public string coursename { get; set; }
         public int Progress { get; set; }
     }
 }

@@ -5,11 +5,11 @@ using Volo.Abp.Application.Dtos;
 
 namespace Quizlet_Fake.Learns
 {
-    public class LearnCreateUpdateDto : AuditedEntityDto<Guid>
+    public class LearnCreateUpdateDto 
     {
         public Guid UserId { get;  set; }
         public Guid WordId { get;  set; }
-        public Guid LessonId { get;  set; }
+        public Guid LessonId { get;   set; }
         public DateTime DateReview { get; set; }
 
         public DateTime DateofLearn { get; set; }

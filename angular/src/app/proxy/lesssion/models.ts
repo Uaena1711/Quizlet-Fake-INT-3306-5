@@ -8,4 +8,5 @@ export interface LessionCreateorUpdateDto {
 export interface LessionDto extends AuditedEntityDto<string> {
   name: string;
   courseId: string;
+  wordnumber: number;
 }
