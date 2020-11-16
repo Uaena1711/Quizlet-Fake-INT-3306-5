@@ -19,10 +19,7 @@ export class LearnComponent implements OnInit {
   conlai : number ;
   currentes: testx;
   showans : false;
-  dapan1: string = "";
-  dapan2: string = "";
-  dapan3: string ="";
-  dapan4: string ="";
+  
   constructor(//public readonly list: ListService, 
    private learnService: LearnService, 
     private wordService: WordService, 
