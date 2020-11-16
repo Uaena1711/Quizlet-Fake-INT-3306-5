@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { AllCourseComponent } from './course/all-course.component';
+import { CourseComponent } from './course/course.component';
 
 
 @NgModule({
@@ -37,10 +37,10 @@ import { AllCourseComponent } from './course/all-course.component';
     NgxsModule.forRoot(),
     ThemeBasicModule.forRoot(),
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

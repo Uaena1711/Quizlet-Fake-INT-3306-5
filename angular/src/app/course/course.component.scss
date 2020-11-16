@@ -1,384 +1,8 @@
-mat-card{
-    margin: 10px 10px 10px 10px;
-    border-radius: 10px;
-    width: 90%;
-    height: 90%;
-    position: relative;
-    cursor: pointer;
-}
-mat-card:hover{
-    background-color: #e1fcfa;
-}
-
-.course_name {
-    text-align: center;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1.2;
-    color: #999890;
-}
-.course_name:hover{
-    color: #f5e000;
-}
-.create_field{
-    padding: 10px;
-    max-width: 500px;
-    margin-bottom: 50px;
-    text-align: justify;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.2;
-}
-.search_field{
-    padding: 10px;
-    max-width: 500px;
-    margin-bottom: 50px;
-}
-.create_field:hover{
-    color: #f5e000;
-    cursor: pointer;
-}
-// .form_container{
-//     width: 100%;
-//     max-width: 500px;
-//     margin:auto;
-//     background-color: #fafafa;
-//     padding: 30px;
-//     border: 1px solid#fcba68;
-//     border-radius: 30px ;
-//     margin-bottom: 40px;
-// }
-
-.fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
-       Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
-  }
-
-  
-  .form_container {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .form-element {
-    padding: 25px 10px 25px 10px;
-    width: 100%;
-  }
-  .inputt{
-      font-size: 1.5rem;
-
-  }
-  .inputt::placeholder{
-      font-size: 1.5rem;
-  }
-
-  
-h1,
-h2,
-p {
-  margin: 0;
-  padding: 0;
-}
-header,
-main {
-  display: block;
-}
-.container {
-  clear: both;
-  margin: 0 auto;
-  max-width: 1300px;
-}
-#page {
-  float: left;
-  width: 100%;
-}
-::selection {
-  background: #c5f1f1;
-}
-::-moz-selection {
-  background: #c5f1f1;
-}
-.page {
-  background: var(--ui_color_gray_90_background);
-}
-/*! CSS Used from: https://assets.quizlet.com/a/c/search.91103edae434afc.css */
-.EmptySearchComponent {
-  padding: 0 1.25rem;
-  text-align: center;
-  width: 100%;
-}
-.EmptySearchComponent-inner {
-  background: var(--ui_color_white_background);
-  min-height: 15rem;
-  padding: 1.25rem 1.5rem;
-  width: 100%;
-}
-.EmptySearchComponent-header {
-  float: left;
-  padding: 0.625rem 0;
-  width: 100%;
-}
-.EmptySearchComponent-title {
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.2;
-  margin-top: 0.625rem;
-}
-@media screen and (max-width: 38.75em) {
-  .EmptySearchComponent-title {
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 1.111111111111111;
-  }
-}
-.EmptySearchComponent-icon {
-  color: var(--ui_brand_color);
-  font-size: 3.125rem;
-}
-.EmptySearchComponent-explanation {
-  color: var(--ui_color_default_foreground);
-  margin-bottom: 0.625rem;
-}
-body.empty.search .page {
-  background: none;
-}
-.EmptySearchPage {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.EmptySearchPage-container {
-  padding-top: 50px;
-}
-.EmptySearchPage-content {
-  min-height: 55vh;
-  padding: 0 20px;
-}
-.EmptySearch {
-  text-align: center;
-}
-.EmptySearch-components {
-  display: inline-block;
-  margin: 0 auto;
-  max-width: 975px;
-  padding-bottom: 20px;
-  width: 100%;
-}
-.EmptySearch-componentsRow {
-  clear: both;
-  *zoom: 1;
-  float: left;
-  width: 100%;
-}
-.EmptySearch-componentsRow:after,
-.EmptySearch-componentsRow:before {
-  content: "";
-  display: table;
-}
-.EmptySearch-componentsRow:after {
-  clear: both;
-}
-.EmptySearch-componentWrapper {
-  float: left;
-  margin-bottom: 40px;
-  width: 33.333333333333336%;
-}
-@media screen and (max-width: 48em) {
-  .EmptySearch-componentWrapper {
-    width: 100%;
-  }
-}
-.SearchHeader {
-  *zoom: 1;
-  padding-top: 20px;
-}
-.SearchHeader:after,
-.SearchHeader:before {
-  content: "";
-  display: table;
-}
-.SearchHeader:after {
-  clear: both;
-}
-.SearchHeader .container {
-  max-width: 975px;
-}
-.SearchHeader.SearchHeader--isEmpty {
-  padding-top: 0;
-}
-.SearchHeader.SearchHeader--isEmpty .container {
-  padding: 30px 16px;
-}
-.SearchHeader-title {
-  font-weight: 700;
-  font-size: 1.875rem;
-  line-height: 1.266666666666667;
-}
-@media screen and (max-width: 38.75em) {
-  .SearchHeader-title {
-    font-weight: 700;
-    font-size: 1.625rem;
-    line-height: 1.153846153846154;
-  }
-}
-.SearchHeader-titleSetup {
-  margin-top: 0.625rem;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.2;
-}
-@media screen and (max-width: 38.75em) {
-  .SearchHeader-titleSetup {
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 1.111111111111111;
-  }
-}
-/*! CSS Used from: https://assets.quizlet.com/a/c/ui.ce84388801ff0fc.css */
-*,
-:after,
-:before {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-[class^="UI"] {
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
-  font-kerning: normal;
-  font-variant-ligatures: common-ligatures contextual;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.UIIcon {
-  display: inline-block;
-  fill: currentColor;
-  height: 1rem;
-  width: 1rem;
-}
-body {
- 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-family: 'Roboto', Tahoma, Arial, sans-serif;
-    line-height: 1.5;
-    font-size: 13px;
-  }
-  
-  #search {
-    outline: 0;
-    float: left;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-  }
-  
-  #search > .textbox {
-    outline: 0;
-    height: 42px;
-    width: 244px;
-    line-height: 42px;
-    padding: 0 16px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #212121;
-    border: 0;
-    float: left;
-    -webkit-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  #search > .textbox:focus {
-    outline: 0;
-    background-color: rgb(245, 245, 245);
-  }
-  
-  #search > .button {
-    outline: 0;
-    background: none;
-    background-color: rgba(38, 50, 56, 0.8);
-    float: left;
-    height: 42px;
-    width: 42px;
-    text-align: center;
-    line-height: 42px;
-    border: 0;
-    color: #FFF;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 16px;
-    text-rendering: auto;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    -webkit-transition: background-color .4s ease;
-    transition: background-color .4s ease;
-    -webkit-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
-  }
-  
-  #search > .button:hover {
-    background-color: rgba(55, 248, 229, 0.8);
-  }
-  /*! CSS Used from: https://assets.quizlet.com/a/c/global.5a8293b1b61ec34.css */
-h1 {
-    margin: 0;
-    padding: 0;
-  }
-  ::selection {
-    background: #c5f1f1;
-  }
-  ::-moz-selection {
-    background: #c5f1f1;
-  }
-  /*! CSS Used from: https://assets.quizlet.com/a/c/search.91103edae434afc.css */
-  #SearchPage-query-header-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-basis: 100%;
-    flex-basis: 100%;
-    width: 100%;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
-  }
-  .SearchPage-query-header {
-    font-weight: var(--typography-heading-weight);
-    font-size: 2.75rem;
-    letter-spacing: normal;
-    line-height: 1.272727272727273;
-  }
-  @media screen and (max-width: 38.75em) {
-    .SearchPage-query-header {
-      font-weight: var(--typography-heading-weight);
-      font-size: 2rem;
-      letter-spacing: normal;
-      line-height: 1.25;
-    }
-  }
-  @media screen and (max-width: 64em) {
-    .SearchPage-query-header-buffer {
-      display: none;
-    }
-  }
-  .SearchPage-filterControls {
-    min-width: 10.625rem;
-    margin-right: 2rem;
-  }
-  /*! CSS Used from: https://assets.quizlet.com/a/c/ui.ce84388801ff0fc.css */
-  *,
-  :after,
-  :before {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-  }
-  /*! CSS Used from: https://assets.quizlet.com/a/c/global.5a8293b1b61ec34.css */
+/*! CSS Used from: https://assets.quizlet.com/a/c/global.9e070d4cb29c739.css */
 h4,
-h5 {
+h5,
+h6,
+input {
   margin: 0;
   padding: 0;
 }
@@ -395,6 +19,10 @@ a,
 a:visited {
   color: var(--blue_color);
 }
+input {
+  font: 12px/18px hurme_no2-webfont, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
 a {
   text-decoration: none;
 }
@@ -403,6 +31,26 @@ img {
 }
 a {
   cursor: pointer;
+}
+.SiteAd {
+  overflow: hidden;
+}
+@media print {
+  .SiteAd {
+    display: none;
+  }
+}
+.SiteAd--rightAlign {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.SiteAd--rightAlign .SiteAd-adContainer {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  -ms-flex-item-align: end;
 }
 .UserLink {
   display: inline-block;
@@ -427,8 +75,6 @@ a {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.285714285714286;
-  color: #007bff;
-
 }
 @media screen and (max-width: 38.75em) {
   .UserLink-username {
@@ -451,6 +97,13 @@ a {
   transform: translateZ(0);
   vertical-align: middle;
 }
+.VerifiedBadge-stamp.UIIcon {
+  color: #fff;
+  fill: #3ccfcf;
+  bottom: -0.0625rem;
+  position: relative;
+  vertical-align: middle;
+}
 .TermText {
   -webkit-font-smoothing: antialiased;
 }
@@ -459,7 +112,7 @@ a {
   font-size: 1.1em;
   font-family: Lucida Grande, Arial, sans-serif !important;
 }
-/*! CSS Used from: https://assets.quizlet.com/a/c/search.91103edae434afc.css */
+/*! CSS Used from: https://assets.quizlet.com/a/c/search.03c909524fdef73.css */
 .SetPreview {
   display: -webkit-flex;
   display: flex;
@@ -671,11 +324,26 @@ a {
 .TermsPreview-mobilePreview {
   display: none;
 }
+.SearchPage-container {
+  height: 100%;
+}
+.SearchPage-subContainer {
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.SearchPage-resultsContainer {
+  width: 100%;
+}
 .SearchPage-results {
   min-height: 37.5rem;
 }
 .SearchPage-results .SearchPage-result {
   border-radius: 0.5rem;
+  background-color: var(--card-background);
 }
 .SearchPage-results .SearchPage-result .UILinkBox {
   border-radius: 0.5rem;
@@ -691,7 +359,122 @@ a {
 .SearchPage-result + .SearchPage-result {
   margin-top: 1rem;
 }
-/*! CSS Used from: https://assets.quizlet.com/a/c/ui.ce84388801ff0fc.css */
+.SearchPage-ad {
+  margin-left: 1.875rem;
+  min-width: 10rem;
+}
+@media screen and (max-width: 48em) {
+  .SearchPage-ad {
+    display: none;
+  }
+}
+.SearchPage-ad .StickyInferiorAdz-wrapper {
+  margin-top: 0;
+}
+.SearchPage-top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+  min-height: 2.625rem;
+  margin-bottom: 0.5rem;
+}
+.SearchPage-appliedFiltersContainer {
+  display: -webkit-flex;
+  display: flex;
+}
+.SearchPage-filterControls {
+  min-width: 10.625rem;
+  margin-right: 2rem;
+}
+.SearchPage-filterRadioGroup:first-child {
+  padding-top: 0;
+}
+.SearchPage-filterRadioGroup {
+  padding-top: 2rem;
+}
+.SearchPage-filterRadioGroup .UIHeading + .UIRadioGroup {
+  margin-top: 1rem;
+}
+.SearchPage-filterRadioGroup .UIHeading + .UIRadioGroup .UIRadio {
+  margin-top: 0.75rem;
+}
+@media screen and (max-width: 64em) {
+  .SearchPage-filterRadioGroup .UIRadioGroup {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 0 !important;
+  }
+  .SearchPage-filterRadioGroup .UIRadio:first-of-type {
+    margin-top: 0.5rem;
+  }
+  .SearchPage-filterRadioGroup .UIRadio {
+    -webkit-flex: 1 0 50%;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%;
+  }
+}
+@media screen and (max-width: 28.75em) {
+  .SearchPage-filterRadioGroup .UIRadioGroup {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.SearchPage-filterTeacherUpgrade {
+  margin-left: 0.5rem;
+}
+.SearchPage-radioWithVerifiedBadge .UIIcon {
+  margin-left: 0.25rem;
+  vertical-align: initial;
+}
+.SearchPage-pagination {
+  text-align: center;
+  margin: 2rem auto;
+  color: var(--ui_color_gray_60);
+}
+.SearchPage-paginationText {
+  margin: 0 1.25rem;
+  display: inline-block;
+}
+#SearchPage-resultSort .UIDropdown {
+  border: 0;
+  color: var(--ui_color_gray_30);
+  font-size: 0.875rem;
+}
+#SearchPage-resultSort .UIDropdown:hover .UIDropdown-select {
+  color: #ffcd1f;
+}
+#SearchPage-resultSort .UIDropdown-select {
+  color: var(--ui_color_gray_30);
+  font-size: 0.875rem;
+  padding-right: 0.5rem;
+}
+#SearchPage-modalFilterTrigger .UIShimmer {
+  display: none;
+  height: 2.625rem;
+  width: 5.125rem;
+}
+@media screen and (max-width: 48em) {
+  #SearchPage-modalFilterTrigger .UIShimmer {
+    display: block;
+  }
+}
+#SearchPage-modalFilterTrigger.loaded .UIShimmer {
+  display: none;
+}
+/*! CSS Used from: https://assets.quizlet.com/a/c/ui.5adfc349e6febde.css */
 *,
 :after,
 :before {
@@ -708,6 +491,159 @@ a {
   font-variant-ligatures: common-ligatures contextual;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.UIButton {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.285714285714286;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: auto;
+}
+.UIButton,
+.UIButton:visited {
+  background-color: var(--primary-button-background);
+  color: var(--primary-button-text);
+}
+.UIButton:active,
+html.cursor .UIButton:hover,
+html.cursor .UIButton:hover:visited {
+  background-color: var(--primary-button-hover-background);
+  color: var(--primary-button-text);
+}
+.UIButton:focus {
+  outline: none;
+}
+@media screen and (max-width: 38.75em) {
+  .UIButton {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.333333333333333;
+    padding: 0.625rem 1.25rem;
+  }
+}
+.UIButton[aria-disabled="true"] {
+  cursor: default;
+}
+.UIButton[aria-disabled="true"],
+.UIButton[aria-disabled="true"]:active,
+.UIButton[aria-disabled="true"]:focus,
+.UIButton[aria-disabled="true"]:visited,
+html.cursor .UIButton[aria-disabled="true"]:hover {
+  background-color: var(--ui_color_disabled);
+  box-shadow: none;
+  color: #fff;
+}
+.UIButton::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.UIButton-wrapper {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  white-space: pre-wrap;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+[class^="UI"] + .UIDiv {
+  margin-top: 1.5rem;
+}
+.UIDropdown {
+  background: var(--ui_color_default_background);
+  border: 0.125rem solid var(--ui_color_gray_80_foreground);
+  border-radius: 0.25rem;
+  color: #3ccfcf;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 2.5rem 0 0;
+  position: relative;
+  vertical-align: middle;
+  width: auto;
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown {
+    padding-right: 1.75rem;
+  }
+}
+.UIDropdown .UIDropdown-icon {
+  background: inherit;
+  display: block;
+  height: 100%;
+  padding: 0 0.8125rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: 2.375rem;
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown .UIDropdown-icon {
+    padding: 0 0.4375rem;
+    width: 1.625rem;
+  }
+}
+.UIDropdown:hover:not([aria-disabled="true"]) .UIDropdown-icon {
+  color: #ffcd1f;
+}
+.UIDropdown-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0.25rem;
+  color: #3ccfcf;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0.625rem 0 0.625rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.285714285714286;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: calc(100% + 100px);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown-select {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.333333333333333;
+  }
+}
+.UIDropdown-select option {
+  font: inherit;
+}
+.UIDropdown-select:focus option {
+  background: var(--ui_color_default_background);
+  color: var(--ui_color_default_foreground);
+}
+@media screen and (max-width: 38.75em) {
+  .UIDropdown-select {
+    padding: 0.5rem 2.125rem 0.5rem 0.5rem;
+  }
+}
+.UIDropdown-select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #3ccfcf;
 }
 .UIHeading--four {
   font-weight: 700;
@@ -735,10 +671,68 @@ a {
     line-height: 1.6;
   }
 }
+.UIHeading--six {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1.333333333333333;
+}
+@media screen and (max-width: 38.75em) {
+  .UIHeading--six {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    line-height: 1.3;
+  }
+}
 .UIHeading {
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
+}
+.UIHeading + [class^="UI"] {
+  margin-top: 1.5rem;
+}
+.UIIconButton {
+  display: inline-block;
+}
+.UIIconButton .UIButton {
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+.UIIconButton .UIButton-wrapper {
+  padding: 0.5625rem;
+}
+.UIIconButton .UIIcon {
+  display: block;
+  pointer-events: none;
+  height: 1.125rem;
+  width: 1.125rem;
+}
+@media screen and (max-width: 38.75em) {
+  .UIIconButton .UIIcon {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+}
+.UIIconButton .UIIcon--wedge-left {
+  transform: translateX(-1px);
+}
+.UIIconButton .UIIcon--wedge-right {
+  transform: translateX(1px);
+}
+.UIIcon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1rem;
+  width: 1rem;
+}
+.UIIcon.UIIcon--medium {
+  height: 1rem;
+  width: 1rem;
 }
 .UILinkBox {
   background-color: var(--card-background);
@@ -821,6 +815,195 @@ html.cursor .UILink:hover:visited {
   border: 0;
   padding: 0;
 }
+.UIRadio {
+  *zoom: 1;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.UIRadio:after,
+.UIRadio:before {
+  content: "";
+  display: table;
+}
+.UIRadio:after {
+  clear: both;
+}
+.UIRadio + .UIRadio,
+.UIRadio + [class^="UI"],
+[class^="UI"] + .UIRadio {
+  margin-top: 1.5rem;
+}
+.UIRadio[aria-disabled="true"] {
+  cursor: default;
+}
+.UIRadio-input {
+  cursor: inherit;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.UIRadio-fauxInput {
+  border: 0.125rem solid var(--ui_color_gray_60);
+  border-radius: 50%;
+  display: block;
+  float: left;
+  position: relative;
+  transform: translateY(0.1875rem);
+  height: 1.25rem;
+  width: 1.25rem;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.UIRadio-fauxInput:hover {
+  border-color: var(--ui_color_gray_60_darken_35);
+}
+@media screen and (max-width: 38.75em) {
+  .UIRadio-fauxInput {
+    transform: translateY(-0.125rem);
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+.UIRadio-input:checked ~ .UIRadio-fauxInput {
+  border-color: #ffcd1f;
+}
+.UIRadio[aria-disabled="true"] .UIRadio-fauxInput {
+  border-color: var(--ui_color_disabled);
+}
+.UIRadio-fauxInput:after {
+  background-color: #ffcd1f;
+  border-radius: 50%;
+  content: "";
+  opacity: 0;
+  bottom: 0.1875rem;
+  left: 0.1875rem;
+  position: absolute;
+  right: 0.1875rem;
+  top: 0.1875rem;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.UIRadio-input:checked ~ .UIRadio-fauxInput:after {
+  opacity: 1;
+}
+.UIRadio[aria-disabled="true"] .UIRadio-fauxInput:after {
+  background-color: var(--ui_color_disabled);
+}
+.UIRadio-label {
+  display: block;
+  margin-left: 1.875rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.625;
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+@media screen and (max-width: 38.75em) {
+  .UIRadio-label {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.571428571428571;
+    margin-left: 2.125rem;
+  }
+}
+.UIRadio[aria-disabled="true"] .UIRadio-label {
+  color: var(--ui_color_disabled);
+}
+.UIRadio-label .UILink {
+  position: relative;
+}
+.UIShimmer {
+  background: var(--ui_shimmer_base_color);
+  background-image: -webkit-linear-gradient(
+    left,
+    var(--ui_shimmer_base_color),
+    var(--ui_shimmer_trail_color) 20%,
+    var(--ui_shimmer_base_color) 40%,
+    var(--ui_shimmer_base_color)
+  );
+  background-image: -moz-linear-gradient(
+    left,
+    var(--ui_shimmer_base_color) 0,
+    var(--ui_shimmer_trail_color) 20%,
+    var(--ui_shimmer_base_color) 40%,
+    var(--ui_shimmer_base_color) 100%
+  );
+  background-image: -ms-linear-gradient(
+    left,
+    var(--ui_shimmer_base_color) 0,
+    var(--ui_shimmer_trail_color) 20%,
+    var(--ui_shimmer_base_color) 40%,
+    var(--ui_shimmer_base_color) 100%
+  );
+  background-image: linear-gradient(
+    90deg,
+    var(--ui_shimmer_base_color) 0,
+    var(--ui_shimmer_trail_color) 20%,
+    var(--ui_shimmer_base_color) 40%,
+    var(--ui_shimmer_base_color)
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 400px;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-animation: placeholderShimmer 1s linear 0s;
+  -moz-animation: 1s linear 0s placeholderShimmer;
+  -ms-animation: 1s linear 0s placeholderShimmer;
+  animation: placeholderShimmer 1s linear 0s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.StickyInferiorAdz-wrapper {
+  top: 16.875rem;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 64em) {
+  .StickyInferiorAdz-wrapper {
+    top: 0;
+  }
+}
+@media screen and (max-height: 31.8125em) {
+  .StickyInferiorAdz-wrapper {
+    top: 0;
+  }
+}
+.StickyAdz {
+  bottom: 62.5rem;
+  display: inline-block;
+  float: right;
+  margin-top: 2.5rem;
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  right: 2.5rem;
+  top: 0;
+  z-index: 300;
+}
+@media screen and (max-width: 64em) {
+  .StickyAdz {
+    margin-top: 0;
+  }
+}
+@media screen and (max-height: 31.8125em) {
+  .StickyAdz {
+    margin-top: 0;
+  }
+}
+.SearchPage-ad .StickyAdz {
+  margin-top: 0;
+}
 .UIVerticalRule--onWhite {
   border-right: 0.125rem solid var(--ui_color_gray_90_foreground);
 }
@@ -830,4 +1013,523 @@ html.cursor .UILink:hover:visited {
   margin-right: 0.625rem;
   padding-right: 0.625rem;
   vertical-align: middle;
+}
+/*! CSS Used keyframes */
+@-moz-keyframes placeholderShimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  to {
+    background-position: 400px 0;
+  }
+}
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  to {
+    background-position: 400px 0;
+  }
+}
+@-o-keyframes placeholderShimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  to {
+    background-position: 400px 0;
+  }
+}
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  to {
+    background-position: 400px 0;
+  }
+}
+/*! CSS Used fontfaces */
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-400.fceb7fa657e6aa7.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-400.8d9738c6b66ccd1.woff)
+      format("woff");
+  unicode-range: u+00a0-00ff, u+0131, u+0152-0153, u+02c6, u+02da, u+02dc,
+    u+2000-2018, u+201a-206f, u+2070-209f, u+20ac, u+2212;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-600.df51690e7e65560.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-600.3ebe1f77c946598.woff)
+      format("woff");
+  unicode-range: u+00a0-00ff, u+0131, u+0152-0153, u+02c6, u+02da, u+02dc,
+    u+2000-2018, u+201a-206f, u+2070-209f, u+20ac, u+2212;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-700.12c06977008dd01.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sup/hurmegeosans-no2-700.0b441f0a4b98a72.woff)
+      format("woff");
+  unicode-range: u+00a0-00ff, u+0131, u+0152-0153, u+02c6, u+02da, u+02dc,
+    u+2000-2018, u+201a-206f, u+2070-209f, u+20ac, u+2212;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-400.b0d1fa6ac7268f9.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-400.0d7ffca8e0d154f.woff)
+      format("woff");
+  unicode-range: u+0000-007f, u+2019;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-600.c3230d124a38c02.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-600.617d65b335b4d10.woff)
+      format("woff");
+  unicode-range: u+0000-007f, u+2019;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-700.f964c59f80946ba.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-basic/hurmegeosans-no2-700.a2549fbf8a90f5b.woff)
+      format("woff");
+  unicode-range: u+0000-007f, u+2019;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-400.26210157740efb6.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-400.239e9a2996960a4.woff)
+      format("woff");
+  unicode-range: u+0100-024f, u+1e, u+20a0-20ab, u+20ad-20cf, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-600.0e10a35b1c1470e.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-600.02ea8dc66a1212a.woff)
+      format("woff");
+  unicode-range: u+0100-024f, u+1e, u+20a0-20ab, u+20ad-20cf, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-700.6f4a55c53c2396e.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-ext/hurmegeosans-no2-700.56052daa0d1ea84.woff)
+      format("woff");
+  unicode-range: u+0100-024f, u+1e, u+20a0-20ab, u+20ad-20cf, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.34800d1f9cfdaf7.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.fc0bd5e633209d3.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-600.1e74bd3800f1436.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-600.5587c0315b8c31a.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-700.1e74bd3800f1436.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-700.5587c0315b8c31a.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+@font-face {
+  font-display: fallback;
+  font-family: hurme_no2-webfont;
+  font-style: normal;
+  font-weight: 400;
+  font-family: Libertinus Sans;
+  src: url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.34800d1f9cfdaf7.woff2)
+      format("woff2"),
+    url(https://assets.quizlet.com/a/i/fonts/latin-sub/libertinussans-400.fc0bd5e633209d3.woff)
+      format("woff");
+  unicode-range: u+2070-209f;
+}
+/*! CSS Used from: https://assets.quizlet.com/a/c/global.9e070d4cb29c739.css */
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+header,
+main {
+  display: block;
+}
+.container {
+  clear: both;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+#page {
+  float: left;
+  width: 100%;
+}
+::selection {
+  background: #c5f1f1;
+}
+::-moz-selection {
+  background: #c5f1f1;
+}
+.page {
+  background: var(--ui_color_gray_90_background);
+}
+/*! CSS Used from: https://assets.quizlet.com/a/c/search.03c909524fdef73.css */
+.EmptySearchComponent {
+  padding: 0 1.25rem;
+  text-align: center;
+  width: 100%;
+}
+.EmptySearchComponent-inner {
+  background: var(--ui_color_white_background);
+  min-height: 15rem;
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+}
+.EmptySearchComponent-header {
+  float: left;
+  padding: 0.625rem 0;
+  width: 100%;
+}
+.EmptySearchComponent-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-top: 0.625rem;
+}
+@media screen and (max-width: 38.75em) {
+  .EmptySearchComponent-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.111111111111111;
+  }
+}
+.EmptySearchComponent-icon {
+  color: var(--ui_brand_color);
+  font-size: 3.125rem;
+}
+.EmptySearchComponent-explanation {
+  color: var(--ui_color_default_foreground);
+  margin-bottom: 0.625rem;
+}
+body.empty.search .page {
+  background: none;
+}
+.EmptySearchPage {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.EmptySearchPage-container {
+  padding-top: 50px;
+}
+.EmptySearchPage-content {
+  min-height: 55vh;
+  padding: 0 20px;
+}
+.EmptySearch {
+  text-align: center;
+}
+.EmptySearch-components {
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 975px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+.EmptySearch-componentsRow {
+  clear: both;
+  *zoom: 1;
+  float: left;
+  width: 100%;
+}
+.EmptySearch-componentsRow:after,
+.EmptySearch-componentsRow:before {
+  content: "";
+  display: table;
+}
+.EmptySearch-componentsRow:after {
+  clear: both;
+}
+.EmptySearch-componentWrapper {
+  float: left;
+  margin-bottom: 40px;
+  width: 33.333333333333336%;
+}
+@media screen and (max-width: 48em) {
+  .EmptySearch-componentWrapper {
+    width: 100%;
+  }
+}
+.SearchHeader {
+  *zoom: 1;
+  padding-top: 20px;
+}
+.SearchHeader:after,
+.SearchHeader:before {
+  content: "";
+  display: table;
+}
+.SearchHeader:after {
+  clear: both;
+}
+.SearchHeader .container {
+  max-width: 975px;
+}
+.SearchHeader.SearchHeader--isEmpty {
+  padding-top: 0;
+}
+.SearchHeader.SearchHeader--isEmpty .container {
+  padding: 30px 16px;
+}
+.SearchHeader-title {
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 1.266666666666667;
+}
+@media screen and (max-width: 38.75em) {
+  .SearchHeader-title {
+    font-weight: 700;
+    font-size: 1.625rem;
+    line-height: 1.153846153846154;
+  }
+}
+.SearchHeader-titleSetup {
+  margin-top: 0.625rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+@media screen and (max-width: 38.75em) {
+  .SearchHeader-titleSetup {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.111111111111111;
+  }
+}
+/*! CSS Used from: https://assets.quizlet.com/a/c/ui.5adfc349e6febde.css */
+*,
+:after,
+:before {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+[class^="UI"] {
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.UIIcon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1rem;
+  width: 1rem;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25rem;
+}
+.page-link:hover {
+  z-index: 2;
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}mat-card{
+  margin: 10px 10px 10px 10px;
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+  position: relative;
+  cursor: pointer;
+}
+mat-card:hover{
+  background-color: #e1fcfa;
+}
+
+.course_name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #999890;
+}
+.course_name:hover{
+  color: #f5e000;
+}
+.create_field{
+  padding: 10px;
+  max-width: 500px;
+  margin-bottom: 50px;
+  text-align: justify;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.search_field{
+  padding: 10px;
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+.create_field:hover{
+  color: #f5e000;
+  cursor: pointer;
+}
+// .form_container{
+//     width: 100%;
+//     max-width: 500px;
+//     margin:auto;
+//     background-color: #fafafa;
+//     padding: 30px;
+//     border: 1px solid#fcba68;
+//     border-radius: 30px ;
+//     margin-bottom: 40px;
+// }
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+
+.form_container {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-element {
+  padding: 25px 10px 25px 10px;
+  width: 100%;
+}
+.inputt{
+    font-size: 1.5rem;
+
+}
+.inputt::placeholder{
+    font-size: 1.5rem;
+}
+
+
+h1,
+h2,
+p {
+margin: 0;
+padding: 0;
+}
+header,
+main {
+display: block;
+}
+.container {
+clear: both;
+margin: 0 auto;
+max-width: 1300px;
+}
+#page {
+float: left;
+width: 100%;
+}
+::selection {
+background: #c5f1f1;
+}
+::-moz-selection {
+background: #c5f1f1;
+}
+.page {
+background: var(--ui_color_gray_90_background);
 }

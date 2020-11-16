@@ -4,6 +4,7 @@ import { ServerHttpService as Permission } from '../CoursePermission/server-http
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-all-course',
@@ -12,9 +13,14 @@ import { Router } from '@angular/router';
 })
 export class AllCourseComponent implements OnInit {
   AllCourses: [];
+  page = 1;
+  pageSize = 5;
   checkRes: number;
   searchForm: FormGroup;
   isSearch: boolean;
+  orderName: number;
+  orderPrice: number;
+  pageOfItem: Array<any>;
   constructor(private Service: ServerHttpService,
               private PermissionService: Permission,
               private dialog: MatDialog,
@@ -33,7 +39,13 @@ export class AllCourseComponent implements OnInit {
     });
   }
   public search(){
-    this.Service.searchCourses(this.searchForm.controls.name.value).subscribe((data => {
+    if(this.orderName === undefined) {
+      this.orderName = 0;
+    }
+    if(this.orderPrice === undefined) {
+      this.orderPrice = 0;
+    }
+    this.Service.searchCourses(this.searchForm.controls.name.value, this.orderName, this.orderPrice).subscribe((data => {
       this.AllCourses = data.items;
     }));
     this.isSearch = true;
@@ -52,6 +64,26 @@ export class AllCourseComponent implements OnInit {
       }
     }));
 
+
+  }
+
+  public changeOrdername(orderName) {
+        this.orderName = orderName;
+        this.Service.searchCourses(this.searchForm.controls.name.value, this.orderName, this.orderPrice).subscribe((data => {
+          this.AllCourses = data.items;
+        }));
+  }
+
+  public changeOrderprice(orderPrice) {
+    this.orderPrice = orderPrice;
+    this.Service.searchCourses(this.searchForm.controls.name.value, this.orderName, this.orderPrice).subscribe((data => {
+      this.AllCourses = data.items;
+    }));
+
+}
+
+  public onChangePage( pageOfItem: Array<any> ) {
+        this.pageOfItem = pageOfItem;
   }
   public openDialog(){
     this.dialog.open(CourseCheckPassComponent, {

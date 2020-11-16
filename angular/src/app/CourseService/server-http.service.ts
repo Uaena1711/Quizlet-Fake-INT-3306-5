@@ -25,6 +25,8 @@ export class ServerHttpService {
   public price;
   public creationTime;
   public creatorId;
+  public orderName;
+  public orderPrice;
 
   public addMode = true;
   public getCourses(): Observable<any>{
@@ -33,8 +35,8 @@ export class ServerHttpService {
           .get<any>(url, httpOptions)
           .pipe(catchError(this.handleError));
   }
-  public searchCourses(text): Observable<any>{
-    const url = `${this.REST_API_SERVER}/ssss?text=`+ text;
+  public searchCourses(text, orderName, orderPrice): Observable<any>{
+    const url = `${this.REST_API_SERVER}/ssss?text=`+ text + `&Sortby=` + orderName + `&Price=` + orderPrice;
     return this.httpClient
           .get<any>(url, httpOptions)
           .pipe(catchError(this.handleError));

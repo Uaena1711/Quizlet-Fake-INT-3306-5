@@ -16,11 +16,10 @@ import { LessionComponent, LessionCreateComponent } from './lession.component';
 import { WordComponent } from './word.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AllCourseComponent, CourseCheckPassComponent } from './all-course.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, WordComponent, AllCourseComponent, CourseCheckPassComponent],
   imports: [
     CommonModule,
     CourseRoutingModule,
@@ -32,7 +31,11 @@ import { AllCourseComponent, CourseCheckPassComponent } from './all-course.compo
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MDBBootstrapModule
-  ]
+    MDBBootstrapModule,
+    NgbModule
+  ],
+  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, AllCourseComponent, WordComponent,
+    CourseCheckPassComponent]
+  
 })
 export class CourseModule { }

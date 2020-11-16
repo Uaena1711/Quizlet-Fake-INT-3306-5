@@ -76,56 +76,73 @@ namespace Quizlet_Fake.Courses
             }
             return new ListResultDto<CourseDto>(res);
         }
-        public async Task<ListResultDto<CourseDto>> GetListssss(PagedAndSortedResultRequestDto input, String? text)
+        public async Task<ListResultDto<CourseDto>> GetListssss(String? text, FilterCourseDto ?filterCourse)
         {
+            var query = from course in Repository
+                        join
+                user in usersRepository on course.CreatorId equals user.Id
+                        
+                        select new { course, user };
             if (text == null)
             {
-                var query = from course in Repository
-                            join
-                    user in usersRepository on course.CreatorId equals user.Id
-                            select new { course, user };
-
-                query = query
-                .Skip(input.SkipCount)
-                .Take(input.MaxResultCount);
-                var queryResult = await AsyncExecuter.ToListAsync(query);
-                var courseDtos = queryResult.Select(x =>
-                {
-                    var courseDto  = ObjectMapper.Map<Course, CourseDto>(x.course);
-                    courseDto.AuthorName = x.user.UserName;
-                    var lesson = lessonrepository.Where(m => m.CourseId == x.course.Id).Count();
-                    courseDto.LessonNumber = lesson;
-                    return courseDto;
-                }).ToList();
-                return new ListResultDto<CourseDto>(courseDtos);
-                //List<Course> course =  await _repository.GetListAsync();
-
-                //List<CourseDto> courdto = ObjectMapper.Map<List<Course>, List<CourseDto>>(course);
-                //return new ListResultDto<CourseDto>(courdto);
+                query = from course in Repository
+                        join
+                user in usersRepository on course.CreatorId equals user.Id
+                        orderby course.Name
+                        select new { course, user };
             }
-            else
+            else if (text != null)
             {
-                
-                var query = from course in Repository
-                            join
-               user in usersRepository on course.CreatorId equals user.Id
-                                       where course.Name.Contains(text)
-                            select new { course, user };
-
-                query = query
-                .Skip(input.SkipCount)
-                .Take(input.MaxResultCount);
-                var queryResult = await AsyncExecuter.ToListAsync(query);
-                var courseDtos = queryResult.Select(x =>
-                {
-                    var courseDto = ObjectMapper.Map<Course, CourseDto>(x.course);
-                    courseDto.AuthorName = x.user.UserName;
-                    var lesson = lessonrepository.Where(m => m.CourseId == x.course.Id).Count();
-                    courseDto.LessonNumber = lesson;
-                    return courseDto;
-                }).ToList();
-                return new ListResultDto<CourseDto>(courseDtos);
+                query = from course in Repository
+                        join
+           user in usersRepository on course.CreatorId equals user.Id
+                        where course.Name.Contains(text)
+                        select new { course, user };
             }
+
+            var queryResult = await AsyncExecuter.ToListAsync(query);
+            var courseDtos = queryResult.Select(x =>
+            {
+                var courseDto = ObjectMapper.Map<Course, CourseDto>(x.course);
+                courseDto.AuthorName = x.user.UserName;
+                var lesson = lessonrepository.Where(m => m.CourseId == x.course.Id).Count();
+                courseDto.LessonNumber = lesson;
+                return courseDto;
+            }).ToList();
+
+            switch (filterCourse.Sortby)
+            {
+                case sortby.a_z:
+                    courseDtos = courseDtos.OrderBy(o => o.Name).ToList();
+
+
+                    break;
+                    
+                case sortby.z_a:
+                    courseDtos = courseDtos.OrderByDescending(o => o.CreationTime).ToList();
+                    break;
+                default:
+                    break;
+               
+                    
+            }
+
+            switch (filterCourse.Price)
+            {
+
+                case price.lowTohigh:
+                    courseDtos = courseDtos.OrderBy(o => o.Price).ToList();
+                    break;
+                case price.highTolow:
+                    courseDtos = courseDtos.OrderByDescending(o => o.Price).ToList();
+                    break;
+            }
+
+         
+
+
+            return new ListResultDto<CourseDto>(courseDtos);
+
         }
 
 

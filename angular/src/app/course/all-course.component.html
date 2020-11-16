@@ -1,115 +1,250 @@
-<div class="create_field" style="font-size: 1.75rem;">
-    All Courses
+<div class="create_field" style="font-size: 1.75rem">All Courses</div>
+<div class="create_field" [routerLink]="['course']" routerLinkActive="router-link-active">
+  My creation Courses
 </div>
-<div class="create_field" [routerLink]="['course']" routerLinkActive="router-link-active" >
-    My creation Courses
+<div class="search_field">
+  <form [formGroup]="searchForm" class="form-inline waves-light" mdbWavesEffect>
+    <div class="md-form mt-0" style="font-size: 1rem">
+      <input
+        #textbox
+        type="text"
+        class="form-control mr-sm-2"
+        formControlName="name"
+        placeholder="Search"
+        (keyup.enter)="search()"
+        style="font-size: 1.25rem"
+      />
+      <mdb-icon fas icon="search" aria-hidden="true" (click)="search()"></mdb-icon>
+    </div>
+  </form>
 </div>
-<div class="search_field"  >
-    <form [formGroup]="searchForm" class="form-inline waves-light" mdbWavesEffect>
-        <div class="md-form mt-0" style="font-size: 1rem;">
-          <input #textbox type="text" class="form-control mr-sm-2" formControlName="name" placeholder="Search" (keyup.enter)="search()" style="font-size: 1.25rem;">
-          <mdb-icon fas icon="search" aria-hidden="true" (click)="search()"></mdb-icon>
+
+<div class="SearchPage-container" *ngIf="isSearch">
+  <div class="SearchPage-subContainer">
+    <div id="SearchPage-resultFilter">
+      <div class="SearchPage-filterControls">
+        <div class="SearchPage-filterRadioGroup">
+          <h6 class="UIHeading UIHeading--six"><span>TÊN</span></h6>
+          <div class="UIDiv UIRadioGroup">
+            <label class="UIRadio" for="ui-control-429ef861-266a-484c-8420-58a85b141211"
+              ><input
+                class="UIRadio-input"
+                id="ui-control-429ef861-266a-484c-8420-58a85b141211"
+                name="SearchNameFilter"
+                type="radio"
+                value="0"
+                (change)="changeOrdername($event.target.value)"
+                checked
+              /><span class="UIRadio-fauxInput"></span
+              ><span class="UIRadio-label"><span>Từ A đến Z</span></span></label
+            ><label class="UIRadio" for="ui-control-52d3c7bc-6438-4efb-a731-3cd31e43ff05"
+              ><input
+                class="UIRadio-input"
+                id="ui-control-52d3c7bc-6438-4efb-a731-3cd31e43ff05"
+                name="SearchNameFilter"
+                type="radio"
+                value="1"
+                (change)="changeOrdername($event.target.value)"
+              /><span class="UIRadio-fauxInput"></span
+              ><span class="UIRadio-label"><span>Từ z đến A</span></span></label
+            >
+          </div>
         </div>
-      </form>
-</div>
-    
-    <div class="SearchPage-result js-setResult" data-item-id="210854689" *ngFor="let item of AllCourses" style="background-color: #ffffff;" >
-      <div class="SetPreviewLink" *ngIf="isSearch">
-        <div class="UILinkBox">
-          <div class="UILinkBox-inner">
-            <div class="SetPreview">
-              <div class="SetPreview-inner">
-                <div class="PreviewCardByline"><span class="SetPreview-cardBylineTermsCount"> {{item.lessonNumber}} bài học </span><span class="UIVerticalRule UIVerticalRule--onWhite"></span>
-                  <div class="SetPreview-cardBylineCreator">
-                    <div class="UserLink">
-                      <div class="UserLink-inner">
-                        
-                        <div class="UserLink-content"><a class="UILink" (click)="check(item.id, item.name)" title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"><span class="UserLink-username">Tác giả: {{item.authorName}}</span></a></div>
+        <div class="SearchPage-filterRadioGroup">
+          <h6 class="UIHeading UIHeading--six"><span>GIÁ</span></h6>
+
+          <div class="UIDiv UIRadioGroup">
+            <label class="UIRadio" for="ui-control-429ef861-266a-484c-8420-58a85b141211"
+              ><input
+                class="UIRadio-input"
+                id="ui-control-429ef861-266a-484c-8420-58a85b141211"
+                name="SearchPriceFilter"
+                type="radio"
+                value="0"
+                (change)="changeOrderprice($event.target.value)"
+                checked
+              /><span class="UIRadio-fauxInput"></span
+              ><span class="UIRadio-label"><span>Từ cao đến thấp</span></span></label
+            ><label class="UIRadio" for="ui-control-52d3c7bc-6438-4efb-a731-3cd31e43ff05"
+              ><input
+                class="UIRadio-input"
+                id="ui-control-52d3c7bc-6438-4efb-a731-3cd31e43ff05"
+                name="SearchPriceFilter"
+                type="radio"
+                value="1"
+                (change)="changeOrderprice($event.target.value)"
+              /><span class="UIRadio-fauxInput"></span
+              ><span class="UIRadio-label"><span>Từ thấp đến cao</span></span></label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="SearchPage-resultsContainer">
+      <div id="SearchPage-appliedFilters">
+        <div class="SearchPage-appliedFiltersContainer"></div>
+      </div>
+      <div class="SearchPage-results">
+        <h5 class="UIHeading UIHeading--five">HỌC PHẦN</h5>
+
+        <div
+          class="SearchPage-result js-setResult"
+          data-item-id="210854689"
+          *ngFor="
+            let item of AllCourses | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize
+          "
+          style="background-color: #ffffff"
+        >
+          <div class="SetPreviewLink" *ngIf="isSearch">
+            <div class="UILinkBox">
+              <div class="UILinkBox-inner">
+                <div class="SetPreview">
+                  <div class="SetPreview-inner">
+                    <div class="PreviewCardByline">
+                      <span class="SetPreview-cardBylineTermsCount">
+                        {{ item.lessonNumber }} bài học </span
+                      ><span class="UIVerticalRule UIVerticalRule--onWhite"></span>
+                      <div class="SetPreview-cardBylineCreator">
+                        <div class="UserLink">
+                          <div class="UserLink-inner">
+                            <div class="UserLink-content">
+                              <a
+                                class="UILink"
+                                (click)="check(item.id, item.name)"
+                                title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"
+                                ><span class="UserLink-username"
+                                  >Tác giả: {{ item.authorName }}</span
+                                ></a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <header class="SetPreview-cardHeader">
+                      <span class="SetPreview-cardHeaderTitle">{{ item.name }}</span>
+                    </header>
+                    <div class="SetPreviewLink-metadata">
+                      <div class="SetPreviewLink-priceTag">
+                        <h4 class="UIHeading UIHeading--four"></h4>
                       </div>
                     </div>
                   </div>
                 </div>
-                <header class="SetPreview-cardHeader"><span class="SetPreview-cardHeaderTitle">{{item.name}}</span></header>
-                <div class="SetPreviewLink-metadata">
-                  <div class="SetPreviewLink-priceTag">
-                    <h4 class="UIHeading UIHeading--four"></h4>
+              </div>
+              <div class="TermsPreview">
+                <div class="UILinkBox-link">
+                  <a
+                    class="UILink"
+                    data-sourcename=""
+                    (click)="check(item.id, item.name)"
+                    title=" {{ item.name }} "
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="SearchPage-pagination">
+         
+          <div class="SearchPage-paginationText"><ngb-pagination
+            
+            [collectionSize]="AllCourses.length"
+            [(page)]="page"
+            [maxSize] = "5"
+            [rotate]="true"
+            [ellipses]="false"
+            [boundaryLinks]="true"
+          ></ngb-pagination></div>
+         
+        </div>
+        
+      </div>
+      <div id="SearchPageAd" class="SearchPage-ad">
+        <div class="StickyAdz">
+          <div class="StickyInferiorAdz-wrapper">
+            <div class="SiteAd SiteAd--SearchSidebar SiteAd-- SiteAd--rightAlign">
+              <div class="SiteAd-adContainer" id="dfp-SearchSidebar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isSearch">
+  <div class="EmptySearchPage">
+    <div class="SearchHeader SearchHeader--isEmpty">
+      <div class="container">
+        <h1 class="SearchHeader-title">Tìm trên Quizlet</h1>
+        <h2 class="SearchHeader-titleSetup">
+          Bạn có thể tìm thấy các học phần, các lớp học hoặc những người dùng khác.
+        </h2>
+      </div>
+    </div>
+
+    <div class="EmptySearchPage-container container">
+      <div class="EmptySearchPage-content">
+        <main class="page" id="page" role="main" itemscope="" itemprop="mainContentOfPage">
+          <div class="EmptySearch">
+            <div class="EmptySearch-components">
+              <div class="EmptySearch-componentsRow">
+                <div class="EmptySearch-componentWrapper">
+                  <div class="EmptySearchComponent">
+                    <div class="EmptySearchComponent-inner">
+                      <header class="EmptySearchComponent-header">
+                        <svg class="UIIcon UIIcon--flashcards EmptySearchComponent-icon">
+                          <use xlink:href="#flashcards"></use>
+                        </svg>
+                        <h2 class="EmptySearchComponent-title">Học phần</h2>
+                      </header>
+
+                      <p class="EmptySearchComponent-explanation">
+                        Tìm thấy nội dung bài học do hàng triệu người dùng trên Quizlet tạo ra về
+                        bất cứ chủ đề nào.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="EmptySearch-componentWrapper">
+                  <div class="EmptySearchComponent">
+                    <div class="EmptySearchComponent-inner">
+                      <header class="EmptySearchComponent-header">
+                        <svg class="UIIcon UIIcon--class EmptySearchComponent-icon">
+                          <use xlink:href="#class"></use>
+                        </svg>
+                        <h2 class="EmptySearchComponent-title">Lớp học</h2>
+                      </header>
+
+                      <p class="EmptySearchComponent-explanation">
+                        Tham gia lớp học trên Quizlet cùng với bạn bè, bạn cùng lớp hoặc giáo viên
+                        của bạn.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="EmptySearch-componentWrapper">
+                  <div class="EmptySearchComponent">
+                    <div class="EmptySearchComponent-inner">
+                      <header class="EmptySearchComponent-header">
+                        <svg class="UIIcon UIIcon--profile EmptySearchComponent-icon">
+                          <use xlink:href="#profile"></use>
+                        </svg>
+                        <h2 class="EmptySearchComponent-title">Người dùng</h2>
+                      </header>
+
+                      <p class="EmptySearchComponent-explanation">
+                        Tìm thấy các học phần do bạn bè, bạn cùng lớp hay giáo viên của bạn tạo ra.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="TermsPreview">
-          <div class="UILinkBox-link"><a class="UILink" data-sourcename="" (click)="check(item.id, item.name)" title=" {{item.name}} "></a></div>
-        </div>
+        </main>
       </div>
     </div>
-    </div>
-    <div *ngIf="!isSearch">
-      <div class="EmptySearchPage">
-          <div class="SearchHeader SearchHeader--isEmpty">
-            <div class="container">
-              <h1 class="SearchHeader-title">Tìm trên Quizlet</h1>
-              <h2 class="SearchHeader-titleSetup">
-                  Bạn có thể tìm thấy các học phần, các lớp học hoặc những người dùng khác. </h2>
-            </div>
-          </div>
-        
-          <div class="EmptySearchPage-container container">
-            <div class="EmptySearchPage-content">
-              <main class="page" id="page" role="main" itemscope="" itemprop="mainContentOfPage">
-                <div class="EmptySearch">
-                  <div class="EmptySearch-components">
-                    <div class="EmptySearch-componentsRow">
-        
-                      <div class="EmptySearch-componentWrapper">
-                        <div class="EmptySearchComponent">
-                          <div class="EmptySearchComponent-inner">
-                            <header class="EmptySearchComponent-header">
-                              <svg class="UIIcon UIIcon--flashcards EmptySearchComponent-icon">
-                                <use xlink:href="#flashcards"></use>
-                              </svg>
-                              <h2 class="EmptySearchComponent-title">Học phần</h2>
-                            </header>
-        
-                            <p class="EmptySearchComponent-explanation">Tìm thấy nội dung bài học do hàng triệu người dùng trên Quizlet tạo ra về bất cứ chủ đề nào.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="EmptySearch-componentWrapper">
-                        <div class="EmptySearchComponent">
-                          <div class="EmptySearchComponent-inner">
-                            <header class="EmptySearchComponent-header">
-                              <svg class="UIIcon UIIcon--class EmptySearchComponent-icon">
-                                <use xlink:href="#class"></use>
-                              </svg>
-                              <h2 class="EmptySearchComponent-title">Lớp học</h2>
-                            </header>
-        
-                            <p class="EmptySearchComponent-explanation">Tham gia lớp học trên Quizlet cùng với bạn bè, bạn cùng lớp hoặc giáo viên của bạn.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="EmptySearch-componentWrapper">
-                        <div class="EmptySearchComponent">
-                          <div class="EmptySearchComponent-inner">
-                            <header class="EmptySearchComponent-header">
-                              <svg class="UIIcon UIIcon--profile EmptySearchComponent-icon">
-                                <use xlink:href="#profile"></use>
-                              </svg>
-                              <h2 class="EmptySearchComponent-title">Người dùng</h2>
-                            </header>
-        
-                            <p class="EmptySearchComponent-explanation">Tìm thấy các học phần do bạn bè, bạn cùng lớp hay giáo viên của bạn tạo ra.</p>
-                          </div>
-                        </div>
-                      </div>
-        
-                    </div>
-                  </div>
-                </div>
-              </main>
-            </div>
-          </div>
-        </div>
-    </div>
-  
+  </div>
+</div>
