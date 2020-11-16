@@ -8,13 +8,15 @@ namespace Quizlet_Fake.Courses
     public class CourseDto : AuditedEntityDto<Guid>
     {
         public string Name { get; set; }
-
         //public string Password { get; set; }
         public Guid UserId { get; private set; }
 
         public string AuthorName { set; get; }
+
+        public Guid UserId { get;  set; }
         public DateTime PublishDate { get; set; }
         public int LessonNumber { get; set; }
         public float Price { get; set; }
+        public int wordnumber { get; set; }
     }
 }

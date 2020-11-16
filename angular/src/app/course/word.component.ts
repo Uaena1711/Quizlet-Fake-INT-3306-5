@@ -39,6 +39,7 @@ export class WordComponent implements OnInit {
       this.cardname = this.cardWords[0].name;
       this.cardvn = this.cardWords[0].vn;
       this.cardid = 0;
+      console.log('1',this.words);
     }));
     this.form = this.fb.group({
       name: this.name,
@@ -46,6 +47,7 @@ export class WordComponent implements OnInit {
       en: this.en
     }
     );
+    console.log('2',this.words);
   }
   public isOnwer() {
       this.lessonSer.isOwner(this.Service.idLession).subscribe(

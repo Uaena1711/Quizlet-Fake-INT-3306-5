@@ -22,6 +22,8 @@ namespace Quizlet_Fake
              * into multiple profile classes for a better organization. */
             CreateMap<Course, CourseDto>();
             CreateMap<CourseCreateUpdateDto, Course>();
+            
+            CreateMap<Course, CourseCreateUpdateDto>();
 
             CreateMap<ParticipationPermission, CoursesPermissionDto>();
             CreateMap<CoursesPermissionCreateUpdateDto, ParticipationPermission>();

@@ -7,6 +7,7 @@ export interface Course extends AuditedAggregateRoot<string> {
   userId: string;
   publishDate: string;
   price: number;
+  wordnumber: number;
 }
 
 export interface CourseCreateUpdateDto {
@@ -19,8 +20,8 @@ export interface CourseCreateUpdateDto {
 
 export interface CourseDto extends AuditedEntityDto<string> {
   name: string;
-  password: string;
   userId: string;
   publishDate: string;
   price: number;
+  wordnumber: number;
 }
