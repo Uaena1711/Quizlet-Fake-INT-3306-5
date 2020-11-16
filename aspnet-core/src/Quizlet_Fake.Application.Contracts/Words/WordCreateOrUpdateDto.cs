@@ -10,9 +10,9 @@ namespace Quizlet_Fake.Words
         [Required]
         public string Name { get; set; }
         [Required]
-        public string VN { get; set; }
+        public string Vn { get; set; }
         [Required]
-        public string EN { get; set; }
+        public string En { get; set; }
         [Required]
 
 

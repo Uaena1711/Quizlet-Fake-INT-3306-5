@@ -19,6 +19,10 @@ export class LearnComponent implements OnInit {
   conlai : number ;
   currentes: testx;
   showans : false;
+  dapan1: string = "";
+  dapan2: string = "";
+  dapan3: string ="";
+  dapan4: string ="";
   constructor(//public readonly list: ListService, 
    private learnService: LearnService, 
     private wordService: WordService, 
@@ -34,13 +38,15 @@ export class LearnComponent implements OnInit {
     subscribe((data => {
      
       this.words = data;
-      //console.log(this.words);
+      console.log('ds',this.words);
      this.conlai = this.words.length;
      console.log('word1',this.words);
      this.generateQuestion();
      this.currentes = this.test[0];
+    // this.dapan1 =this.currentes.arr[0].word.en;
+     //console.log('dap an 1',this.currentes.arr[0].word.en);
      console.log('curren ', this.currentes);
-    // console.log('test o trong',this.test);
+    //console.log('test o trong',this.test);
     }));
     
     
