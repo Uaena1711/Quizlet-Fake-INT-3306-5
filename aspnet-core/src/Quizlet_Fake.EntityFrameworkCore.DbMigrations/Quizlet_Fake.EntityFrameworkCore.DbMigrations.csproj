@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201116161056_fix_data.cs" />
+    <Compile Remove="Migrations\20201116161056_fix_data.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Quizlet_Fake.EntityFrameworkCore\Quizlet_Fake.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
