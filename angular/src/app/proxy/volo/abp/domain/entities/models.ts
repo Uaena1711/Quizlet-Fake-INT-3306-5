@@ -7,8 +7,9 @@ export interface AggregateRoot<TKey> extends BasicAggregateRoot<TKey> {
 export interface BasicAggregateRoot<TKey> extends Entity<TKey> {
 }
 
+export interface Entity {
+}
 
-
-export interface Entity<TKey>  {
+export interface Entity<TKey> extends Entity {
   id: TKey;
 }

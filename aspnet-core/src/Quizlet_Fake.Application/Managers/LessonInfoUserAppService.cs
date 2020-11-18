@@ -82,7 +82,7 @@ namespace Quizlet_Fake.Managers
 
 
 
-                        }, autoSave: true); ; ;
+                        }, autoSave: true); 
                 }
                 
             }

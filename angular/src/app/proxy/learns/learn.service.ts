@@ -79,5 +79,13 @@ export class LearnService {
     },
     { apiName: this.apiName });
 
+  resetprogressByIdlesson = (idlesson: string) =>
+    this.restService.request<any, void>({
+      method: 'POST',
+      url: `/api/app/learn/resetprogress`,
+      params: { idlesson: idlesson },
+    },
+    { apiName: this.apiName });
+
   constructor(private restService: RestService) {}
 }
