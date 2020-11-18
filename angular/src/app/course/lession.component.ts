@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Event, Router } from '@angular/router';
 import { ServerHttpService } from '../LessionService/server-http.service';
 
 
@@ -49,6 +49,11 @@ export class LessionComponent implements OnInit {
       location.reload();
     }))
   }
+
+  public hoclesonnay(item )
+  {
+    console.log('ev',item);
+  }
 }
  @Component({
    selector: 'LessionCreateComponent',
@@ -73,6 +78,7 @@ export class LessionComponent implements OnInit {
   public closeDialog() {
     this.dialog.closeAll();
   }
+ 
   public save(){
     if(this.Service.addMode === false){
       this.name = this.form.controls.name.value;

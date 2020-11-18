@@ -6,7 +6,7 @@
 </div>
 
 <div class="SearchPage-result js-setResult" data-item-id="210854689" *ngFor="let item of lession" style="background-color: #ffffff;">
-    <div class="SetPreviewLink">
+    <div class="SetPreviewLink" (click) = "hoclesonnay(item)" >
       <div class="UILinkBox">
         <div class="UILinkBox-inner">
           <div class="SetPreview">
@@ -15,7 +15,6 @@
                 <div class="SetPreview-cardBylineCreator">
                   <div class="UserLink">
                     <div class="UserLink-inner">
-                      <div class="UserLink-content"><a class="UILink"  [routerLink]="['lession/' + item.name + '/' + item.id]" routerLinkActive="router-link-active" title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"><span class="UserLink-username">quizlette7098644</span></a></div>
                     </div>
                   </div>
                 </div>

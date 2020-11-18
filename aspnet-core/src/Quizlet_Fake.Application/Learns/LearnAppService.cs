@@ -81,11 +81,14 @@ namespace Quizlet_Fake.Learns
 
                 if( b)
                 {
-                    
+                    if (wordinput.Level < 6)
+                    {
+
                         input.Level = wordinput.Level + 1;
                         input.DateReview = DateTime.Now.AddHours(4 * input.Level);
-                       lessonlearn.Progress = (int)((lessonlearn.Progress * 5 * wordnumber + 100) /(5 * wordnumber));
-                       await  _lessonrepository.UpdateAsync(lessonlearn);
+                        lessonlearn.Progress = (int)((lessonlearn.Progress * 5 * wordnumber + 100) / (5 * wordnumber));
+                        await _lessonrepository.UpdateAsync(lessonlearn);
+                    }
                 }
                 else
                 {
@@ -177,7 +180,23 @@ namespace Quizlet_Fake.Learns
             return true;
             
         }
-        
+        public void resetprogress(Guid idlesson)
+        {
+            List<Learn> list = _repository.Where(x => x.LessonId == idlesson && x.UserId == _currentUser.Id).ToList();
+            int sum = 0;
+            foreach( Learn l in list)
+            {
+                sum += l.Level;
+
+            }
+            int progress =100* sum / (5 * list.Count());
+
+            var oldlessonuser = _lessonrepository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == idlesson);
+            oldlessonuser.Progress = progress;
+            _lessonrepository.UpdateAsync( oldlessonuser) ;
+        }
+
+       
 
     }
 }

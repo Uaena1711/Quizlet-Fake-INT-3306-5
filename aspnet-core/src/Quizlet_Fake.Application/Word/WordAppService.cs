@@ -15,6 +15,8 @@ using System.Linq;
 using Quizlet_Fake.Participations;
 using System.Collections.Generic;
 using Quizlet_Fake.Permissions;
+using Quizlet_Fake.Managers;
+using Quizlet_Fake.Learns;
 
 namespace Quizlet_Fake.Words
 {
@@ -32,15 +34,22 @@ namespace Quizlet_Fake.Words
         private readonly IRepository<ParticipationPermission, Guid> perRepository;
         private readonly IRepository<Lesson, Guid> lessonsRepo;
         private readonly IRepository<Course, Guid> _courserepo;
-        public WordAppService(IRepository<Word, Guid> repository, ICurrentUser currentUser, IRepository<ParticipationPermission, Guid> xrepo, IRepository<Lesson,Guid> yrepo,
+        private readonly IRepository<LessonInfoOfUser, Guid> _lessonuserrepository;
+        private readonly IRepository<Learn, Guid> _learnrepository;
+
+        public WordAppService(IRepository<Word, Guid> repository, ICurrentUser currentUser,
+            
+            IRepository<ParticipationPermission, Guid> xrepo, IRepository<Lesson,Guid> yrepo,
+            IRepository<LessonInfoOfUser, Guid> lessonuserrepository,
+            IRepository<Learn, Guid> learnrepository,
             IRepository<Course, Guid> zrepo) : base(repository)
         {
             this._currentUser = currentUser;
             this._repository = repository;
             this.perRepository = xrepo;
             this.lessonsRepo = yrepo;
-
-
+            this._learnrepository = learnrepository;
+            this._lessonuserrepository = lessonuserrepository;
             this._courserepo = zrepo;
 
            
@@ -48,7 +57,7 @@ namespace Quizlet_Fake.Words
 
         }
 
-        public override Task<WordDto> CreateAsync(WordCreateOrUpdateDto input)
+        public override async Task<WordDto> CreateAsync(WordCreateOrUpdateDto input)
         {
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == input.LessonId);
 
@@ -62,11 +71,13 @@ namespace Quizlet_Fake.Words
                 {
                    // Course cour = (Course)_courserepo.Where(x => x.Id == lession.CourseId);
                     cour.wordnumber += 1;
-                   _courserepo.UpdateAsync(cour);
+                 await  _courserepo.UpdateAsync(cour);
                     lession.wordnumber += 1;
-                    lessonsRepo.UpdateAsync(lession);
+                await lessonsRepo.UpdateAsync(lession);
 
-                    return base.CreateAsync(input);
+                var x =  await base.CreateAsync(input);
+                await updateLearnAfterAddWord(input.LessonId);
+                return x;
                 }
            // }
 
@@ -79,11 +90,12 @@ namespace Quizlet_Fake.Words
             }
            */
             
-            return base.CreateAsync(new WordCreateOrUpdateDto());
+            return await base.CreateAsync(new WordCreateOrUpdateDto());
         }
 
         public List<Word> GetWordOfLession(Guid id)
         {
+            resetprogress(id);
             var word = new List<Word>();
             Guid currentId = (Guid)_currentUser.Id;
             var lession = lessonsRepo.FirstOrDefault(x => x.Id == id);
@@ -97,6 +109,27 @@ namespace Quizlet_Fake.Words
 
             return word;
         }
+
+        public void resetprogress(Guid idlesson)
+        {
+            List<Learn> list = _learnrepository.Where(x => x.LessonId == idlesson && x.UserId == _currentUser.Id).ToList();
+            int sum = 0;
+            foreach (Learn l in list)
+            {
+                sum += l.Level;
+
+            }
+            if (list != null)
+            {
+                int progress = 100 * sum / (5 * list.Count());
+
+                var oldlessonuser = _lessonuserrepository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == idlesson);
+                oldlessonuser.Progress = progress;
+                _lessonuserrepository.UpdateAsync(oldlessonuser);
+            }
+        }
+
+
         public override Task DeleteAsync(Guid id)
         {
 
@@ -145,6 +178,42 @@ namespace Quizlet_Fake.Words
             return base.UpdateAsync(new Guid(), input);
         }
 
+        public async Task updateLearnAfterAddWord(Guid idlesson)
+        {
+            var query = (from l in _lessonuserrepository
+                         select new { l.UserId }).Distinct();
+
+             var queryResult = await AsyncExecuter.ToListAsync(query);
+
+             var list = queryResult.Select(x =>
+             {
+                 var dto = x.UserId;
+
+                 return dto;
+             }).ToList();
+            var countOfRows = _repository.Count();
+            var w = _repository.Skip(countOfRows -1).FirstOrDefault();
+            //return w;
+            foreach (Guid l in list)
+            {
+               await _learnrepository.InsertAsync(
+                        new Learn
+                        {
+                            UserId = l,
+                            WordId = w.Id,
+                            LessonId = idlesson,
+                            Level = 0,
+                            DateReview = DateTime.Now.AddHours(400),
+                            DateofLearn = DateTime.Now,
+                            Note = ""
+
+
+
+                        }, autoSave: true);
+
+            }
+           
+        }
 
     }
 }

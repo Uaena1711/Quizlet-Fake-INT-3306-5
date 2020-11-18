@@ -54,19 +54,46 @@ export class LearnComponent implements OnInit {
   generateQuestion()
   {
     var len = this.words.length;
-    var i = this.randomIntFromInterval(1,3);
-
+    
+   
+   
+    
     this.words.forEach((value , index) => {
+      
+      
+     let tmp = this.words.slice();
+     tmp[index] = tmp[tmp.length -1]
+      console.log('t', tmp);
+      let tmpindex : number = 0;
+      
+    
+      tmpindex = this.randomIntFromInterval(0,tmp.length-2);
+      let w1 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 2];
+      
+      
+      tmpindex = this.randomIntFromInterval(0,tmp.length-3);
+      let w2 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 3];
+      
+      tmpindex = this.randomIntFromInterval(0,tmp.length-4);
+      let w3 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 4];
+      
+      tmpindex = this.randomIntFromInterval(0,tmp.length-5);
+      let w4 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 5];
+      
       var object = {
         arr: [{
-          word: this.words[(index+i+i+i)%len], ans: false
+          word: w1, ans: false
 
         },{
-          word: this.words[(index+i)%len], ans: false
+          word: w2, ans: false
         },{
-          word: this.words[(index+i+i)%len], ans: false
+          word: w3, ans: false
         },{
-          word: this.words[(index+i+i+i)%len], ans: false
+          word: w4, ans: false
         }],
         ans: value
       };
@@ -96,12 +123,14 @@ export class LearnComponent implements OnInit {
     {
       alert('dung con me roi ');
       this.learnService.updateLevelLearningWordByIdwordAndB(this.currentes.ans.id,true).subscribe( data => {
-        console.log(data);
+       // console.log(data);
       });
       console.log('ca',this.currentes.ans.id);
     }
     else{
       alert('sai con me roi ');
+      this.learnService.updateLevelLearningWordByIdwordAndB(this.currentes.ans.id,false).subscribe( data => {
+      });
     }
 
     this.conlai -=1;

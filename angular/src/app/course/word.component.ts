@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ServerHttpService } from '../WordService/server-http.service';
 import { ServerHttpService as LessonServe } from '../LessionService/server-http.service';
+import { WordService } from '@proxy/words';
 
 @Component({
   selector: 'app-word',
@@ -26,7 +27,8 @@ export class WordComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private Service: ServerHttpService,
     private route: ActivatedRoute,
-    private lessonSer: LessonServe
+    private lessonSer: LessonServe,
+    private wordService: WordService
   ) { }
 
   ngOnInit(): void {
@@ -96,6 +98,7 @@ export class WordComponent implements OnInit {
       ).subscribe((data => {
         location.reload();
       }))
+      
     } else {
       this.Service.editWord({
         "name": this.form.controls.name.value,
@@ -111,6 +114,8 @@ export class WordComponent implements OnInit {
         location.reload();
       }));
     }
+    
+   
   }
   public Cancel() {
     location.reload();
