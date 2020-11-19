@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ServerHttpService } from '../WordService/server-http.service';
 import { ServerHttpService as LessonServe } from '../LessionService/server-http.service';
 import { WordService } from '@proxy/words';
+import { LessonInfoOfUserService } from '@proxy/managers';
 
 @Component({
   selector: 'app-word',
@@ -28,7 +29,8 @@ export class WordComponent implements OnInit {
     private Service: ServerHttpService,
     private route: ActivatedRoute,
     private lessonSer: LessonServe,
-    private wordService: WordService
+    private wordService: WordService,
+    private LesInfoUser :LessonInfoOfUserService
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +45,7 @@ export class WordComponent implements OnInit {
       this.cardid = 0;
       console.log('1',this.words);
     }));
+    this.LesInfoUser.learnLessonByIdlesson(this.route.snapshot.params.idLession).subscribe((data) =>{});
     this.form = this.fb.group({
       name: this.name,
       vn: this.vn,
