@@ -119,13 +119,16 @@ namespace Quizlet_Fake.Words
                 sum += l.Level;
 
             }
-            if (list != null)
+            if (list.Count() != 0)
             {
                 int progress = 100 * sum / (5 * list.Count());
 
                 var oldlessonuser = _lessonuserrepository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == idlesson);
-                oldlessonuser.Progress = progress;
-                _lessonuserrepository.UpdateAsync(oldlessonuser);
+                if (oldlessonuser != null)
+                {
+                    oldlessonuser.Progress = progress;
+                    _lessonuserrepository.UpdateAsync(oldlessonuser);
+                }
             }
         }
 

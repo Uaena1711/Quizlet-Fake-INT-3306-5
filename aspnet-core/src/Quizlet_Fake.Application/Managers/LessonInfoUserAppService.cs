@@ -54,41 +54,48 @@ namespace Quizlet_Fake.Managers
         }
        public  async Task  LearnLesson(Guid idlesson ) 
         {
-            try
+            var obj = _repository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == idlesson);
+            if (obj != null)
             {
-                Guid userid = (Guid)this._currentUser.Id;
-               
-
-                await _repository.InsertAsync(new LessonInfoOfUser {
-                    LessonId = idlesson,
-                    UserId = userid,
-                    Progress = 0
-                }, autoSave: true
-                    );
-
-                List<Word> list = _wordrepository.Where(x => x.LessonId == idlesson).ToList();
-                foreach( Word w in list)
+                try
                 {
-                    await _learnrepository.InsertAsync(
-                        new Learn
+                    Guid userid = (Guid)this._currentUser.Id;
+
+
+                    await _repository.InsertAsync(new LessonInfoOfUser
+                    {
+                        LessonId = idlesson,
+                        UserId = userid,
+                        Progress = 0
+                    }, autoSave: true
+                        );
+
+                    List<Word> list = _wordrepository.Where(x => x.LessonId == idlesson).ToList();
+                    if (list.Count() != 0)
+                    {
+                        foreach (Word w in list)
                         {
-                            UserId = userid,
-                            WordId = w.Id,
-                            LessonId = idlesson,
-                            Level = 0,
-                            DateReview = DateTime.Now.AddHours(400),
-                            DateofLearn = DateTime.Now,
-                            Note = ""
+                            await _learnrepository.InsertAsync(
+                                new Learn
+                                {
+                                    UserId = userid,
+                                    WordId = w.Id,
+                                    LessonId = idlesson,
+                                    Level = 0,
+                                    DateReview = DateTime.Now.AddHours(400),
+                                    DateofLearn = DateTime.Now,
+                                    Note = ""
 
 
 
-                        }, autoSave: true); 
+                                }, autoSave: true);
+                        }
+                    }
                 }
-                
-            }
-            catch (Exception e)
-            {
-               
+                catch (Exception e)
+                {
+
+                }
             }
         }
        
