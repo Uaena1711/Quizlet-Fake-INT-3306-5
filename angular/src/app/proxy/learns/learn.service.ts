@@ -39,11 +39,11 @@ export class LearnService {
     },
     { apiName: this.apiName });
 
-  getMyReviewByFrom = (from: number) =>
+  getMyReviewByIdcourse = (idcourse: string) =>
     this.restService.request<any, LearnDto[]>({
       method: 'GET',
       url: `/api/app/learn/myReview`,
-      params: { from: from },
+      params: { idcourse: idcourse },
     },
     { apiName: this.apiName });
 

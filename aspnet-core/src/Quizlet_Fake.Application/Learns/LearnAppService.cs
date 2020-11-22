@@ -140,7 +140,7 @@ namespace Quizlet_Fake.Learns
             return new List<LearnDto>(DTos);
         }
 
-        public async Task<List<LearnDto>> GetMyReview(int from)
+        public async Task<List<LearnDto>> GetMyReview(Guid idcourse)
         {
             await CheckGetListPolicyAsync();
 
@@ -148,9 +148,12 @@ namespace Quizlet_Fake.Learns
 
             var query = from word1 in _repository
                         join word in _word_rea_repository on word1.WordId equals word.Id
-                        where DateTime.Compare(word1.DateReview,DateTime.Now) <= 0 && word1.UserId == myid
+                        join ls in _lesson_rea_repository on word.LessonId equals ls.Id
+                        join c in _course_real_repository on ls.CourseId equals c.Id
+                        where word1.UserId == myid && c.Id == idcourse
+                        orderby word1.Level
                         select new { word1, word };
-            query = query.Skip(from).Take(20);
+            query = query.Skip(0).Take(100);
             var queryResult = await AsyncExecuter.ToListAsync(query);
 
             var DTos = queryResult.Select(x =>
@@ -158,11 +161,23 @@ namespace Quizlet_Fake.Learns
                 var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
                 dto.Vn = x.word.Vn;
                 dto.En = x.word.En;
+                dto.name = x.word.Name;
                 return dto;
             }).ToList();
+            List<LearnDto> Llist = new List<LearnDto>(DTos);
 
-
-            return new List<LearnDto>(DTos);
+            int n = Llist.Count();
+            Random rng = new Random();
+            while (n > 1)
+                
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                LearnDto value = Llist[k];
+                Llist[k] = Llist[n];
+                Llist[n] = value;
+            }
+            return Llist.GetRange(0, 20); ;
         }
 
 

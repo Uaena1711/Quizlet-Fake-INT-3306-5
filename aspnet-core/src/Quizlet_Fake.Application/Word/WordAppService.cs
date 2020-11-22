@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using Quizlet_Fake.Permissions;
 using Quizlet_Fake.Managers;
 using Quizlet_Fake.Learns;
+using Volo.Abp.Data;
 
 namespace Quizlet_Fake.Words
 {
@@ -93,7 +94,7 @@ namespace Quizlet_Fake.Words
             return await base.CreateAsync(new WordCreateOrUpdateDto());
         }
 
-        public List<Word> GetWordOfLession(Guid id)
+        public async Task<List<Word>> GetWordOfLession(Guid id)
         {
             resetprogress(id);
             var word = new List<Word>();
@@ -102,8 +103,31 @@ namespace Quizlet_Fake.Words
             var per = perRepository.Where(x => x.CourseId == lession.CourseId).Where(x => x.UserId == currentId).FirstOrDefault();
             if (per != null)
             {
-                word = _repository.Where(x => x.LessonId == id).ToList();
-                return word;
+               // word = _repository.Where(x => x.LessonId == id).ToList();
+
+                var query = from word1 in _repository
+                            join learn in _learnrepository on word1.Id equals learn.WordId into gj
+
+                            from sub in gj.DefaultIfEmpty()
+                            where word1.LessonId == id
+                            select new { word1, sub };
+
+                var queryResult = await AsyncExecuter.ToListAsync(query);
+
+                var DTos = queryResult.Select(x =>
+                {
+                    var dto = x.word1;
+                    dto.SetProperty("level","0");
+
+
+                    if (x.sub != null)
+                    {
+                        dto.SetProperty("level", x.sub.Level.ToString());
+                    }
+                    return dto;
+                }).ToList();
+                return new List<Word>(DTos);
+                
             }
 
 

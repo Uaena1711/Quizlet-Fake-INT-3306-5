@@ -16,11 +16,11 @@ import { LessionComponent, LessionCreateComponent } from './lession.component';
 import { WordComponent } from './word.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AllCourseComponent, CourseCheckPassComponent } from './all-course.component';
-
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
-  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, WordComponent, AllCourseComponent, CourseCheckPassComponent],
+  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, WordComponent,TestComponent, AllCourseComponent, CourseCheckPassComponent],
   imports: [
     CommonModule,
     CourseRoutingModule,

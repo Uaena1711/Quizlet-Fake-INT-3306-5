@@ -20,6 +20,7 @@ namespace Quizlet_Fake.Learns
         public string Vn { get; set; }
 
         public string En { get; set; }
+        public string name { get; set; }
 
     }
 }

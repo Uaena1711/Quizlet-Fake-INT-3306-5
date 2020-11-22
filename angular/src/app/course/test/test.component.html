@@ -1,0 +1,44 @@
+
+<div class="TestModeSection">
+    <h4 class="UIHeading UIHeading--four"> Câu hỏi nhiều lựa chọn</h4>
+    <h5 *ngIf="showans" > Điểm: {{diem}}</h5>
+    <div class="TestModeSection-questions" *ngFor="let item of test; let i=index;">
+      <ol class="TestModeSection-questionList">
+        <li class="TestModeSection-questionItem">
+          <div class="TestModeMultipleChoiceQuestion">
+            <div class="TestModeMultipleChoiceQuestion-prompt"><span class="TestModeTermText"><span><span class="TermText notranslate lang-vi">{{item.ans.name}}</span></span></span></div>
+            <ol class="TestModeMultipleChoiceQuestion-choicesList">
+              <li class="TestModeMultipleChoiceQuestion-choice">
+                <div class="TestModeMultipleChoiceQuestion-choiceText" (click) ="bambne(item,0,i)"><label class="UIRadio" for="ui-control-07eb4401-9eb8-499c-92dd-1368baf78461"><input class="UIRadio-input" id="ui-control-07eb4401-9eb8-499c-92dd-1368baf78461" name="multipleChoice14684987552" tabindex="6" type="radio" value=""><span class="UIRadio-fauxInput"></span><span class="UIRadio-label"><span class="TestModeTermText"><span><span class="TermText notranslate lang-en">1. {{item.arr[0].word.en}}</span></span></span></span></label></div>
+              </li>
+              <li class="TestModeMultipleChoiceQuestion-choice">
+                <div class="TestModeMultipleChoiceQuestion-choiceText"  (click) ="bambne(item,0,i)"><label class="UIRadio" for="ui-control-d003ee48-7d83-45c5-bb68-88ce6065e14d"><input class="UIRadio-input" id="ui-control-d003ee48-7d83-45c5-bb68-88ce6065e14d" name="multipleChoice14684987552" tabindex="6" type="radio" value=""><span class="UIRadio-fauxInput"></span><span class="UIRadio-label"><span class="TestModeTermText"><span><span class="TermText notranslate lang-en">2. {{item.arr[1].word.en}}</span></span></span></span></label></div>
+              </li>
+              <li class="TestModeMultipleChoiceQuestion-choice">
+                <div class="TestModeMultipleChoiceQuestion-choiceText" (click) ="bambne(item,0,i)" ><label class="UIRadio" for="ui-control-7bb1e4a9-86d8-445f-a5d4-3fa81bc93348"><input class="UIRadio-input" id="ui-control-7bb1e4a9-86d8-445f-a5d4-3fa81bc93348" name="multipleChoice14684987552" tabindex="6" type="radio" value=""><span class="UIRadio-fauxInput"></span><span class="UIRadio-label"><span class="TestModeTermText"><span><span class="TermText notranslate lang-en">3. {{item.arr[2].word.en}}</span></span></span></span></label></div>
+              </li>
+              <li class="TestModeMultipleChoiceQuestion-choice">
+                <div class="TestModeMultipleChoiceQuestion-choiceText" (click) ="bambne(item,0,i)"><label class="UIRadio" for="ui-control-1c5bad26-9970-4301-9f36-8d707e2f9a96"><input class="UIRadio-input" id="ui-control-1c5bad26-9970-4301-9f36-8d707e2f9a96" name="multipleChoice14684987552" tabindex="6" type="radio" value=""><span class="UIRadio-fauxInput"></span><span class="UIRadio-label"><span class="TestModeTermText"><span><span class="TermText notranslate lang-en">4. {{item.arr[3].word.en}}</span></span></span></span></label></div>
+              </li>
+
+              
+            </ol>
+            <div *ngIf="showans">
+                <div *ngIf="item.tf">
+                    Wrong! answer is {{item.ans.en}}
+                </div>
+
+                <div *ngIf="!item.tf">
+                    Correct!
+                </div>
+            </div>
+          </div>
+          
+        </li>
+        
+      </ol>
+    </div>
+    <button (click)="check()">
+        Show Answer
+    </button>
+  </div>
