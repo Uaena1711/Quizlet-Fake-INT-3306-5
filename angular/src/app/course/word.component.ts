@@ -46,7 +46,9 @@ export class WordComponent implements OnInit {
       this.cardid = 0;
       console.log('1',this.words);
     }));
-    this.LesInfoUser.learnLessonByIdlesson(this.route.snapshot.params.idLession).subscribe((data) =>{});
+    this.LesInfoUser.learnLessonByIdlesson(this.route.snapshot.params.idLession).subscribe((data) =>{
+      console.log('xong r ne');
+    });
     this.form = this.fb.group({
       name: this.name,
       vn: this.vn,

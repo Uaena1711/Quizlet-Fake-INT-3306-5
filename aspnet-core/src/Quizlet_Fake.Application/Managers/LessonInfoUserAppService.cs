@@ -55,7 +55,7 @@ namespace Quizlet_Fake.Managers
        public  async Task  LearnLesson(Guid idlesson ) 
         {
             var obj = _repository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == idlesson);
-            if (obj != null)
+            if (obj is null)
             {
                 try
                 {

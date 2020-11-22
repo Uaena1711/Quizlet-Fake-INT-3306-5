@@ -17,6 +17,9 @@ import { WordComponent } from './word.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AllCourseComponent, CourseCheckPassComponent } from './all-course.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {TestComponent} from'./test/test.component'
+
+
 
 
 @NgModule({
@@ -34,7 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MDBBootstrapModule,
     NgbModule
   ],
-  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, AllCourseComponent, WordComponent,
+  declarations: [CourseComponent,CourseCreateComponent, LessionComponent, LessionCreateComponent, AllCourseComponent, WordComponent,TestComponent,
     CourseCheckPassComponent]
   
 })
