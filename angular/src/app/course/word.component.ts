@@ -25,6 +25,7 @@ export class WordComponent implements OnInit {
   cardid: number;
   cardWords: Array<any>;
   isOwner: boolean;
+  routerTest: string= "";
   constructor(private fb: FormBuilder,
     private Service: ServerHttpService,
     private route: ActivatedRoute,
@@ -35,6 +36,8 @@ export class WordComponent implements OnInit {
 
   ngOnInit(): void {
     this.Service.idLession = this.route.snapshot.params.idLession;
+    this.routerTest = '/courses/'+this.route.snapshot.params.nameCourse +'/'+this.route.snapshot.params.idcourse +'/test';
+    console.log('dd', this.routerTest);
     this.isOnwer();
     this.nameLession = this.route.snapshot.params.nameLession;
     this.Service.getWordOfLession(this.Service.idLession).subscribe((data => {
