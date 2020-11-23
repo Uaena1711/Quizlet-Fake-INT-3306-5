@@ -1,470 +1,2182 @@
-/*! CSS Used from: https://assets.quizlet.com/a/c/global.1c8ceb575ad7c61.css */
-body,button,h2,h4,input,li,ol,textarea,ul{margin:0;padding:0;}
-body{background:var(--app-background);}
-aside,header,main{display:block;}
-.container{clear:both;margin:0 auto;max-width:1300px;}
-#page{float:left;width:100%;}
-::selection{background:#c5f1f1;}
-::-moz-selection{background:#c5f1f1;}
-body{color:var(--ui_color_default_foreground);font-family:hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;font-size:100%;line-height:1.625;}
-@media print{
-body{color:#000;}
-}
-.page,.site{background:var(--ui_color_gray_90_background);}
-a,a:visited{color:var(--blue_color);}
-textarea{color:#222;}
-input,textarea{font:12px/18px hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;}
-ul{list-style:none;}
-ul li{background:transparent;}
-a{text-decoration:none;}
-img{border:none;}
-a{cursor:pointer;}
-.SiteHeader{background-color:var(--app-header-background);color:#fff;height:5rem;}
-@media screen and (max-width:48em){
-.SiteHeader{height:3.125rem;}
-body.mode .SiteHeader{display:none;}
-}
-.SiteHeader>.UIContainer.UIContainer--isFullBleed{max-width:unset;padding:0 2.5rem;}
-@media screen and (max-width:38.75em){
-.SiteHeader>.UIContainer.UIContainer--isFullBleed{padding:0 1rem;}
-}
-.SiteHeader-wrapper{-ms-flex-align:center;-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;height:5rem;-ms-flex-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;min-width:100%;overflow:visible;position:relative;}
-@media screen and (max-width:48em){
-.SiteHeader-wrapper{height:3.125rem;}
-}
-.SiteHeader-logo{width:9.375rem;}
-@media screen and (max-width:38.75em){
-.SiteHeader-logo{width:auto;}
-}
-.SiteHeader-logo .UILink{-ms-flex-align:center;-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;height:5rem;}
-.SiteHeader-logo .UILink:focus,.SiteHeader-logo .UILink:hover{color:#fff!important;}
-@media screen and (min-width:28.8125em){
-.SiteHeader-logo .UILink{width:9.375rem;}
-}
-@media screen and (max-width:48em){
-.SiteHeader-logo .UILink{height:3.125rem;}
-}
-.SiteHeader-transitionGroupWrapper{-ms-flex-align:center;-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;}
-.SiteHeader-transitionGroupWrapper{-webkit-flex:1;-ms-flex:1;flex:1;height:5rem;position:relative;}
-.SiteHeader-headerItemsTransitionGroup{-webkit-flex:1;-ms-flex:1;flex:1;}
-.SiteHeader-searchTransitionGroup{position:absolute;top:50%;transform:translateY(-50%);width:100%;}
-.SiteHeader-section{display:inline-block;font-size:.9375rem;white-space:nowrap;}
-.SiteHeader-defaultDesktop{-ms-flex-align:center;-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;height:3.125rem;-ms-flex-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:100%;}
-@media screen and (max-width:48em){
-.SiteHeader-defaultDesktop{display:none;}
-}
-@media screen and (max-width:48em){
-.SiteHeader-create,.SiteHeader-search{display:none;}
-}
-.SiteHeader-create .UILink,.SiteHeader-search .UILink{display:inline-block;padding:1.25rem 2rem;width:100%;}
-.SiteHeader-create{width:8.75rem;}
-.SiteHeader-search{width:9rem;}
-.SiteHeader-search .UILink{padding-right:0;text-align:inherit;}
-.SiteHeader-searchInner{padding-right:2rem;}
-.SiteHeader-searchInner{border-right:2px solid var(--ui_color_secondary_indigo_dark_background);}
-.SiteHeader-createIcon,.SiteHeader-searchSubmitIcon{margin-right:.5rem;position:relative;}
-.SiteHeader-icon.UIIcon{vertical-align:middle;}
-.SiteHeader-userSection{text-align:right;width:calc(100% - 17.75rem);}
-@media screen and (max-width:48em){
-.SiteHeader-userSection{display:none;}
-}
-.SiteHeader-chiclet{display:inline-block;vertical-align:middle;}
-.SiteHeader-chiclet{margin-right:2rem;}
-@media screen and (max-width:38.75em){
-.SiteHeader-chiclet{margin-right:0;}
-}
-.SiteHeader-username{display:inline-block;padding-right:.625rem;}
-@media screen and (max-width:55.625em){
-.SiteHeader-username{display:none;}
-}
-.SiteHeader-VOLinks{position:absolute;right:0;bottom:0;display:-webkit-flex;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;z-index:-1;opacity:0;}
-@media print{
-.SiteHeader{background:var(--ui_color_white_background);height:3.125rem;}
-.SiteHeader-section{display:none!important;}
-}
-.SiteLogo{height:1.2875rem;width:5.9375rem;}
-.SiteLogo svg{vertical-align:top;}
-@media screen and (max-width:38.75em){
-.SiteLogo{height:1.068625rem;width:4.928125rem;}
-}
-.SiteAd{overflow:hidden;}
-@media print{
-.SiteAd{display:none;}
-}
-.SiteHeaderChiclet{display:inline-block;padding:.5rem .75rem;text-align:center;border-radius:.25rem;font-weight:600;font-size:.875rem;line-height:1.285714285714286;transition:all .12s cubic-bezier(.47,0,.745,.715);}
-.SiteHeaderChiclet,.SiteHeaderChiclet:visited{background-color:var(--primary-button-background);color:var(--primary-button-text);}
-.SiteHeaderChiclet:active,html.cursor .SiteHeaderChiclet:hover,html.cursor .SiteHeaderChiclet:hover:visited{background-color:var(--primary-button-hover-background);color:var(--primary-button-text);}
-.SiteHeaderChiclet:focus{outline:none;}
-@media screen and (max-width:38.75em){
-.SiteHeaderChiclet{font-weight:600;font-size:.75rem;line-height:1.333333333333333;}
-}
-@media screen and (max-width:64em) and (min-width:48.0625em){
-.SiteHeaderChiclet div{max-width:7.5rem;overflow:hidden;text-overflow:ellipsis;}
-}
-.NotificationContainer{position:fixed;left:1.25rem;bottom:1.25rem;z-index:1200;}
-@media screen and (max-width:38.75em){
-.NotificationContainer{bottom:.5rem;left:.5rem;right:.5rem;}
-}
-.UserAvatar{overflow:hidden;background:transparent no-repeat top;background-image:none;background-color:rgba(0,0,0,.04);background-size:cover;border-radius:100%;box-shadow:inset 0 0 1px rgba(0,0,0,.3);display:inline-block;margin:0;padding:0;transform:translateZ(0);vertical-align:middle;}
-.HeaderAvatar-userInfo{display:inline-block;vertical-align:middle;}
-.HeaderAvatar-userInfo:hover{opacity:.5;}
-@media screen and (max-width:55.625em){
-.HeaderAvatar-userInfo{min-width:0;}
-}
-@media screen and (max-width:48em){
-.HeaderAvatar-userInfo{line-height:3.125rem;}
-}
-.TermText{-webkit-font-smoothing:antialiased;}
-.lang-vi,.TermText.lang-vi{font-size:1.1em;font-family:Lucida Grande,Arial,sans-serif!important;}
-.AutoExpandTextarea{position:relative;}
-.AutoExpandTextarea-sizer,.AutoExpandTextarea-textarea{white-space:pre-wrap;word-wrap:break-word;-webkit-font-smoothing:antialiased;}
-.AutoExpandTextarea-sizer{visibility:hidden;}
-.AutoExpandTextarea-wrapper{position:absolute;top:0;bottom:0;left:0;right:0;}
-.AutoExpandTextarea-textarea{height:100%;width:100%;background:transparent;border:none;color:inherit;cursor:inherit;display:block;font:inherit;line-height:inherit;outline:none;overflow:hidden;resize:none;text-shadow:inherit;-webkit-tap-highlight-color:rgba(255,255,255,0);}
-.PrintLogo{display:none;}
-@media print{
-.PrintLogo{display:block;height:2.575rem;position:absolute;left:0;top:0;width:11.875rem;z-index:10000;}
-}
-body.theme-default{--ui_color_primary_indigo_foreground:var(--indigo-400);--ui_color_primary_indigo_lighten_10:#5065be;--ui_color_primary_indigo_lighten_12:#5468c0;--ui_color_primary_indigo_lighten_15:#5a6ec2;--ui_color_primary_indigo_lighten_40:#8b98d4;--ui_color_primary_indigo_lighten_50:#9ea9db;--ui_color_primary_indigo_lighten_60:#b1bbe2;--ui_color_primary_indigo_lighten_65:#bbc3e6;--ui_color_primary_indigo_lighten_88:#e8eaf6;--ui_color_primary_indigo_lighten_90:#eceef8;--ui_color_primary_indigo_lighten_90_transparent_70:rbga(#eceef8,0.3);--ui_color_primary_indigo_darken_2:#4155ae;--ui_color_primary_indigo_darken_8:#3d50a4;--ui_color_primary_indigo_darken_10:#3b4ea0;--ui_color_primary_indigo_darken_15:#384a97;--ui_color_primary_indigo_desaturate_50:#5e6896;--ui_color_primary_indigo_desaturate_50_lighten_88:#ebecf3;--ui_color_primary_indigo_saturate_10_ligthen_8:saturate(ligthen(#4257b2,8%));--ui_color_primary_indigo_shade_30:#2e3c7c;--ui_color_primary_indigo_tint_40:#27346a;--ui_color_primary_indigo_tint_70:#131a35;--ui_color_primary_indigo_tint_90:#060811;--ui_color_primary_indigo_transparent_10:rgba(66,87,178,0.9);--ui_color_primary_indigo_transparent_20:rgba(66,87,178,0.8);--ui_color_primary_indigo_transparent_30:rgba(66,87,178,0.7);--ui_color_primary_indigo_transparent_50:rgba(66,87,178,0.5);--ui_color_primary_indigo_transparent_70:rgba(66,87,178,0.3);--ui_color_primary_indigo_transparent_85:rgba(66,87,178,0.15);--ui_color_primary_indigo_transparent_86:rgba(66,87,178,0.14);--ui_color_primary_indigo_transparent_90:rgba(66,87,178,0.1);--ui_color_primary_indigo_background:var(--indigo-400);--ui_color_secondary_indigo_dark_background:var(--indigo-500);--ui_color_secondary_white_foreground:var(--neutral-100);--ui_color_white_background:var(--neutral-100);--ui_color_white_transparent:hsla(0,0%,100%,0);--ui_color_white_transparent_10:hsla(0,0%,100%,0.9);--ui_color_white_transparent_20:hsla(0,0%,100%,0.8);--ui_color_white_transparent_30:hsla(0,0%,100%,0.7);--ui_color_white_transparent_50:hsla(0,0%,100%,0.5);--ui_color_white_transparent_90:hsla(0,0%,100%,0.1);--ui_color_tertiary_indigo_dark_background:var(--ui_color_secondary_indigo_dark_background);--ui_color_gray_20:var(--ink-400);--ui_color_gray_20_foreground:var(--ink-400);--ui_color_gray_20_lighten_10:#2b3143;--ui_color_gray_20_lighten_15:#343a50;--ui_color_gray_20_lighten_20:#3d445e;--ui_color_gray_20_lighten_25:#464e6b;--ui_color_gray_20_transparent_30:rgba(26,29,40,0.7);--ui_color_gray_20_transparent_40:rgba(26,29,40,0.6);--ui_color_gray_20_transparent_90:rgba(26,29,40,0.1);--ui_color_gray_30:var(--ink-200);--ui_color_gray_30_foreground:var(--ink-200);--ui_color_gray_30_transparent_50:rgba(48,53,69,0.5);--ui_color_gray_30_transparent_60:rgba(48,53,69,0.4);--ui_color_gray_30_transparent_76:rgba(48,53,69,0.24);--ui_color_gray_60:var(--neutral-500);--ui_color_gray_60_foreground:var(--neutral-500);--ui_color_gray_60_transparent_70:rgba(147,155,180,0.3);--ui_color_gray_60_lighten_10:#a1aeb3;--ui_color_gray_60_darken_35:rgba(147,155,180,0.35);--ui_color_gray_70_foreground:var(--neutral-400);--ui_color_gray_70_foreground_transparent_70:rgba(195,199,213,0.3);--ui_color_gray_80_foreground:var(--neutral-400);--ui_color_gray_90_foreground:var(--neutral-200);--ui_color_gray_90_background:var(--neutral-200);--ui_color_gray_90_background_transparent:rgba(246,247,251,0);--ui_color_gray_90_background_transparent_20:rgba(246,247,251,0.8);--ui_color_gray_90_background_transparent_60:rgba(246,247,251,0.4);--ui_color_gray_90_transparent:rgba(246,247,251,0);--ui_color_gray_90_transparent_50:rgba(246,247,251,0.5);--ui_color_gray_90_foreground_transparent_10:rgba(246,247,251,0.9);--ui_color_gray_90_foreground_darken_10:#dbdbdb;--ui_color_gray_90_foreground_darken_20:#c2c2c2;--ui_color_secondary_blue_light_background:#cde7fa;--ui_color_secondary_blue_light_transparent:rgba(205,231,250,0);--ui_color_secondary_pink_light_background:#fde8ff;--ui_color_secondary_pink_light_transparent:rgba(253,232,255,0);--ui_color_secondary_yellow_light_background:#fff4e5;--ui_color_secondary_yellow_light_transparent:rgba(255,242,199,0);--ui_color_secondary_yellow_background:var(--yellow-400);--ui_color_secondary_yellow_foreground:var(--yellow-400);--ui_color_tertiary_green_light_background:var(--teal-100);--ui_color_tertiary_yellow_light_background:var(--yellow-100);--ui_color_disabled:var(--ui_color_gray_70_foreground);--ui_color_disabled_border:var(--ui_color_gray_80_foreground);--ui_color_disabled_transparent_70:var(--ui_color_gray_70_foreground_transparent_70);--primary-body-text-color:var(--ink-200);--secondary-body-text-color:var(--ink-100);--secondary-heading-color:var(--ink-100);--app-header-background:var(--indigo-400);--page-header-background:var(--neutral-100);--app-background:var(--neutral-200);--page-background:var(--neutral-200);--sidebar-background:var(--neutral-100);--card-background:var(--neutral-100);--card-alt-background:var(--neutral-100);--card-alt-background-transparent:hsla(0,0%,100%,0);--primary-button-background:var(--teal-400);--primary-button-text:var(--neutral-100);--primary-button-hover-background:var(--teal-500);--divider-color:var(--neutral-300);--border-color:var(--neutral-400);--new_mode_nav_background:var(--ui_color_white_background);--close_icon_color:var(--ui_color_gray_60);--main_icon_color:var(--ui_color_primary_indigo_foreground);--day_picker_background_color:#fff;--day_picker_chosen_day_color:#13141b;--day_picker_day_disabled_color:#d9dde8;--ui_browse_page_background_color:var(--ui_color_white_background);--ui_section_indigo_header_background_color:var(--ui_color_secondary_indigo_dark_background);--marketing_page_even_child_background_color:#f2f5f7;--browse_sidebar_background_color:#e7e4df;--bundles_list_header_border_bottom_color:var(--ui_color_gray_90_foreground);--bundles_page_background_color:#fff;--blog_sidebar_color:#232c38;--blog_sidebar_color_lighten_15:#3b4a5f;--blog_sidebar_color_lighten_25:#4b5f78;--editable_mcq_item_background_color:#fff;--high_fives_color:rgba(0,0,0,0.4);--bulleted_list_feature_item_border_bottom_color:var(--ui_color_gray_90_foreground);--bulleted_list_ellipse_gray_border_color:var(--ui_color_gray_90_foreground);--hurricane_banner_background_color:var(--ui_color_white_background);--progress_meter_background_color:var(--ui_color_gray_70_foreground);--progress_meter_foreground_color:#3b4c9b;--progress_meter_label_color:#3b4c9b;--raised_empty_state_box_shadow_color:var(--ui_color_gray_60);--sitenav_default_icon_color:#303545;--terms_preview_icon_lock_color:#fff;--upsell_modal_features_background_color:var(--ui_color_primary_indigo_background);--gravity_typing_prompt_input_foreground_color:#13141b;--modal_body_background_color:#fff;--irrelevant_set_modal_reason_border_color:var(--ui_color_gray_80_foreground);--merch_banner_background_color:#eff2fe;--parent_upsell_modal_product_features_background_color:var(--ui_color_primary_indigo_background);--prismic_highlighted_text_light_teal_background_color:#f3fcfc;--prismic_three_column_cards_blue_background_color:var(--ui_color_gray_90_foreground);--prismic_highlighted_text_light_orange_background_color:var(--yellow-100);--prismic_testimonials_orange:#fef9f2;--promo_page_content_divider_background_color:#d9dde8;--promo_page_content_item_description_color:#303545;--promo_page_content_item_title_color:var(--ui_color_primary_indigo_background);--promo_page_header_title_color:var(--ui_color_primary_indigo_foreground);--ui_referrals_copy_section_white_background_color:var(--ui_color_default_background);--set_page_options_button_background_color:var(--neutral-200);--set_page_options_button_color:var(--ink-200);--set_page_options_button_background_color_premium:var(--indigo-400);--set_page_information_icon_background_color:#303545;--set_page_dropdown_color:var(--ui_color_gray_30);--set_page_user_link_color:#303545;--terms_preview_word_color:#13141b;--terms_preview_definition_color:rgba(33,37,48,0.6);--card_header_color:var(--ui_color_gray_60);--pill_background_color:var(--ui_color_gray_90_background);--pill_background_color_keyphrase:var(--neutral-200);--pill_color:var(--ui_color_gray_30);--pill_inverted_border_color:var(--ui_color_gray_70_foreground);--pill_inverted_color:var(--ui_color_gray_30);--pill_keyphrase_border_color:var(--ui_color_gray_70_foreground);--pill_keyphrase_color:var(--ui_color_gray_20);--pill_keyphrase_color_link:var(--ui_color_primary_indigo_foreground);--section_header_backgroud_color:var(--ui_color_white_background);--curated_page_body_text_color:#646f90;--confirmation_redesign_header_background_color:#3b4c9b;--confirmation_redesign_header_link_background_color:#3b4c9b;--confirmation_redesign_header_small_background_color:var(--ui_color_secondary_indigo_dark_background);--ui_section_header_background_color:var(--ui_color_white_background);--ui_interacting_foreground_color:var(--ui_color_gray_30);--pre_beyonce_important_color:#fffabc;--ui_shimmer_base_color:#f6f7f8;--ui_shimmer_trail_color:#edeef1;--ui_tooltip_background_color:var(--ui_color_primary_indigo_background);--ui_modal_header_color:var(--ui_color_primary_indigo_background);--ui_modal_body_color_white:var(--ui_color_white_background);--ui_modal_body_color_gray:var(--ui_color_gray_90_background);--ui_interacting_white_foreground_color:#fff;--ui_divider_color_black:var(--ui_color_gray_90_foreground);--ui_popover_shadow_color:rgba(0,0,0,0.2);--ui_backdrop_opacity:0.5;--ui_black_backdrop_opacity:rgba(0,0,0,0.5);--color_overwritten:var(--ui_color_gray_30);--ui_redirect_box_background:var(--ui_color_white_background);--pagination_text_color:#303545;--progress_tracking_upsell_white_background:var(--ui_color_white_transparent_20);--ui_badge_white_version_text_color:var(--ui_color_primary_indigo_foreground);--ui_badge_indigo_version_background_color:var(--ui_color_primary_indigo_background);--progress_dashboard_upsell_footer_background:var(--ui_color_secondary_yellow_light_background);--progress_dashboard_upsell_header_background_control:var(--ui_color_secondary_yellow_light_background);--progress_dashboard_upsell_header_background_variant:var(--ui_color_primary_indigo_lighten_90);--progress_dashboard_upsell_screenshot_header_background:var(--ui_color_white_background);--progress_dashboard_upsell_screenshot_divider_color:var(--ui_color_gray_70_foreground);--activity_center_card_background_hover:#cedaf3;--activity_center_card_background_read:var(--ui_color_white_background);--activity_center_card_background_unread:#eff3fb;--activity_center_unread_indicator:var(--ui_color_primary_indigo_background);--upgrade_page_value_prop_background_color:var(--neutral-100);--upgrade_page_value_prop_chart_price_color:var(--indigo-300);--upgrade_page_value_prop_chart_disabled_feature_color:var(--neutral-300);--set_page_tags_color_light_teal:#ebfafa;--ios_edgy_web_view_background:#fff;--study_path_upsell_text_color:var(--ink-100);--study_value_upsell_modal_header_background_color:var(--indigo-100);--study_value_upsell_modal_body_title_color:var(--ink-100);--study_value_upsell_modal_body_features_color:var(--ink-100);--study_value_upsell_modal_disclaimer_color:var(--ink-100);--study_value_upsell_modal_footer_background_color:var(--neutral-100);--themed_menu_item_divider:var(--neutral-300);--themed_menu_item_primary:var(--ink-200);--smart_grading_modal_upsell_text_color:var(--ink-100);--set_creator_username:var(--ink-200);--toggle_switch_handle:var(--neutral-100);--toggle_switch_handle_checked:var(--ui_color_primary_indigo_foreground);--toggle_switch_handle_disabled:#d9dde8;--toggle_switch_background:var(--neutral-400);--toggle_switch_background_checked:var(--indigo-200);--checkbox-border-unchecked:var(--neutral-500);--checkbox-border-checked:var(--ui_color_primary_indigo_background);--checkbox-background-checked:var(--ui_color_primary_indigo_background);--checkbox-check-fill:var(--neutral-100);--themed_interacting_background:var(--neutral-200);--upgrade_header_teacher_background_url:url(https://assets.quizlet.com/a/i/upgrade/redesign_hero_teacher.7a22720045351f3.jpg);--upgrade_header_student_background_url:url(https://assets.quizlet.com/a/i/upgrade/redesign_hero_student.907fefd9c4925f3.jpg);--confirmation_redesign_header_background_url:url(https://assets.quizlet.com/a/i/confirmation_redesign/background-shape@3x.b1814ca66ad5a3a.png);--next_action_assistant_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/learning-assistant.67d3d22857938c5.svg);--next_action_flashcards_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/flashcards.a0781eaff8a8ae7.svg);--next_action_learn_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/learn.71976e36698b265.svg);--next_action_live_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/live.a11e6138103d44d.svg);--next_action_match_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/match.2658de1b5130c37.svg);--next_action_test_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/test.85a876b541e5a0e.svg);--next_action_write_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/learn.71976e36698b265.svg);--next_action_gravity_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/gravity.2a2c9be9bc61622.svg);--next_action_spell_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/spell.581c8aacce38c2f.svg);--next_action_progress_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/progress.28aa635a97e7143.svg);--next_action_collect_school_data_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/collect-school-data.ff62f19e1412c32.svg);--next_action_confirm_email_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/confirm-email.5fddf5a018fc6c8.svg);--next_action_create_folder_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/create-folder.557f2a575d2ee1e.svg);--next_action_create_set_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/create-set.d180318ff2be4ad.svg);--next_action_create_class_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/create-class.d01b31555bf8987.svg);--next_action_get_app_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/get-app.89a38e6cee08fe8.svg);--next_action_track_progress_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/track-progress.df3ece3178b994a.svg);--next_action_add_image_background_icon_url:url(https://assets.quizlet.com/a/i/next_action/add-image.09d0bbb57166b3e.svg);--flashcard_swipe_background_url:url(https://assets.quizlet.com/a/i/cards/flashcardSwipe.bee6515198f2220.gif);--study_path_goals_disabled_url:url(https://assets.quizlet.com/a/i/study_paths/goals_disabled.be69f68d664b8d9.svg);--study_path_goals_enabled_url:url(https://assets.quizlet.com/a/i/study_paths/goals_enabled.36d56e2e113e470.svg);--study_path_quiz_disabled_url:url(https://assets.quizlet.com/a/i/study_paths/quiz_disabled.a6a01a6ceb7cef3.svg);--study_path_quiz_enabled_url:url(https://assets.quizlet.com/a/i/study_paths/quiz_enabled.d1110c9879d15f8.svg);--study_path_mountain_background_url:url(https://assets.quizlet.com/a/i/study_path/mountain.6c329d02ac96774.svg);--study_path_path_disabled_url:url(https://assets.quizlet.com/a/i/study_paths/path_disabled.65f18405cc0df25.svg);--study_path_path_enabled_url:url(https://assets.quizlet.com/a/i/study_paths/path_enabled.1a43299ca7dd6e0.svg);--study_path_target_background_url:url(https://assets.quizlet.com/a/i/study_path/target.f34b9e29ddfa1e0.svg);--edgy_default_illustration:url(https://assets.quizlet.com/a/i/homepage/distance-learning-start-graphic.f68de2b096423c0.svg);--edgy_end_illustration:url(https://assets.quizlet.com/a/i/homepage/distance-learning-end-graphic.50b9e6fb3761600.svg);--teal-button-background:var(--teal-400);--teal-button-hover-background:#3ac8c8;--teal-button-text:var(--neutral-100);--teal-button-disabled-background:#8ae2e2;--create-button-text:var(--indigo-400);--create-button-disabled-background:var(--teal-200);--create-button-disabled-text:var(--indigo-300);--danger-button-disabled-background:var(--coral-300);--danger-button-text-disabled:var(--neutral-100);--upgrade-button-disabled-background:var(--yellow-200);--upgrade-button-disabled-text:var(--indigo-300);--link-button-text:var(--teal-400);--link-button-text-disabled:#8ae2e2;--button-hover-border:var(--neutral-500);--button-disabled-border:var(--neutral-300);--subtle-button-background:var(--neutral-100);--subtle-button-text:var(--ink-100);--subtle-button-text-disabled:#a2a8bc;--subtle-button-hover-text:#5a6381;--icon-button-background:var(--neutral-100);--icon-button-background-disabled:var(--neutral-100);--icon-button-text:var(--ink-100);--icon-button-text-hover:var(--ink-100);--icon-button-text-disabled:#a2a8bc;}
-body.theme-default{--ui_color_secondary_orange_background:var(--coral-400);--ui_color_tertiary_green_background:var(--green-400);--ui_color_tertiary_orange_background:var(--orange-400);--ui_color_default_background:var(--ui_color_white_background);--user_showcase_background_color:#282e3e;--set_page_information_background_color:var(--ui_color_white_background);--set_page_options_button_color_premium:var(--neutral-100);--ui_shadow_color:rgba(0,0,0,0.24);--progress_dashboard_upsell_screenshot_border_color:#1a1d28;--activity_center_dismiss_hover:var(--yellow-100);--upgrade_page_price_strikethrough_color:var(--coral-400);--upgrade_page_value_prop_chart_feature_color:var(--yellow-400);--ios_edgy_cta_button_color:#fff;}
-body.theme-default{--mp_gray_color:var(--ui_color_gray_90_foreground);--mp_gray_color_transparent_10:var(--ui_color_gray_90_foreground_transparent_10);--mp_gray_color_darken_10:var(--ui_color_gray_90_foreground_darken_10);--mp_gray_color_darken_20:var(--ui_color_gray_90_foreground_darken_20);--term_operations_color:var(--ui_color_gray_60);--term_operations_color_lighten_10:var(--ui_color_gray_60_lighten_10);--ui_color_no_activity:var(--ui_color_gray_70_foreground);--ui_color_dots:var(--ui_color_gray_70_foreground);--ui_color_dots_active:var(--ui_color_gray_60);--ui_color_breadcrumb_text:var(--ui_color_gray_60);--ui_color_browser_header_background:var(--ui_color_gray_90_background);--ui_color_default_foreground:var(--ui_color_gray_30);--ui_color_default_foreground_transparent_50:var(--ui_color_gray_30_transparent_50);--ui_color_default_foreground_transparent_76:var(--ui_color_gray_30_transparent_76);--ui_color_revert:var(--ui_color_gray_30);--ui_color_started:var(--ui_color_gray_30);--ui_color_finished:var(--ui_color_gray_30);--teacher_mp_color:var(--ui_color_gray_20);--teacher_mp_color_transparent_90:var(--ui_color_gray_20_transparent_90);--ui_color_no_activity_transparent_70:var(--ui_color_gray_70_foreground_transparent_70);--ui_color_progress_unfamiliar:var(--ui_color_gray_70_foreground);--ui_brand_color:var(--ui_color_primary_indigo_foreground);--ui_brand_color_lighten_40:var(--ui_color_primary_indigo_lighten_40);--ui_brand_color_transparent_20:var(--ui_color_primary_indigo_transparent_20);--ui_brand_color_transparent_86:var(--ui_color_primary_indigo_transparent_86);--active_color:var(--ui_color_primary_indigo_foreground);--active_color_darken_2:var(--ui_color_primary_indigo_darken_2);--active_color_darken_8:var(--ui_color_primary_indigo_darken_8);--active_color_darken_15:var(--ui_color_primary_indigo_darken_15);--active_color_lighten_10:var(--ui_color_primary_indigo_lighten_10);--active_color_lighten_12:var(--ui_color_primary_indigo_lighten_12);--active_color_lighten_15:var(--ui_color_primary_indigo_lighten_15);--active_color_lighten_40:var(--ui_color_primary_indigo_lighten_40);--active_color_lighten_50:var(--ui_color_primary_indigo_lighten_50);--active_color_lighten_60:var(--ui_color_primary_indigo_lighten_60);--active_color_lighten_65:var(--ui_color_primary_indigo_lighten_65);--active_color_lighten_88:var(--ui_color_primary_indigo_lighten_88);--active_color_lighten_90:var(--ui_color_primary_indigo_lighten_90);--active_color_lighten_90_transparent_70:var(--ui_color_primary_indigo_lighten_90_transparent_70);--active_color_desaturate_50_lighten_10:var(--ui_color_primary_indigo_desaturate_50_lighten_10);--active_color_saturate_10_ligthen_8:var(--ui_color_primary_indigo__saturate_10_ligthen_8);--active_color_desaturate_50:var(--ui_color_primary_indigo_desaturate_50);--active_color_transparent_30:var(--ui_color_primary_indigo_transparent_30);--active_color_transparent_10:var(--ui_color_primary_indigo_transparent_10);--quizlet_color:var(--ui_color_primary_indigo_foreground);--blue_color:var(--ui_color_primary_indigo_foreground);--plus_color:var(--ui_color_primary_indigo_foreground);--plus_color_transparent_20:var(--ui_color_primary_indigo_transparent_20);--plus_color_transparent_85:var(--ui_color_primary_indigo_transparent_85);--plus_color_transparent_90:var(--ui_color_primary_indigo_transparent_90);--plus_color_lighten_15:var(--ui_color_primary_indigo_lighten_15);--teacher_color:var(--ui_color_primary_indigo_foreground);--teacher_color_lighten_15:var(--ui_color_primary_indigo_lighten_15);--teacher_color_lighten_65:var(--ui_color_primary_indigo_lighten_65);--teacher_color_lighten_88:var(--ui_color_primary_indigo_lighten_88);--teacher_color_transparent_85:var(--ui_color_primary_indigo_transparent_85);--quiz_color:var(--ui_color_primary_indigo_foreground);--dark_quiz_color:var(--ui_color_primary_indigo_shade_30);--light_quiz_color:var(--ui_color_primary_indigo_tint_40);--lighter_quiz_color:var(--ui_color_primary_indigo_tint_70);--lightest_quiz_color:var(--ui_color_primary_indigo_tint_90);--testbank_color:var(--ui_color_primary_indigo_foreground);--testbank_color_darken_10:var(--ui_color_primary_indigo_darken_10);--testbank_color_lighten_40:var(--ui_color_primary_indigo_lighten_40);--dmca_color:var(--ui_color_primary_indigo_foreground);--dmca_color_lighten_40:var(--ui_color_primary_indigo_lighten_40);--medium_blue:var(--ui_color_primary_indigo_foreground);--ui_color_inverse_background:var(--ui_color_primary_indigo_background);--midnight_blue:var(--ui_color_gray_20);--midnight_blue_lighten_10:var(--ui_color_gray_20_lighten_10);--midnight_blue_lighten_15:var(--ui_color_gray_20_lighten_15);--midnight_blue_lighten_25:var(--ui_color_gray_20_lighten_25);--midnight_blue_transparent_30:var(--ui_color_gray_20_transparent_30);--midnight_blue_transparent_40:var(--ui_color_gray_20_transparent_40);--menu_item_alert:var(--coral-400);--menu_item_highlight:var(--yellow-100);--menu_item_highlight_muted:var(--themed_interacting_background);--menu_item_divider:var(--themed_menu_item_divider);--menu_item_primary:var(--themed_menu_item_primary);--menu_item_secondary:var(--neutral-500);--menu_item_primary_highlight:var(--ink-200);--menu_item_secondary_highlight:var(--neutral-500);--mobile_slider_active_dot_background_color:var(--teal-400);--mobile_slider_dot_background_color:var(--neutral-400);--product_card_fine_print_color:var(--neutral-500);--button-border:var(--border-color);--danger-button-background:var(--coral-400);--danger-button-border:var(--coral-400);--danger-button-text:var(--neutral-100);--danger-button-hover-background:#f76e58;--upgrade-button-background:var(--yellow-300);--upgrade-button-text:var(--indigo-400);--upgrade-button-hover-background:#f7d55f;--create-button-background:var(--teal-300);--create-button-hover-background:#73d6d6;--dropdown-button-active-background:var(--neutral-200);--link-button-text-hover:#36baba;--inverted-button-text:var(--indigo-200);--inverted-button-text-hover:var(--neutral-100);--inverted-button-background:hsla(0,0%,100%,0.1);--inverted-button-text-disabled:#525761;--study-modes-high-contrast:var(--yellow-400);--prismic_richtext_section_white_transparent_background:var(--ui_color_white_transparent_30);--prismic_collapsible_texts_link_button:var(--teal-400);--prismic_collapsible_texts_item_arrow:var(--ink-200);--prismic_prep_pack_primary_dark_indigo_color:var(--ink-200);--prismic_prep_pack_feature_table_name:var(--indigo-500);--prismic_prep_pack_feature_table_logo_text:var(--neutral-100);--prismic_prep_pack_feature_table_features:var(--neutral-100);--prismic_recent_press_background:var(--neutral-200);--prismic_recent_press_footer_first_child:var(--neutral-200);--prismic_textcallout_primary_indigo_background:var(--neutral-100);--prismic_textcallout_secondary_indigo_background:var(--neutral-100);--prismic_textcallout_link_button:var(--teal-400);--prismic_topic_links_background:var(--yellow-200);--prismic_topic_links_button:var(--ink-200);--prismic_value_prop_banner_color:var(--neutral-100);--prismic_video_embed_with_text_white:var(--neutral-100);--prismic_video_embed_with_text_link_button:var(--neutral-100);}
-/*! CSS Used from: https://assets.quizlet.com/a/c/mode.5a998b64de2e689.css */
-.ModeControls{background-color:var(--sidebar-background);box-shadow:0 .25rem 1.25rem rgba(0,0,0,.08);height:100%;width:100%;bottom:0;left:0;position:absolute;right:0;top:0;}
-@media screen and (max-width:48em){
-.ModeControls{position:static;box-shadow:none;}
-}
-@media print{
-.ModeControls{display:none;}
-}
-.ModeControls-sidebar{bottom:0;left:0;position:absolute;right:0;top:0;}
-.ModeControls-back{border-bottom:1px solid var(--ui_divider_color_black);padding:.5rem 1rem;}
-.ModeControls-back .UILink{-ms-flex-align:center;-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;min-height:2.5rem;}
-.ModeControls-backText{color:var(--ui_color_gray_30);margin-left:.5rem;text-align:left;font-weight:600;font-size:.875rem;line-height:1.285714285714286;}
-@media screen and (max-width:38.75em){
-.ModeControls-backText{font-weight:600;font-size:.75rem;line-height:1.333333333333333;}
-}
-.ModeControls-backIcon.UIIcon{vertical-align:middle;}
-.ModeControls-main{padding:1rem;top:3.75rem!important;bottom:0;left:0;position:absolute;right:0;top:0;}
-.ModeControls-actions{top:auto!important;bottom:1rem;left:1rem;position:absolute;right:1rem;top:1rem;}
-.ModeControls-action+.ModeControls-action{margin-top:1rem;}
-.ModeControls-modeName{position:relative;font-weight:700;font-size:.875rem;letter-spacing:.1875rem;line-height:1.214285714285714;margin:1.5rem 0 2.5rem;}
-@media screen and (max-width:38.75em){
-.ModeControls-modeName{font-weight:700;font-size:.75rem;letter-spacing:.1875rem;line-height:1.333333333333333;}
-}
-.ModeControls-modeName .UIModeIcon{margin-right:.75rem;vertical-align:middle;}
-.ModeLayout{background-color:var(--ui_color_gray_90_background);top:5rem!important;bottom:0;left:0;position:absolute;right:0;top:0;max-height:100%;transition:max-height .2s ease-in;}
-.ModeLayout.is-showingAdz{overflow-y:auto;}
-@media screen and (max-width:48em){
-.ModeLayout{top:0!important;}
-}
-@media print{
-.ModeLayout{position:static;}
-}
-.ModeLayout .UIContainer{display:-webkit-flex;display:flex;padding:0;}
-:not(.is-showingNewNav).ModeLayout .UIContainer{bottom:0;left:0;position:absolute;right:0;top:0;}
-@media screen and (max-width:48em){
-.ModeLayout .UIContainer{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}
-}
-@media print{
-.ModeLayout .UIContainer{display:block;}
-}
-.ModeLayout.is-fullHeight .UIContainer{position:static;}
-.ModeLayout-controls{bottom:0;display:block;position:fixed;top:5rem;width:12.1875rem;}
-@media screen and (max-width:48em){
-.ModeLayout-controls{display:block;position:static;width:100%;}
-}
-.ModeLayout-content{display:-webkit-flex;display:flex;-webkit-flex:1;-ms-flex:1;flex:1;margin-left:12.1875rem;padding:1.5rem;position:relative;width:100%;}
-@media screen and (max-width:48em){
-.ModeLayout-content{padding:1rem;}
-}
-@media screen and (max-width:38.75em){
-.ModeLayout-content{padding:0;}
-}
-.ModeLayout-content>*{-webkit-flex:1;-ms-flex:1;flex:1;}
-@media screen and (max-width:48em){
-.ModeLayout-content{margin-left:0;}
-}
-@media print{
-.ModeLayout-content{margin-left:0;display:block;}
-}
-.ModeLayout-ad{padding:1.5rem .625rem 1.5rem 0;width:10.625rem;}
-@media screen and (min-width:48.0625em){
-body.flex-sidebar .ModeLayout-ad{width:11.875rem;}
-}
-@media screen and (min-width:64.0625em){
-body.flex-sidebar .ModeLayout-ad{width:19.375rem;}
-}
-@media screen and (max-width:48em){
-.TestModePage .ModeLayout-ad{padding:0 0 .75rem;width:100%;}
-}
-@media screen and (max-width:38.75em){
-.TestModePage .ModeLayout-ad{padding:.75rem 0 0;}
-}
-@media print{
-.ModeLayout-ad{display:none;}
-}
-/*! CSS Used from: https://assets.quizlet.com/a/c/test.b2f3bef1bc0229a.css */
-.TestModeControls-printLinkWrapper{text-align:center;}
-.TestModeMatchingQuestion{*zoom:1;}
-.TestModeMatchingQuestion:after,.TestModeMatchingQuestion:before{content:"";display:table;}
-.TestModeMatchingQuestion:after{clear:both;}
-.TestModeMatchingQuestion-promptSide{width:calc(49.995% - 16px);width:calc(49.995% - 4px);}
-.TestModeMatchingQuestion-promptSide:nth-child(n){margin-right:32px;margin-right:8px;float:left;clear:none;}
-.TestModeMatchingQuestion-promptSide:nth-child(odd){clear:left;}
-.TestModeMatchingQuestion-matchingInput{display:inline-block;margin-right:.5rem;text-align:center;vertical-align:text-bottom;width:2.5rem;}
-.TestModeMatchingQuestion-optionsSide{width:calc(49.995% - 16px);width:calc(49.995% - 4px);}
-.TestModeMatchingQuestion-optionsSide:nth-child(n){margin-right:32px;margin-right:8px;float:left;clear:none;}
-.TestModeMatchingQuestion-optionsSide:last-child{margin-right:0;}
-.TestModeMatchingQuestion-optionsSide:nth-child(2n){margin-right:0;float:right;}
-.TestModeMatchingQuestion-promptSideList{list-style-position:inside;}
-.TestModeMatchingQuestion-prompt{font-weight:400;font-size:1rem;line-height:1.625;}
-@media screen and (max-width:38.75em){
-.TestModeMatchingQuestion-prompt{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeMatchingQuestion-promptSideListItem{page-break-inside:avoid;font-weight:600;}
-.TestModeMatchingQuestion-promptSideListItem+.TestModeMatchingQuestion-promptSideListItem{margin-top:2.5rem;}
-@media screen and (max-width:38.75em){
-.TestModeMatchingQuestion-promptSideListItem+.TestModeMatchingQuestion-promptSideListItem{margin-top:2rem;}
-}
-@media print{
-.TestModeMatchingQuestion-promptSideListItem+.TestModeMatchingQuestion-promptSideListItem{margin-top:1.25rem;}
-}
-.TestModeMatchingQuestion-optionsSideList{list-style:upper-alpha;margin-left:1.25rem;}
-.TestModeMatchingQuestion-optionsSideListItem{font-weight:400;font-size:1rem;line-height:1.625;font-weight:600;margin-bottom:10px;padding-bottom:10px;page-break-inside:avoid;transition:opacity .12s;}
-@media screen and (max-width:38.75em){
-.TestModeMatchingQuestion-optionsSideListItem{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeMultipleChoiceQuestion{page-break-inside:avoid;margin-bottom:25px;}
-.TestModeMultipleChoiceQuestion-prompt{font-weight:400;font-size:1rem;line-height:1.625;margin-bottom:10px;}
-@media screen and (max-width:38.75em){
-.TestModeMultipleChoiceQuestion-prompt{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeMultipleChoiceQuestion-choicesList{list-style-type:none;margin-bottom:1rem;}
-@media print{
-.TestModeMultipleChoiceQuestion-choicesList{list-style-type:upper-alpha;}
-}
-.TestModeMultipleChoiceQuestion-choice{margin-top:.625rem;}
-@media print{
-.TestModeMultipleChoiceQuestion-choice{margin-left:.75rem;}
-.TestModeMultipleChoiceQuestion-choice .UIRadio{display:inline-block;width:auto;}
-.TestModeMultipleChoiceQuestion-choice .UIRadio-fauxInput,.TestModeMultipleChoiceQuestion-choice .UIRadio-input{display:none;}
-.TestModeMultipleChoiceQuestion-choice .UIRadio-label{display:inline;margin-left:0;}
-}
-.TestModeMultipleChoiceQuestion-choiceText{display:-webkit-flex;display:flex;}
-@media print{
-.ModeLayout .UIContainer{margin-top:2rem;max-width:100%;position:static;}
-}
-.TestModePage-sections{background-color:var(--card-alt-background);padding:2.5rem 2rem;}
-@media screen and (max-width:38.75em){
-.TestModePage-sections{padding:2rem 1rem;}
-}
-@media print{
-.TestModePage-sections{margin:0;padding:1.5rem 0;}
-}
-.TestModePage-sectionDivider{margin-left:-2rem;margin-right:-2rem;}
-@media screen and (max-width:38.75em){
-.TestModePage-sectionDivider{margin-left:-1rem;margin-right:-1rem;}
-}
-@media print{
-.TestModePage-sectionDivider{display:none;}
-}
-@media print{
-.TestModePage-button{display:none;}
-}
-@media screen and (max-width:28.75em){
-.TestModePage .ModeLayout.is-fullHeight .UIContainer{height:100%;}
-}
-.TestModePage-inner{background-color:var(--card-alt-background);}
-.TestModePrintOnlyNametag{display:none;line-height:36px;position:absolute;right:0;top:0;z-index:10000;}
-@media print{
-.TestModePrintOnlyNametag{display:inline-block;}
-}
-@media print{
-.TestModePrintOnlyNametag-line{border-bottom:1px solid #000;display:inline-block;margin-bottom:-3px;width:150px;}
-}
-@media print{
-.TestModePrintOnlyNametag-text{display:inline-block;}
-}
-.TestModeSection+[class^=UI],[class^=UI]+.TestModeSection{margin-top:2.5rem;}
-@media print{
-.TestModeSection+[class^=UI],[class^=UI]+.TestModeSection{margin-top:1.5rem;}
-}
-[class^=UI]+.TestModeSection-questions{margin-top:2.5rem;}
-@media screen and (max-width:38.75em){
-[class^=UI]+.TestModeSection-questions{margin-top:1.25rem;}
-}
-@media print{
-[class^=UI]+.TestModeSection-questions{margin-top:1.5rem;}
-}
-.TestModeSection-questionList{font-weight:400;font-size:1rem;line-height:1.625;font-weight:600;list-style-position:outside;}
-@media screen and (max-width:38.75em){
-.TestModeSection-questionList{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeSection-questionItem{page-break-inside:avoid;list-style-position:outside;margin-left:1rem;}
-.TestModeSection-questionItem+.TestModeSection-questionItem{margin-top:2.5rem;}
-@media screen and (max-width:38.75em){
-.TestModeSection-questionItem+.TestModeSection-questionItem{margin-top:2rem;}
-}
-@media print{
-.TestModeSection-questionItem+.TestModeSection-questionItem{margin-top:1.5rem;}
-}
-.TestModeTermText{font-weight:400;font-size:1rem;line-height:1.625;word-wrap:break-word;}
-@media screen and (max-width:38.75em){
-.TestModeTermText{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeTermText-image{display:block;margin:.625rem 0;max-height:100px;}
-@media screen and (max-width:38.75em){
-.TestModeTermText-image{max-width:100%;max-height:inherit;}
-}
-.TestModeTrueFalseQuestion{page-break-inside:avoid;margin-bottom:40px;}
-@media print{
-.TestModeTrueFalseQuestion .UIRadio+[class^=UI]{margin-top:.5rem;}
-}
-.TestModeTrueFalseQuestion-prompt{margin-bottom:20px;}
-.TestModeTrueFalseQuestion-choices{margin-top:10px;}
-.TestModeTrueFalseQuestion-prompt{font-weight:400;font-size:1rem;line-height:1.625;}
-@media screen and (max-width:38.75em){
-.TestModeTrueFalseQuestion-prompt{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeWrittenQuestion{page-break-inside:avoid;}
-@media print{
-.TestModeWrittenQuestion .UIInput-label{display:none;}
-}
-.TestModeWrittenQuestion-promptTerm{margin-bottom:.625rem;font-weight:400;font-size:1rem;line-height:1.625;}
-@media screen and (max-width:38.75em){
-.TestModeWrittenQuestion-promptTerm{font-weight:400;font-size:.875rem;line-height:1.571428571428571;}
-}
-.TestModeWrittenQuestion-answerInputContainer{*zoom:1;max-width:380px;}
-.TestModeWrittenQuestion-answerInputContainer:after,.TestModeWrittenQuestion-answerInputContainer:before{content:"";display:table;}
-.TestModeWrittenQuestion-answerInputContainer:after{clear:both;}
-.TestModeWrittenQuestion-accentsBar{margin-top:.625rem;}
-@media screen and (max-width:38.75em){
-.TestModeWrittenQuestion-accentsBar{display:none;}
-}
-@media print{
-.TestModeWrittenQuestion-accentsBar{display:none;}
-}
-.PrintLogo{display:none;}
-@media print{
-.PrintLogo{display:block;height:2.575rem;position:absolute;left:0;top:0;width:11.875rem;z-index:10000;}
-}
-@media print{
-.container{max-width:none;}
-}
-/*! CSS Used from: https://assets.quizlet.com/a/c/ui.47a452546ccc6b3.css */
-*,:after,:before{-webkit-box-sizing:inherit;-moz-box-sizing:inherit;box-sizing:inherit;}
-[class^=UI]{-moz-font-feature-settings:"kern","liga","clig","calt";-ms-font-feature-settings:"kern","liga","clig","alt";-webkit-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt";font-kerning:normal;font-variant-ligatures:common-ligatures contextual;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.UIButton{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;border-radius:.25rem;cursor:pointer;display:inline-block;font:inherit;max-width:100%;padding:.75rem 1.5rem;font-weight:600;font-size:.875rem;line-height:1.285714285714286;transition:all .12s cubic-bezier(.47,0,.745,.715);width:auto;}
-.UIButton,.UIButton:visited{background-color:var(--primary-button-background);color:var(--primary-button-text);}
-.UIButton:active,html.cursor .UIButton:hover,html.cursor .UIButton:hover:visited{background-color:var(--primary-button-hover-background);color:var(--primary-button-text);}
-.UIButton:focus{outline:none;}
-@media screen and (max-width:38.75em){
-.UIButton{font-weight:600;font-size:.75rem;line-height:1.333333333333333;padding:.625rem 1.25rem;}
-}
-.UIButton .UIIcon+*{margin-left:.625rem;}
-@media screen and (max-width:38.75em){
-.UIButton .UIIcon+*{margin-left:.5rem;}
-}
-.UIButton::-moz-focus-inner{border:0;padding:0;}
-.UIButton-wrapper{-ms-flex-align:center;-webkit-align-items:center;align-items:center;display:-webkit-inline-flex;display:inline-flex;white-space:pre-wrap;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;}
-.UIButton--fill{display:-webkit-flex;display:flex;width:100%;}
-.UIButton--whiteBorder{background:var(--ui_color_white_background)!important;border:.125rem solid var(--ui_color_gray_80_foreground);}
-.UIButton--whiteBorder,.UIButton--whiteBorder:visited{color:#3ccfcf;}
-.UIButton--whiteBorder:active,html.cursor .UIButton--whiteBorder:hover,html.cursor .UIButton--whiteBorder:hover:visited{color:#ffcd1f;}
-.UIButton--hero{padding:1.5rem 5rem;font-weight:700;font-size:1.125rem;letter-spacing:.0625rem;line-height:1.222222222222222;}
-@media screen and (max-width:38.75em){
-.UIButton--hero{font-weight:700;font-size:1rem;letter-spacing:.0625rem;line-height:1.1875;}
-}
-.UIButton--hero.UIButton--fill{padding-left:1.5rem;padding-right:1.5rem;}
-@media screen and (max-width:38.75em){
-.UIButton--hero{padding:1.25rem 2.5rem;}
-.UIButton--hero.UIButton--fill{padding-left:1.25rem;padding-right:1.25rem;}
-}
-.UIContainer{clear:both;margin-left:auto;margin-right:auto;max-width:81.25em;padding:0 2.5rem;}
-@media screen and (max-width:38.75em){
-.UIContainer{padding:0 1rem;}
-}
-.UIContainer--isFullBleed{clear:both;margin-left:auto;margin-right:auto;max-width:81.25em;padding:0;}
-@media screen and (max-width:85.25em){
-.UIContainer--isFullBleed{padding:0 2.5rem;}
-}
-@media screen and (max-width:38.75em){
-.UIContainer--isFullBleed{padding:0 1rem;}
-}
-.UIHeading--four{font-weight:700;font-size:1.25rem;line-height:1.2;}
-@media screen and (max-width:38.75em){
-.UIHeading--four{font-weight:700;font-size:1.125rem;line-height:1.111111111111111;}
-}
-.UIHeading{margin-bottom:0;margin-left:0;margin-right:0;}
-.UIHorizontalRule{border:none;border-bottom:.0625rem solid var(--ui_divider_color_black);height:0;margin-bottom:0;overflow:visible;}
-.UIIcon{display:inline-block;fill:currentColor;height:1rem;width:1rem;}
-.UIIcon.UIIcon--medium{height:1rem;width:1rem;}
-.UIIcon.UIIcon--large{height:1.25rem;width:1.25rem;}
-.UIInput{cursor:pointer;display:block;font-weight:400;font-size:1.125rem;line-height:1.444444444444444;}
-@media screen and (max-width:38.75em){
-.UIInput{font-weight:400;font-size:1rem;line-height:1.1875;}
-}
-.UIInput-content{-ms-flex-align:start;-webkit-align-items:flex-start;align-items:flex-start;display:-webkit-flex;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;position:relative;width:100%;border-radius:.25rem;}
-.UIInput-border{-webkit-align-self:flex-end;align-self:flex-end;-ms-flex-item-align:end;display:block;height:.25rem;box-shadow:0 .125rem 0 0 var(--ui_color_gray_30);transition:all .12s cubic-bezier(.47,0,.745,.715);width:100%;}
-@media print{
-.UIInput-border{border-bottom:1px solid #000;box-shadow:none;}
-}
-.UIInput-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:initial;border:none;border-radius:.25rem;box-shadow:none;color:var(--ui_color_gray_20);cursor:text;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;font:inherit;letter-spacing:inherit;line-height:inherit;outline:none;padding-bottom:.375rem;text-align:inherit;white-space:pre-wrap;width:100%;word-break:break-word;}
-.UIInput-input::-webkit-input-placeholder{color:var(--ui_color_gray_70_foreground);}
-.UIInput-input:-moz-placeholder,.UIInput-input::-moz-placeholder{color:var(--ui_color_gray_70_foreground);}
-.UIInput-input:-ms-input-placeholder{color:var(--ui_color_gray_70_foreground);}
-.UIInput-input::-ms-input-placeholder{color:var(--ui_color_gray_70_foreground);}
-@media screen and (max-width:38.75em){
-.UIInput-input{padding-bottom:0;}
-}
-.UIInput-input:focus~.UIInput-border{box-shadow:0 .25rem 0 0 #ffcd1f;}
-.UIInput-label{color:var(--ui_color_gray_60);display:block;margin-top:.625rem;text-align:inherit;font-weight:600;text-transform:uppercase;font-size:.75rem;letter-spacing:.0625rem;line-height:1.333333333333333;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
-@media screen and (max-width:38.75em){
-.UIInput-label{font-weight:600;text-transform:uppercase;font-size:.625rem;letter-spacing:.0625rem;line-height:1.3;}
-}
-.UILink{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:initial;border:none;cursor:pointer;display:inline;font:inherit;margin-top:0;outline:none;padding:0;font-size:.875rem;line-height:1.285714285714286;font-weight:600;transition:all .12s cubic-bezier(.47,0,.745,.715);}
-@media screen and (max-width:38.75em){
-.UILink{font-weight:600;font-size:.75rem;line-height:1.333333333333333;}
-}
-.UILink,.UILink:visited{color:#3ccfcf;}
-.UILink:active,html.cursor .UILink:hover,html.cursor .UILink:hover:visited{color:#ffcd1f;}
-.UILink::-moz-focus-inner{border:0;padding:0;}
-.UILink--inverted,.UILink--inverted:visited{color:#fff;}
-.UILink--inverted:active,.UILink--inverted:focus,html.cursor .UILink--inverted:hover,html.cursor .UILink--inverted:hover:visited{color:hsla(0,0%,100%,.5);}
-.UIModeIcon{position:relative;}
-.UIModeIcon--small{display:inline-block;height:2.1875rem;width:2.1875rem;}
-.UIModeIcon-modeIcon{color:#3ccfcf;fill:var(--ui_color_primary_indigo_foreground);height:100%;width:100%;}
-.UIRadio{*zoom:1;cursor:pointer;display:block;position:relative;width:100%;}
-.UIRadio:after,.UIRadio:before{content:"";display:table;}
-.UIRadio:after{clear:both;}
-.UIRadio+.UIRadio,.UIRadio+[class^=UI],[class^=UI]+.UIRadio{margin-top:1.5rem;}
-.UIRadio-input{cursor:inherit;opacity:0;height:100%;width:100%;bottom:0;left:0;position:absolute;right:0;top:0;}
-.UIRadio-fauxInput{border:.125rem solid var(--ui_color_gray_60);border-radius:50%;display:block;float:left;position:relative;transform:translateY(.1875rem);height:1.25rem;width:1.25rem;transition:all .12s cubic-bezier(.47,0,.745,.715);}
-.UIRadio-fauxInput:hover{border-color:var(--ui_color_gray_60_darken_35);}
-@media screen and (max-width:38.75em){
-.UIRadio-fauxInput{transform:translateY(-.125rem);height:1.5rem;width:1.5rem;}
-}
-.UIRadio-input:checked~.UIRadio-fauxInput{border-color:#ffcd1f;}
-.UIRadio-fauxInput:after{background-color:#ffcd1f;border-radius:50%;content:"";opacity:0;bottom:.1875rem;left:.1875rem;position:absolute;right:.1875rem;top:.1875rem;transition:all .12s cubic-bezier(.47,0,.745,.715);}
-.UIRadio-input:checked~.UIRadio-fauxInput:after{opacity:1;}
-.UIRadio-label{display:block;margin-left:1.875rem;font-weight:400;font-size:1rem;line-height:1.625;transition:all .12s cubic-bezier(.47,0,.745,.715);}
-@media screen and (max-width:38.75em){
-.UIRadio-label{font-weight:400;font-size:.875rem;line-height:1.571428571428571;margin-left:2.125rem;}
-}
-.StickyInferiorAdz-wrapper{top:16.875rem;margin-top:1rem;}
-@media screen and (max-width:64em){
-.StickyInferiorAdz-wrapper{top:0;}
-}
-@media screen and (max-height:31.8125em){
-.StickyInferiorAdz-wrapper{top:0;}
-}
-.ModeLayout-ad .StickyInferiorAdz-wrapper{margin-top:0;}
-.StickyAdz{bottom:62.5rem;display:inline-block;float:right;margin-top:2.5rem;position:relative;position:-webkit-sticky;position:sticky;right:2.5rem;top:0;z-index:300;}
-@media screen and (max-width:64em){
-.StickyAdz{margin-top:0;}
-}
-@media screen and (max-height:31.8125em){
-.StickyAdz{margin-top:0;}
-}
-.TestModePage .StickyAdz{margin-top:0;}
-/*! CSS Used fontfaces */
+.ab-pause-scrolling,
+    body.ab-pause-scrolling,
+    html.ab-pause-scrolling {
+      overflow: hidden;
+      touch-action: none
+    }
+
+    .ab-centering-div,
+    .ab-iam-root.v3 {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1050;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .ab-centering-div:focus,
+    .ab-iam-root.v3:focus {
+      outline: 0
+    }
+
+    .ab-centering-div.ab-effect-fullscreen,
+    .ab-centering-div.ab-effect-html,
+    .ab-centering-div.ab-effect-modal,
+    .ab-iam-root.v3.ab-effect-fullscreen,
+    .ab-iam-root.v3.ab-effect-html,
+    .ab-iam-root.v3.ab-effect-modal {
+      opacity: 0
+    }
+
+    .ab-centering-div.ab-effect-fullscreen.ab-show,
+    .ab-centering-div.ab-effect-html.ab-show,
+    .ab-centering-div.ab-effect-modal.ab-show,
+    .ab-iam-root.v3.ab-effect-fullscreen.ab-show,
+    .ab-iam-root.v3.ab-effect-html.ab-show,
+    .ab-iam-root.v3.ab-effect-modal.ab-show {
+      opacity: 1
+    }
+
+    .ab-centering-div.ab-effect-fullscreen.ab-show.ab-animate-in,
+    .ab-centering-div.ab-effect-html.ab-show.ab-animate-in,
+    .ab-centering-div.ab-effect-modal.ab-show.ab-animate-in,
+    .ab-iam-root.v3.ab-effect-fullscreen.ab-show.ab-animate-in,
+    .ab-iam-root.v3.ab-effect-html.ab-show.ab-animate-in,
+    .ab-iam-root.v3.ab-effect-modal.ab-show.ab-animate-in {
+      -webkit-transition: opacity .5s;
+      -moz-transition: opacity .5s;
+      -o-transition: opacity .5s;
+      transition: opacity .5s
+    }
+
+    .ab-centering-div.ab-effect-fullscreen.ab-hide,
+    .ab-centering-div.ab-effect-html.ab-hide,
+    .ab-centering-div.ab-effect-modal.ab-hide,
+    .ab-iam-root.v3.ab-effect-fullscreen.ab-hide,
+    .ab-iam-root.v3.ab-effect-html.ab-hide,
+    .ab-iam-root.v3.ab-effect-modal.ab-hide {
+      opacity: 0
+    }
+
+    .ab-centering-div.ab-effect-fullscreen.ab-hide.ab-animate-out,
+    .ab-centering-div.ab-effect-html.ab-hide.ab-animate-out,
+    .ab-centering-div.ab-effect-modal.ab-hide.ab-animate-out,
+    .ab-iam-root.v3.ab-effect-fullscreen.ab-hide.ab-animate-out,
+    .ab-iam-root.v3.ab-effect-html.ab-hide.ab-animate-out,
+    .ab-iam-root.v3.ab-effect-modal.ab-hide.ab-animate-out {
+      -webkit-transition: opacity .5s;
+      -moz-transition: opacity .5s;
+      -o-transition: opacity .5s;
+      transition: opacity .5s
+    }
+
+    .ab-centering-div.ab-effect-slide .ab-in-app-message,
+    .ab-iam-root.v3.ab-effect-slide .ab-in-app-message {
+      -webkit-transform: translateX(535px);
+      -moz-transform: translateX(535px);
+      -ms-transform: translateX(535px);
+      transform: translateX(535px)
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-show .ab-in-app-message,
+    .ab-iam-root.v3.ab-effect-slide.ab-show .ab-in-app-message {
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0)
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-show.ab-animate-in .ab-in-app-message,
+    .ab-iam-root.v3.ab-effect-slide.ab-show.ab-animate-in .ab-in-app-message {
+      -webkit-transition: transform .5s ease-in-out;
+      -moz-transition: transform .5s ease-in-out;
+      -o-transition: transform .5s ease-in-out;
+      transition: transform .5s ease-in-out
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-hide .ab-in-app-message,
+    .ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message {
+      -webkit-transform: translateX(535px);
+      -moz-transform: translateX(535px);
+      -ms-transform: translateX(535px);
+      transform: translateX(535px)
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-left,
+    .ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-left {
+      -webkit-transform: translateX(-535px);
+      -moz-transform: translateX(-535px);
+      -ms-transform: translateX(-535px);
+      transform: translateX(-535px)
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-up,
+    .ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-up {
+      -webkit-transform: translateY(-535px);
+      -moz-transform: translateY(-535px);
+      -ms-transform: translateY(-535px);
+      transform: translateY(-535px)
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-down,
+    .ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-down {
+      -webkit-transform: translateY(535px);
+      -moz-transform: translateY(535px);
+      -ms-transform: translateY(535px);
+      transform: translateY(535px)
+    }
+
+    .ab-centering-div.ab-effect-slide.ab-hide.ab-animate-out .ab-in-app-message,
+    .ab-iam-root.v3.ab-effect-slide.ab-hide.ab-animate-out .ab-in-app-message {
+      -webkit-transition: transform .5s ease-in-out;
+      -moz-transition: transform .5s ease-in-out;
+      -o-transition: transform .5s ease-in-out;
+      transition: transform .5s ease-in-out
+    }
+
+    .ab-centering-div .ab-ios-scroll-wrapper,
+    .ab-iam-root.v3 .ab-ios-scroll-wrapper {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: auto;
+      pointer-events: all;
+      touch-action: auto;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .ab-centering-div .ab-in-app-message,
+    .ab-iam-root.v3 .ab-in-app-message {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: fixed;
+      text-align: center;
+      -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+      -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+      box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+      line-height: normal;
+      letter-spacing: normal;
+      font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+      z-index: 1050;
+      max-width: 100%;
+      overflow: hidden;
+      display: inline-block;
+      pointer-events: all;
+      color: #333
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-no-shadow,
+    .ab-iam-root.v3 .ab-in-app-message.ab-no-shadow {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none
+    }
+
+    .ab-centering-div .ab-in-app-message :focus,
+    .ab-centering-div .ab-in-app-message:focus,
+    .ab-iam-root.v3 .ab-in-app-message :focus,
+    .ab-iam-root.v3 .ab-in-app-message:focus {
+      outline: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-clickable,
+    .ab-iam-root.v3 .ab-in-app-message.ab-clickable {
+      cursor: pointer
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-background,
+    .ab-iam-root.v3 .ab-in-app-message.ab-background {
+      background-color: #fff
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: 15px;
+      border: none;
+      width: 15px;
+      height: 15px;
+      -webkit-border-radius: 7.5px;
+      -moz-border-radius: 7.5px;
+      border-radius: 7.5px;
+      cursor: pointer;
+      display: block;
+      font-size: 15px;
+      line-height: 0;
+      padding-top: 15px;
+      padding-right: 15px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: center;
+      z-index: 1060
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button svg,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button svg {
+      -webkit-transition: .2s ease;
+      -moz-transition: .2s ease;
+      -o-transition: .2s ease;
+      transition: .2s ease;
+      fill: #9b9b9b
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button svg.ab-chevron,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button svg.ab-chevron {
+      display: none
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button:active,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button:active {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button:focus,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button:focus {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button:hover,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button:hover {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-close-button:hover svg,
+    .ab-iam-root.v3 .ab-in-app-message .ab-close-button:hover svg {
+      fill-opacity: .8
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text {
+      line-height: 1.5;
+      margin: 20px 25px;
+      max-width: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      vertical-align: text-bottom;
+      word-wrap: break-word;
+      white-space: pre-wrap
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text.start-aligned,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text.start-aligned {
+      text-align: left;
+      text-align: start
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text.end-aligned,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text.end-aligned {
+      text-align: right;
+      text-align: end
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text.center-aligned,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text.center-aligned {
+      text-align: center
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text::-webkit-scrollbar,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 14px
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text::-webkit-scrollbar-thumb,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar-thumb {
+      -webkit-appearance: none;
+      border: 4px solid transparent;
+      background-clip: padding-box;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      border-radius: 7px;
+      background-color: rgba(0, 0, 0, .2)
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text::-webkit-scrollbar-button,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+      display: none
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-text::-webkit-scrollbar-corner,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar-corner {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-header,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-header {
+      letter-spacing: 0;
+      margin: 0;
+      font-weight: 700;
+      display: block;
+      font-size: 20px;
+      margin-bottom: 10px;
+      line-height: 1.3
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-header.start-aligned,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-header.start-aligned {
+      text-align: left;
+      text-align: start
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-header.end-aligned,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-header.end-aligned {
+      text-align: right;
+      text-align: end
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-header.center-aligned,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-header.center-aligned {
+      text-align: center
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen,
+    .ab-centering-div .ab-in-app-message.ab-modal,
+    .ab-centering-div .ab-in-app-message.ab-slideup,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup {
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      cursor: pointer;
+      overflow: hidden;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 20px;
+      margin-top: calc(constant(safe-area-inset-top, 0) + 20px);
+      margin-right: calc(constant(safe-area-inset-right, 0) + 20px);
+      margin-bottom: calc(constant(safe-area-inset-bottom, 0) + 20px);
+      margin-left: calc(constant(safe-area-inset-left, 0) + 20px);
+      margin-top: calc(env(safe-area-inset-top, 0) + 20px);
+      margin-right: calc(env(safe-area-inset-right, 0) + 20px);
+      margin-bottom: calc(env(safe-area-inset-bottom, 0) + 20px);
+      margin-left: calc(env(safe-area-inset-left, 0) + 20px);
+      max-height: 150px;
+      padding: 10px;
+      right: 0;
+      background-color: #efefef
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone {
+      max-height: 66px;
+      margin: 10px;
+      margin-top: calc(constant(safe-area-inset-top, 0) + 10px);
+      margin-right: calc(constant(safe-area-inset-right, 0) + 10px);
+      margin-bottom: calc(constant(safe-area-inset-bottom, 0) + 10px);
+      margin-left: calc(constant(safe-area-inset-left, 0) + 10px);
+      margin-top: calc(env(safe-area-inset-top, 0) + 10px);
+      margin-right: calc(env(safe-area-inset-right, 0) + 10px);
+      margin-bottom: calc(env(safe-area-inset-bottom, 0) + 10px);
+      margin-left: calc(env(safe-area-inset-left, 0) + 10px);
+      max-width: 90%;
+      max-width: calc(100% - 40px);
+      min-width: 90%;
+      min-width: calc(100% - 40px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-close-button,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-close-button {
+      display: none
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-close-button svg:not(.ab-chevron),
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-close-button svg:not(.ab-chevron) {
+      display: none
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-close-button,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-close-button {
+      display: block;
+      height: 20px;
+      padding: 0 20px 0 18px;
+      pointer-events: none;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 12px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-close-button svg.ab-chevron,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-close-button svg.ab-chevron {
+      display: inline
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-message-text {
+      border-right-width: 40px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text {
+      max-width: 100%;
+      border-right-width: 10px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text span,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text span {
+      max-height: 66px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text.ab-with-icon,
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text.ab-with-image,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text.ab-with-icon,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text.ab-with-image {
+      max-width: 80%;
+      max-width: calc(100% - 50px - 5px - 10px - 25px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-image-area {
+      width: 50px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.simulate-phone .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-image-area img {
+      max-width: 50px;
+      max-height: 50px;
+      width: auto
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.ab-clickable:active .ab-message-text,
+    .ab-centering-div .ab-in-app-message.ab-slideup.ab-clickable:focus .ab-message-text,
+    .ab-centering-div .ab-in-app-message.ab-slideup.ab-clickable:hover .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:active .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:focus .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:hover .ab-message-text {
+      opacity: .8
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup.ab-clickable:active .ab-close-button svg.ab-chevron,
+    .ab-centering-div .ab-in-app-message.ab-slideup.ab-clickable:focus .ab-close-button svg.ab-chevron,
+    .ab-centering-div .ab-in-app-message.ab-slideup.ab-clickable:hover .ab-close-button svg.ab-chevron,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:active .ab-close-button svg.ab-chevron,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:focus .ab-close-button svg.ab-chevron,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:hover .ab-close-button svg.ab-chevron {
+      fill-opacity: .8
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      display: table-cell;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 5px 25px 5px 10px;
+      max-width: 430px;
+      vertical-align: middle;
+      margin: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-message-text span,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text span {
+      display: block;
+      max-height: 150px;
+      overflow: auto
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-message-text.ab-with-icon,
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-message-text.ab-with-image,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text.ab-with-icon,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text.ab-with-image {
+      max-width: 365px;
+      border-top: 0;
+      border-bottom: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: 15px;
+      border: none;
+      width: 15px;
+      height: 15px;
+      -webkit-border-radius: 7.5px;
+      -moz-border-radius: 7.5px;
+      border-radius: 7.5px;
+      cursor: pointer;
+      display: block;
+      font-size: 15px;
+      line-height: 0;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-left: 6.66666667px;
+      padding-bottom: 6.66666667px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: center;
+      z-index: 1060
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button svg,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button svg {
+      -webkit-transition: .2s ease;
+      -moz-transition: .2s ease;
+      -o-transition: .2s ease;
+      transition: .2s ease;
+      fill: #9b9b9b
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button svg.ab-chevron,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button svg.ab-chevron {
+      display: none
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button:active,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button:active {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button:focus,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button:focus {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button:hover,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button:hover {
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-close-button:hover svg,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button:hover svg {
+      fill-opacity: .8
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-image-area {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      display: table-cell;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 5px 0 5px 5px;
+      vertical-align: top;
+      width: 60px;
+      margin: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-image-area.ab-icon-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-image-area.ab-icon-area {
+      width: auto
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-slideup .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-image-area img {
+      width: 100%
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen,
+    .ab-centering-div .ab-in-app-message.ab-modal,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal {
+      font-size: 14px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen .ab-image-area,
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-image-area {
+      position: relative;
+      display: block;
+      overflow: hidden
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen .ab-image-area .ab-center-cropped-img,
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-image-area .ab-center-cropped-img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-image-area .ab-center-cropped-img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-image-area .ab-center-cropped-img {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen .ab-icon,
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-icon,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-icon,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-icon {
+      margin-top: 20px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.graphic,
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.graphic,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic {
+      padding: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.graphic .ab-message-text,
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.graphic .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic .ab-message-text {
+      display: none
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.graphic .ab-message-buttons,
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic .ab-message-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.graphic .ab-message-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic .ab-message-buttons {
+      bottom: 0;
+      left: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.graphic .ab-image-area,
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.graphic .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic .ab-image-area {
+      height: auto;
+      margin: 0
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.graphic .ab-image-area img,
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.graphic .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic .ab-image-area img {
+      display: block;
+      top: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal {
+      padding-top: 20px;
+      width: 450px;
+      max-width: 450px;
+      max-height: 720px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal.simulate-phone,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.simulate-phone {
+      max-width: 91%;
+      max-width: calc(100% - 30px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal.simulate-phone.graphic .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.simulate-phone.graphic .ab-image-area img {
+      max-width: 91vw;
+      max-width: calc(100vw - 30px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-message-text {
+      max-height: 660px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-message-text.ab-with-image,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-message-text.ab-with-image {
+      max-height: 524.82758621px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-message-text.ab-with-icon,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-message-text.ab-with-icon {
+      max-height: 610px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-message-text.ab-with-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-message-text.ab-with-buttons {
+      margin-bottom: 93px;
+      max-height: 587px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-message-text.ab-with-buttons.ab-with-image,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-message-text.ab-with-buttons.ab-with-image {
+      max-height: 451.82758621px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-message-text.ab-with-buttons.ab-with-icon,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-message-text.ab-with-buttons.ab-with-icon {
+      max-height: 537px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-image-area {
+      margin-top: -20px;
+      max-height: 155.17241379px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-image-area img {
+      max-width: 100%;
+      max-height: 155.17241379px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal .ab-image-area.ab-icon-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal .ab-image-area.ab-icon-area {
+      height: auto
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic {
+      width: auto;
+      overflow: hidden
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic .ab-image-area {
+      display: inline
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-modal.graphic .ab-image-area img,
+    .ab-iam-root.v3 .ab-in-app-message.ab-modal.graphic .ab-image-area img {
+      max-height: 720px;
+      max-width: 450px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen {
+      width: 450px;
+      max-height: 720px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.landscape,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape {
+      width: 720px;
+      max-height: 450px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.landscape .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape .ab-image-area {
+      height: 225px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.landscape.graphic .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape.graphic .ab-image-area {
+      height: 450px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.landscape .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape .ab-message-text {
+      max-height: 112px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-message-text {
+      max-height: 247px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen .ab-message-text.ab-with-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-message-text.ab-with-buttons {
+      margin-bottom: 93px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-image-area {
+      height: 360px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.graphic .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.graphic .ab-image-area {
+      height: 720px
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone {
+      -webkit-transition: top none;
+      -moz-transition: top none;
+      -o-transition: top none;
+      transition: top none;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      max-height: none;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+      height: auto !important
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone.landscape .ab-close-button,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone.landscape .ab-close-button {
+      margin-right: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+      margin-right: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0));
+      margin-left: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+      margin-left: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0))
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone .ab-image-area,
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone.landscape .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone.landscape .ab-image-area {
+      height: 50%
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone .ab-message-text,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone .ab-message-text {
+      max-height: 48%;
+      max-height: calc(50% - 20px - 20px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone .ab-message-text.ab-with-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone .ab-message-text.ab-with-buttons {
+      margin-bottom: 20px;
+      max-height: 30%;
+      max-height: calc(50% - 93px - 20px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone.landscape .ab-message-text.ab-with-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone.landscape .ab-message-text.ab-with-buttons {
+      max-height: 20%;
+      max-height: calc(50% - 93px - 20px)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone:not(.graphic),
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone:not(.graphic) {
+      padding-bottom: 0;
+      padding-bottom: constant(safe-area-inset-bottom, 0);
+      padding-bottom: env(safe-area-inset-bottom, 0)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone:not(.graphic) .ab-message-buttons,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone:not(.graphic) .ab-message-buttons {
+      padding-top: 0;
+      position: relative
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone.graphic,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone.graphic {
+      display: block
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone.graphic .ab-image-area,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone.graphic .ab-image-area {
+      height: 100%
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-fullscreen.simulate-phone.graphic .ab-message-button,
+    .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.simulate-phone.graphic .ab-message-button {
+      margin-bottom: 0;
+      margin-bottom: constant(safe-area-inset-bottom, 0);
+      margin-bottom: env(safe-area-inset-bottom, 0)
+    }
+
+    .ab-centering-div .ab-in-app-message.ab-html-message,
+    .ab-iam-root.v3 .ab-in-app-message.ab-html-message {
+      background-color: transparent;
+      border: none;
+      height: 100%;
+      overflow: auto;
+      position: relative;
+      touch-action: auto;
+      width: 100%
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-buttons,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-buttons {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 17px 25px 30px 25px;
+      z-index: inherit;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      height: 44px;
+      line-height: normal;
+      letter-spacing: normal;
+      margin: 0;
+      max-width: 100%;
+      min-width: 80px;
+      padding: 0 12px;
+      position: relative;
+      text-transform: none;
+      width: 48%;
+      width: calc(50% - 5px);
+      border: 1px solid #1b78cf;
+      -webkit-transition: .2s ease;
+      -moz-transition: .2s ease;
+      -o-transition: .2s ease;
+      transition: .2s ease;
+      overflow: hidden;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      word-wrap: normal;
+      white-space: nowrap
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:first-of-type,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:first-of-type {
+      float: left;
+      background-color: #fff;
+      color: #1b78cf
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:last-of-type,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:last-of-type {
+      float: right;
+      background-color: #1b78cf;
+      color: #fff
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:first-of-type:last-of-type,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:first-of-type:last-of-type {
+      float: none;
+      width: auto
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:after,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:after,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:after {
+      -webkit-transition: .2s ease;
+      -moz-transition: .2s ease;
+      -o-transition: .2s ease;
+      transition: .2s ease
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:hover,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:hover {
+      opacity: .8
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:active:after,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:active:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .08)
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button:focus:after,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button:focus:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .15)
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-message-button a,
+    .ab-iam-root.v3 .ab-in-app-message .ab-message-button a {
+      color: inherit;
+      text-decoration: inherit
+    }
+
+    .ab-centering-div .ab-in-app-message img,
+    .ab-iam-root.v3 .ab-in-app-message img {
+      display: inline-block
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-icon,
+    .ab-iam-root.v3 .ab-in-app-message .ab-icon {
+      display: inline-block;
+      padding: 10px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px
+    }
+
+    .ab-centering-div .ab-in-app-message .ab-icon .fa,
+    .ab-iam-root.v3 .ab-in-app-message .ab-icon .fa {
+      font-size: 30px;
+      width: 30px
+    }
+
+    .ab-centering-div .ab-start-hidden,
+    .ab-iam-root.v3 .ab-start-hidden {
+      visibility: hidden
+    }
+
+    .ab-centering-div .ab-centered,
+    .ab-centering-div.ab-centering-div .ab-modal,
+    .ab-iam-root.v3 .ab-centered,
+    .ab-iam-root.v3.ab-centering-div .ab-modal {
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%)
+    }
+
+    .ab-email-capture,
+    .ab-iam-root.v3 {
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0
+    }
+
+    .ab-email-capture .ab-page-blocker,
+    .ab-iam-root.v3 .ab-page-blocker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1040;
+      pointer-events: all;
+      background-color: rgba(51, 51, 51, .75)
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-email-capture-input {
+      margin-bottom: 30px
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-message-buttons~.ab-message-text {
+      max-height: 541px;
+      margin-bottom: 160px
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-message-buttons~.ab-message-text.with-explanatory-link {
+      max-height: 513px;
+      margin-bottom: 188px
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-image-area~.ab-message-text {
+      max-height: 385.82758621px
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-image-area~.ab-message-text.with-explanatory-link {
+      max-height: 357.82758621px
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-email-validation-error {
+      margin-top: 62px
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-explanatory-link {
+      display: block
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-background,
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-mask {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-close-button {
+      line-height: normal
+    }
+
+    .ab-email-capture .ab-in-app-message.ab-modal .ab-html-close-button {
+      right: 3px;
+      top: -1px;
+      font-size: 34px;
+      padding-top: 0
+    }
+
+    @media (max-width:600px) {
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup {
+        max-height: 66px;
+        margin: 10px;
+        margin-top: calc(constant(safe-area-inset-top, 0) + 10px);
+        margin-right: calc(constant(safe-area-inset-right, 0) + 10px);
+        margin-bottom: calc(constant(safe-area-inset-bottom, 0) + 10px);
+        margin-left: calc(constant(safe-area-inset-left, 0) + 10px);
+        margin-top: calc(env(safe-area-inset-top, 0) + 10px);
+        margin-right: calc(env(safe-area-inset-right, 0) + 10px);
+        margin-bottom: calc(env(safe-area-inset-bottom, 0) + 10px);
+        margin-left: calc(env(safe-area-inset-left, 0) + 10px);
+        max-width: 90%;
+        max-width: calc(100% - 40px);
+        min-width: 90%;
+        min-width: calc(100% - 40px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button {
+        display: none
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-close-button svg:not(.ab-chevron) {
+        display: none
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable .ab-close-button {
+        display: block;
+        height: 20px;
+        padding: 0 20px 0 18px;
+        pointer-events: none;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 12px
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable .ab-close-button svg.ab-chevron {
+        display: inline
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable .ab-message-text {
+        border-right-width: 40px
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text {
+        max-width: 100%;
+        border-right-width: 10px
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text span {
+        max-height: 66px
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text.ab-with-icon,
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-message-text.ab-with-image {
+        max-width: 80%;
+        max-width: calc(100% - 50px - 5px - 10px - 25px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-image-area {
+        width: 50px
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-slideup .ab-image-area img {
+        max-width: 50px;
+        max-height: 50px;
+        width: auto
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape {
+        -webkit-transition: top none;
+        -moz-transition: top none;
+        -o-transition: top none;
+        transition: top none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        max-height: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        transform: none;
+        height: auto !important
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape .ab-close-button,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape.landscape .ab-close-button {
+        margin-right: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-right: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0));
+        margin-left: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-left: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0))
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen .ab-image-area,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape .ab-image-area,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape.landscape .ab-image-area {
+        height: 50%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen .ab-message-text,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape .ab-message-text {
+        max-height: 48%;
+        max-height: calc(50% - 20px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen .ab-message-text.ab-with-buttons,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape .ab-message-text.ab-with-buttons {
+        margin-bottom: 20px;
+        max-height: 30%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape .ab-message-text.ab-with-buttons,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape.landscape .ab-message-text.ab-with-buttons {
+        max-height: 20%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape:not(.graphic),
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen:not(.graphic) {
+        padding-bottom: 0;
+        padding-bottom: constant(safe-area-inset-bottom, 0);
+        padding-bottom: env(safe-area-inset-bottom, 0)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape:not(.graphic) .ab-message-buttons,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen:not(.graphic) .ab-message-buttons {
+        padding-top: 0;
+        position: relative
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.graphic,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape.graphic {
+        display: block
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.graphic .ab-image-area,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape.graphic .ab-image-area {
+        height: 100%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.graphic .ab-message-button,
+      .ab-iam-root.v3 .ab-in-app-message:not(.force-desktop).ab-fullscreen.landscape.graphic .ab-message-button {
+        margin-bottom: 0;
+        margin-bottom: constant(safe-area-inset-bottom, 0);
+        margin-bottom: env(safe-area-inset-bottom, 0)
+      }
+    }
+
+    @media (max-width:480px) {
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop),
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) {
+        max-width: 91%;
+        max-width: calc(100% - 30px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop).graphic .ab-image-area img,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop).graphic .ab-image-area img {
+        max-width: 91vw;
+        max-width: calc(100vw - 30px)
+      }
+    }
+
+    @media (max-height:750px) {
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop),
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) {
+        max-height: 91%;
+        max-height: calc(100% - 30px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop).graphic .ab-image-area img,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop).graphic .ab-image-area img {
+        max-height: 91vh;
+        max-height: calc(100vh - 30px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text {
+        max-height: 65vh;
+        max-height: calc(100vh - 30px - 60px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-image,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-image {
+        max-height: 45vh;
+        max-height: calc(100vh - 30px - 155.17241379310346px - 40px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-icon,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-icon {
+        max-height: 45vh;
+        max-height: calc(100vh - 30px - 70px - 40px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-buttons,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-buttons {
+        max-height: 50vh;
+        max-height: calc(100vh - 30px - 93px - 40px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-buttons.ab-with-image,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-buttons.ab-with-image {
+        max-height: 30vh;
+        max-height: calc(100vh - 30px - 155.17241379310346px - 93px - 20px)
+      }
+
+      .ab-email-capture .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-buttons.ab-with-icon,
+      .ab-iam-root.v3 .ab-in-app-message.ab-modal:not(.force-desktop) .ab-message-text.ab-with-buttons.ab-with-icon {
+        max-height: 30vh;
+        max-height: calc(100vh - 30px - 70px - 93px - 20px)
+      }
+    }
+
+    @media (min-width:601px) {
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen .ab-image-area img {
+        max-height: 100%;
+        max-width: 100%
+      }
+    }
+
+    @media (max-height:750px) and (min-width:601px) {
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop) {
+        -webkit-transition: top none;
+        -moz-transition: top none;
+        -o-transition: top none;
+        transition: top none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        max-height: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        transform: none;
+        height: auto !important;
+        width: 450px
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop).landscape .ab-close-button {
+        margin-right: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-right: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0));
+        margin-left: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-left: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0))
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop) .ab-image-area,
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop).landscape .ab-image-area {
+        height: 50%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop) .ab-message-text {
+        max-height: 48%;
+        max-height: calc(50% - 20px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop) .ab-message-text.ab-with-buttons {
+        margin-bottom: 20px;
+        max-height: 30%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop).landscape .ab-message-text.ab-with-buttons {
+        max-height: 20%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop):not(.graphic) {
+        padding-bottom: 0;
+        padding-bottom: constant(safe-area-inset-bottom, 0);
+        padding-bottom: env(safe-area-inset-bottom, 0)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop):not(.graphic) .ab-message-buttons {
+        padding-top: 0;
+        position: relative
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop).graphic {
+        display: block
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop).graphic .ab-image-area {
+        height: 100%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen:not(.landscape):not(.force-desktop).graphic .ab-message-button {
+        margin-bottom: 0;
+        margin-bottom: constant(safe-area-inset-bottom, 0);
+        margin-bottom: env(safe-area-inset-bottom, 0)
+      }
+    }
+
+    @media (max-height:480px) {
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) {
+        -webkit-transition: top none;
+        -moz-transition: top none;
+        -o-transition: top none;
+        transition: top none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        max-height: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        transform: none;
+        height: auto !important
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).landscape .ab-close-button {
+        margin-right: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-right: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0));
+        margin-left: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-left: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0))
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) .ab-image-area,
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).landscape .ab-image-area {
+        height: 50%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) .ab-message-text {
+        max-height: 48%;
+        max-height: calc(50% - 20px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) .ab-message-text.ab-with-buttons {
+        margin-bottom: 20px;
+        max-height: 30%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).landscape .ab-message-text.ab-with-buttons {
+        max-height: 20%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop):not(.graphic) {
+        padding-bottom: 0;
+        padding-bottom: constant(safe-area-inset-bottom, 0);
+        padding-bottom: env(safe-area-inset-bottom, 0)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop):not(.graphic) .ab-message-buttons {
+        padding-top: 0;
+        position: relative
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).graphic {
+        display: block
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).graphic .ab-image-area {
+        height: 100%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).graphic .ab-message-button {
+        margin-bottom: 0;
+        margin-bottom: constant(safe-area-inset-bottom, 0);
+        margin-bottom: env(safe-area-inset-bottom, 0)
+      }
+    }
+
+    @media (max-width:750px) {
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) {
+        -webkit-transition: top none;
+        -moz-transition: top none;
+        -o-transition: top none;
+        transition: top none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        max-height: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        transform: none;
+        height: auto !important
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).landscape .ab-close-button {
+        margin-right: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-right: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0));
+        margin-left: calc(constant(safe-area-inset-bottom, 0) + constant(safe-area-inset-top, 0));
+        margin-left: calc(env(safe-area-inset-bottom, 0) + env(safe-area-inset-top, 0))
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) .ab-image-area,
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).landscape .ab-image-area {
+        height: 50%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) .ab-message-text {
+        max-height: 48%;
+        max-height: calc(50% - 20px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop) .ab-message-text.ab-with-buttons {
+        margin-bottom: 20px;
+        max-height: 30%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).landscape .ab-message-text.ab-with-buttons {
+        max-height: 20%;
+        max-height: calc(50% - 93px - 20px)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop):not(.graphic) {
+        padding-bottom: 0;
+        padding-bottom: constant(safe-area-inset-bottom, 0);
+        padding-bottom: env(safe-area-inset-bottom, 0)
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop):not(.graphic) .ab-message-buttons {
+        padding-top: 0;
+        position: relative
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).graphic {
+        display: block
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).graphic .ab-image-area {
+        height: 100%
+      }
+
+      .ab-iam-root.v3 .ab-in-app-message.ab-fullscreen.landscape:not(.force-desktop).graphic .ab-message-button {
+        margin-bottom: 0;
+        margin-bottom: constant(safe-area-inset-bottom, 0);
+        margin-bottom: env(safe-area-inset-bottom, 0)
+      }
+    }
+
+    body>.ab-feed {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 421px;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0
+    }
+
+    body>.ab-feed .ab-feed-body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border: none;
+      border-left: 1px solid #d0d0d0;
+      padding-top: 58px;
+      min-height: 100%
+    }
+
+    body>.ab-feed .ab-no-cards-message {
+      position: absolute;
+      width: 100%;
+      margin-left: -20px;
+      top: 40%
+    }
+
+    .ab-feed {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-box-shadow: 0 1px 7px 1px rgba(66, 82, 113, .15);
+      -moz-box-shadow: 0 1px 7px 1px rgba(66, 82, 113, .15);
+      box-shadow: 0 1px 7px 1px rgba(66, 82, 113, .15);
+      width: 402px;
+      background-color: #eee;
+      font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+      font-size: 13px;
+      line-height: 130%;
+      letter-spacing: normal;
+      overflow-y: auto;
+      overflow-x: visible;
+      z-index: 1050;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .ab-feed :focus,
+    .ab-feed:focus {
+      outline: 0
+    }
+
+    .ab-feed .ab-feed-body {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #d0d0d0;
+      border-top: none;
+      padding: 20px 20px 0 20px
+    }
+
+    .ab-feed.ab-effect-slide {
+      -webkit-transform: translateX(450px);
+      -moz-transform: translateX(450px);
+      -ms-transform: translateX(450px);
+      transform: translateX(450px);
+      -webkit-transition: transform .5s ease-in-out;
+      -moz-transition: transform .5s ease-in-out;
+      -o-transition: transform .5s ease-in-out;
+      transition: transform .5s ease-in-out
+    }
+
+    .ab-feed.ab-effect-slide.ab-show {
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0)
+    }
+
+    .ab-feed.ab-effect-slide.ab-hide {
+      -webkit-transform: translateX(450px);
+      -moz-transform: translateX(450px);
+      -ms-transform: translateX(450px);
+      transform: translateX(450px)
+    }
+
+    .ab-feed .ab-card {
+      position: relative;
+      -webkit-box-shadow: 0 2px 3px 0 rgba(178, 178, 178, .5);
+      -moz-box-shadow: 0 2px 3px 0 rgba(178, 178, 178, .5);
+      box-shadow: 0 2px 3px 0 rgba(178, 178, 178, .5);
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      width: 100%;
+      border: 1px solid #d0d0d0;
+      margin-bottom: 20px;
+      overflow: hidden;
+      background-color: #fff;
+      -webkit-transition: height .4s ease-in-out, margin .4s ease-in-out;
+      -moz-transition: height .4s ease-in-out, margin .4s ease-in-out;
+      -o-transition: height .4s ease-in-out, margin .4s ease-in-out;
+      transition: height .4s ease-in-out, margin .4s ease-in-out
+    }
+
+    .ab-feed .ab-card .ab-pinned-indicator {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 24px 24px 0;
+      border-color: transparent #1676d0 transparent transparent
+    }
+
+    .ab-feed .ab-card .ab-pinned-indicator .fa-star {
+      position: absolute;
+      right: -21px;
+      top: 2px;
+      font-size: 9px;
+      color: #fff
+    }
+
+    .ab-feed .ab-card.ab-effect-card.ab-hide {
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      -o-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out
+    }
+
+    .ab-feed .ab-card.ab-effect-card.ab-hide.ab-swiped-left {
+      -webkit-transform: translateX(-450px);
+      -moz-transform: translateX(-450px);
+      -ms-transform: translateX(-450px);
+      transform: translateX(-450px)
+    }
+
+    .ab-feed .ab-card.ab-effect-card.ab-hide.ab-swiped-right {
+      -webkit-transform: translateX(450px);
+      -moz-transform: translateX(450px);
+      -ms-transform: translateX(450px);
+      transform: translateX(450px)
+    }
+
+    .ab-feed .ab-card.ab-effect-card.ab-hide:not(.ab-swiped-left):not(.ab-swiped-right) {
+      opacity: 0
+    }
+
+    .ab-feed .ab-card .ab-close-button {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: 15px;
+      border: none;
+      width: 15px;
+      height: 15px;
+      -webkit-border-radius: 7.5px;
+      -moz-border-radius: 7.5px;
+      border-radius: 7.5px;
+      cursor: pointer;
+      display: block;
+      font-size: 15px;
+      line-height: 0;
+      padding-top: 15px;
+      padding-right: 15px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: center;
+      z-index: 1060;
+      opacity: 0;
+      -webkit-transition: .5s;
+      -moz-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s
+    }
+
+    .ab-feed .ab-card .ab-close-button svg {
+      -webkit-transition: .2s ease;
+      -moz-transition: .2s ease;
+      -o-transition: .2s ease;
+      transition: .2s ease;
+      fill: #9b9b9b
+    }
+
+    .ab-feed .ab-card .ab-close-button svg.ab-chevron {
+      display: none
+    }
+
+    .ab-feed .ab-card .ab-close-button:active {
+      background-color: transparent
+    }
+
+    .ab-feed .ab-card .ab-close-button:focus {
+      background-color: transparent
+    }
+
+    .ab-feed .ab-card .ab-close-button:hover {
+      background-color: transparent
+    }
+
+    .ab-feed .ab-card .ab-close-button:hover svg {
+      fill-opacity: .8
+    }
+
+    .ab-feed .ab-card .ab-close-button:hover {
+      opacity: 1
+    }
+
+    .ab-feed .ab-card .ab-close-button:focus {
+      opacity: 1
+    }
+
+    .ab-feed .ab-card a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .ab-feed .ab-card a:hover {
+      text-decoration: underline
+    }
+
+    .ab-feed .ab-card .ab-image-area {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 0;
+      overflow: hidden;
+      width: 100%;
+      -webkit-box-sizing: initial;
+      -moz-box-sizing: initial;
+      box-sizing: initial
+    }
+
+    .ab-feed .ab-card .ab-image-area img {
+      height: auto;
+      width: 100%
+    }
+
+    .ab-feed .ab-card.ab-banner .ab-card-body {
+      display: none
+    }
+
+    .ab-feed .ab-card .ab-card-body {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      position: relative
+    }
+
+    .ab-feed .ab-card .ab-unread-indicator {
+      position: absolute;
+      bottom: 0;
+      margin-right: -1px;
+      width: 100%;
+      height: 5px;
+      background-color: #1676d0
+    }
+
+    .ab-feed .ab-card .ab-unread-indicator.read {
+      background-color: transparent
+    }
+
+    .ab-feed .ab-card .ab-title {
+      letter-spacing: 0;
+      margin: 0;
+      font-weight: 700;
+      display: block;
+      overflow: hidden;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      font-size: 18px;
+      line-height: 130%;
+      font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+      padding: 20px 25px 0 25px
+    }
+
+    .ab-feed .ab-card .ab-description {
+      color: #545454;
+      padding: 15px 25px 20px 25px;
+      word-wrap: break-word;
+      white-space: pre-wrap
+    }
+
+    .ab-feed .ab-card .ab-description.ab-no-title {
+      padding-top: 20px
+    }
+
+    .ab-feed .ab-card .ab-url-area {
+      color: #1676d0;
+      margin-top: 12px;
+      font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
+    }
+
+    .ab-feed .ab-card.ab-classic-card .ab-card-body {
+      min-height: 40px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px
+    }
+
+    .ab-feed .ab-card.ab-classic-card.with-image .ab-card-body {
+      min-height: 100px;
+      padding-left: 72px
+    }
+
+    .ab-feed .ab-card.ab-classic-card.with-image .ab-image-area {
+      width: 60px;
+      height: 60px;
+      padding: 25px 0 25px 25px;
+      position: absolute
+    }
+
+    .ab-feed .ab-card.ab-classic-card.with-image .ab-image-area img {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      width: 60px;
+      height: 60px
+    }
+
+    .ab-feed .ab-card.ab-classic-card.with-image .ab-title {
+      background-color: transparent;
+      font-size: 16px
+    }
+
+    .ab-feed .ab-card.ab-classic-card.with-image .ab-description {
+      padding-top: 10px
+    }
+
+    .ab-feed .ab-card.ab-control-card {
+      height: 0;
+      width: 0;
+      margin: 0;
+      border: 0
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper {
+      position: relative;
+      background-color: #282828;
+      height: 38px;
+      -webkit-box-shadow: 0 2px 3px 0 rgba(178, 178, 178, .5);
+      -moz-box-shadow: 0 2px 3px 0 rgba(178, 178, 178, .5);
+      box-shadow: 0 2px 3px 0 rgba(178, 178, 178, .5);
+      z-index: 1
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper .ab-close-button,
+    .ab-feed .ab-feed-buttons-wrapper .ab-refresh-button {
+      cursor: pointer;
+      color: #fff;
+      font-size: 18px;
+      margin: 10px;
+      -webkit-transition: .2s;
+      -moz-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper .ab-close-button:hover,
+    .ab-feed .ab-feed-buttons-wrapper .ab-refresh-button:hover {
+      font-size: 22px
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper .ab-close-button {
+      float: right;
+      margin-top: 9px
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper .ab-close-button:hover {
+      margin-top: 6px;
+      margin-right: 9px
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper .ab-refresh-button {
+      margin-left: 12px
+    }
+
+    .ab-feed .ab-feed-buttons-wrapper .ab-refresh-button:hover {
+      margin-top: 8px;
+      margin-left: 10px
+    }
+
+    .ab-feed .ab-no-cards-message {
+      text-align: center;
+      margin-bottom: 20px
+    }
+
+    @media (max-width:600px) {
+      body>.ab-feed {
+        width: 100%
+      }
+    }
+    ._3emE9--dark-theme .-S-tR--ff-downloader {
+        background: rgba(30, 30, 30, .93);
+        border: 1px solid rgba(82, 82, 82, .54);
+        box-shadow: 0 4px 7px rgba(30, 30, 30, .55);
+        color: #fff
+      }
+  
+      ._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn {
+        background: #3d4b52
+      }
+  
+      ._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover {
+        background: #131415
+      }
+  
+      ._3emE9--dark-theme .-S-tR--ff-downloader ._10vpG--footer {
+        background: rgba(30, 30, 30, .93)
+      }
+  
+      ._2mDEx--white-theme .-S-tR--ff-downloader {
+        background: #fff;
+        border: 1px solid rgba(82, 82, 82, .54);
+        box-shadow: 0 4px 7px rgba(30, 30, 30, .55);
+        color: #314c75
+      }
+  
+      ._2mDEx--white-theme .-S-tR--ff-downloader ._6_Mtt--header {
+        font-weight: 700
+      }
+  
+      ._2mDEx--white-theme .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice {
+        border: 0;
+        color: rgba(0, 0, 0, .88)
+      }
+  
+      ._2mDEx--white-theme .-S-tR--ff-downloader ._10vpG--footer {
+        background: #fff
+      }
+  
+      .-S-tR--ff-downloader {
+        display: block;
+        overflow: hidden;
+        position: fixed;
+        bottom: 20px;
+        right: 7.1%;
+        width: 330px;
+        height: 180px;
+        background: rgba(30, 30, 30, .93);
+        border-radius: 2px;
+        color: #fff;
+        z-index: 99999999;
+        border: 1px solid rgba(82, 82, 82, .54);
+        box-shadow: 0 4px 7px rgba(30, 30, 30, .55);
+        transition: .5s
+      }
+  
+      .-S-tR--ff-downloader._3M7UQ--minimize {
+        height: 62px
+      }
+  
+      .-S-tR--ff-downloader._3M7UQ--minimize .nxuu4--file-info,
+      .-S-tR--ff-downloader._3M7UQ--minimize ._6_Mtt--header {
+        display: none
+      }
+  
+      .-S-tR--ff-downloader ._6_Mtt--header {
+        padding: 10px;
+        font-size: 17px;
+        font-family: sans-serif
+      }
+  
+      .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn {
+        float: right;
+        background: #f1ecec;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        padding: 2px;
+        margin-top: -10px;
+        cursor: pointer
+      }
+  
+      .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover {
+        background: #e2dede
+      }
+  
+      .-S-tR--ff-downloader ._13XQ2--error {
+        color: red;
+        padding: 10px;
+        font-size: 12px;
+        line-height: 19px
+      }
+  
+      .-S-tR--ff-downloader ._2dFLA--container {
+        position: relative;
+        height: 100%
+      }
+  
+      .-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info {
+        padding: 6px 15px 0;
+        font-family: sans-serif
+      }
+  
+      .-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info div {
+        margin-bottom: 5px;
+        width: 100%;
+        overflow: hidden
+      }
+  
+      .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice {
+        margin-top: 21px;
+        font-size: 11px
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        font-weight: 700
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer ._2V73d--loader {
+        -webkit-animation: n0BD1--rotation 3.5s linear forwards;
+        animation: n0BD1--rotation 3.5s linear forwards;
+        position: absolute;
+        top: -120px;
+        left: calc(50% - 35px);
+        border-radius: 50%;
+        border: 5px solid #fff;
+        border-top-color: #a29bfe;
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar {
+        width: 100%;
+        height: 18px;
+        background: #dfe6e9;
+        border-radius: 5px
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar ._1FVu9--progress-bar {
+        height: 100%;
+        background: #8bc34a;
+        border-radius: 5px
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status {
+        margin-top: 10px
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1XilH--state {
+        float: left;
+        font-size: .9em;
+        letter-spacing: 1pt;
+        text-transform: uppercase;
+        width: 100px;
+        height: 20px;
+        position: relative
+      }
+  
+      .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1jiaj--percentage {
+        float: right
+      }

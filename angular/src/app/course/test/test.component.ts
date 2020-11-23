@@ -16,7 +16,7 @@ export class TestComponent implements OnInit {
   conlai : number ;
    alphas:string[];
    sai: number = 0;
-   diem: number = 0; 
+   diem: string = ""; 
    showans: boolean = false;
 
   constructor( private route: ActivatedRoute,
@@ -100,15 +100,16 @@ export class TestComponent implements OnInit {
 
     bambne(item : any, so : number, index : number)
   {
-    
+    console.log('dd',this.test[index].arr[so].ans,'so', so);
     
     if(this.test[index].arr[so].ans)
     {
      this.test[index].tf=true;
+    // this.sai +=1;
     }
     else{
-      this.sai +=1;
-      this.test[index].tf=true;
+      
+      this.test[index].tf=false;
     }
 
     
@@ -116,7 +117,11 @@ export class TestComponent implements OnInit {
     check()
     {
         this.showans = true;
-        this.diem = 100*(this.test.length - this.sai)/ this.test.length;
+        this.sai = 0;
+        this.test.forEach(element => {
+        if(element.tf) this.sai+=1;
+      });
+        this.diem = (100*( this.sai)/ this.test.length).toFixed();
     }
 
 }

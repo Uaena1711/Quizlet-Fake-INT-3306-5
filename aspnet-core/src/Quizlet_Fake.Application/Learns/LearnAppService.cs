@@ -177,7 +177,7 @@ namespace Quizlet_Fake.Learns
                 Llist[k] = Llist[n];
                 Llist[n] = value;
             }
-            return Llist.GetRange(0, 20); ;
+            return Llist;
         }
 
 

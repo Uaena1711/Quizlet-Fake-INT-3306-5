@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService, PagedResultDto } from '@abp/ng.core';
-import { ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { LearnService } from '@proxy/learns';
 import { LessionService } from '@proxy/lessions';
 import { Word, WordDto, WordService } from '@proxy/words';
@@ -24,7 +24,8 @@ export class LearnComponent implements OnInit {
    private learnService: LearnService, 
     private wordService: WordService, 
    private route: ActivatedRoute,
-   private lessonService: LessionService
+   private lessonService: LessionService,
+   private router: Router,
     
     
   ) { }
@@ -135,6 +136,13 @@ export class LearnComponent implements OnInit {
 
     this.conlai -=1;
     this.currentes = this.test[this.test.length -this.conlai ];
+    if(this.conlai == 0)
+    {
+      alert('Bạn đã hoàn thành bài học.')
+      let s  = this.router.url.substring(0, this.router.url.length - 5);
+      console.log('s',s);
+      this.router.navigate([s]);
+    }
     }
   
 }
