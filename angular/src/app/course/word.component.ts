@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ServerHttpService } from '../WordService/server-http.service';
 import { ServerHttpService as LessonServe } from '../LessionService/server-http.service';
+import { WordService } from '@proxy/words';
+import { LessonInfoOfUserService } from '@proxy/managers';
 
 @Component({
   selector: 'app-word',
@@ -23,14 +25,20 @@ export class WordComponent implements OnInit {
   cardid: number;
   cardWords: Array<any>;
   isOwner: boolean;
+  routerTest: string= "";
   constructor(private fb: FormBuilder,
-              private Service: ServerHttpService,
-              private route: ActivatedRoute,
-              private lessonSer: LessonServe
+              
+    private Service: ServerHttpService,
+    private route: ActivatedRoute,
+    private lessonSer: LessonServe,
+    private wordService: WordService,
+    private LesInfoUser :LessonInfoOfUserService
   ) { }
 
   ngOnInit(): void {
     this.Service.idLession = this.route.snapshot.params.idLession;
+    this.routerTest = '/courses/'+this.route.snapshot.params.nameCourse +'/'+this.route.snapshot.params.idcourse +'/test';
+    console.log('dd', this.routerTest);
     this.isOnwer();
     this.nameLession = this.route.snapshot.params.nameLession;
     this.Service.getWordOfLession(this.Service.idLession).subscribe((data => {
@@ -41,6 +49,9 @@ export class WordComponent implements OnInit {
       this.cardid = 0;
       console.log('1',this.words);
     }));
+    this.LesInfoUser.learnLessonByIdlesson(this.route.snapshot.params.idLession).subscribe((data) =>{
+      console.log('xong r ne');
+    });
     this.form = this.fb.group({
       name: this.name,
       vn: this.vn,
@@ -96,6 +107,7 @@ export class WordComponent implements OnInit {
       ).subscribe((data => {
         location.reload();
       }))
+      
     } else {
       this.Service.editWord({
         "name": this.form.controls.name.value,
@@ -111,6 +123,8 @@ export class WordComponent implements OnInit {
         location.reload();
       }));
     }
+    
+   
   }
   public Cancel() {
     location.reload();

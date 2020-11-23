@@ -81,11 +81,14 @@ namespace Quizlet_Fake.Learns
 
                 if( b)
                 {
-                    
+                    if (wordinput.Level < 6)
+                    {
+
                         input.Level = wordinput.Level + 1;
                         input.DateReview = DateTime.Now.AddHours(4 * input.Level);
-                       lessonlearn.Progress = (int)((lessonlearn.Progress * 5 * wordnumber + 100) /(5 * wordnumber));
-                       await  _lessonrepository.UpdateAsync(lessonlearn);
+                        lessonlearn.Progress = (int)((lessonlearn.Progress * 5 * wordnumber + 100) / (5 * wordnumber));
+                        await _lessonrepository.UpdateAsync(lessonlearn);
+                    }
                 }
                 else
                 {
@@ -128,8 +131,8 @@ namespace Quizlet_Fake.Learns
             var DTos = queryResult.Select(x =>
             {
                 var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
-                dto.VN = x.word.VN;
-                dto.EN = x.word.EN;
+                dto.Vn = x.word.Vn;
+                dto.En = x.word.En;
                 return dto;
             }).ToList();
 
@@ -137,7 +140,7 @@ namespace Quizlet_Fake.Learns
             return new List<LearnDto>(DTos);
         }
 
-        public async Task<List<LearnDto>> GetMyReview(int from)
+        public async Task<List<LearnDto>> GetMyReview(Guid idcourse)
         {
             await CheckGetListPolicyAsync();
 
@@ -145,21 +148,36 @@ namespace Quizlet_Fake.Learns
 
             var query = from word1 in _repository
                         join word in _word_rea_repository on word1.WordId equals word.Id
-                        where DateTime.Compare(word1.DateReview,DateTime.Now) <= 0 && word1.UserId == myid
+                        join ls in _lesson_rea_repository on word.LessonId equals ls.Id
+                        join c in _course_real_repository on ls.CourseId equals c.Id
+                        where word1.UserId == myid && c.Id == idcourse
+                        orderby word1.Level
                         select new { word1, word };
-            query = query.Skip(from).Take(20);
+            query = query.Skip(0).Take(100);
             var queryResult = await AsyncExecuter.ToListAsync(query);
 
             var DTos = queryResult.Select(x =>
             {
                 var dto = ObjectMapper.Map<Learn, LearnDto>(x.word1);
-                dto.VN = x.word.VN;
-                dto.EN = x.word.EN;
+                dto.Vn = x.word.Vn;
+                dto.En = x.word.En;
+                dto.name = x.word.Name;
                 return dto;
             }).ToList();
+            List<LearnDto> Llist = new List<LearnDto>(DTos);
 
-
-            return new List<LearnDto>(DTos);
+            int n = Llist.Count();
+            Random rng = new Random();
+            while (n > 1)
+                
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                LearnDto value = Llist[k];
+                Llist[k] = Llist[n];
+                Llist[n] = value;
+            }
+            return Llist;
         }
 
 
@@ -177,7 +195,23 @@ namespace Quizlet_Fake.Learns
             return true;
             
         }
-        
+        public void resetprogress(Guid idlesson)
+        {
+            List<Learn> list = _repository.Where(x => x.LessonId == idlesson && x.UserId == _currentUser.Id).ToList();
+            int sum = 0;
+            foreach( Learn l in list)
+            {
+                sum += l.Level;
+
+            }
+            int progress =100* sum / (5 * list.Count());
+
+            var oldlessonuser = _lessonrepository.FirstOrDefault(x => x.UserId == _currentUser.Id && x.LessonId == idlesson);
+            oldlessonuser.Progress = progress;
+            _lessonrepository.UpdateAsync( oldlessonuser) ;
+        }
+
+       
 
     }
 }

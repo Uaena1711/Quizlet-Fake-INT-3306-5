@@ -54,5 +54,21 @@ export class WordService {
     },
     { apiName: this.apiName });
 
+  resetprogressByIdlesson = (idlesson: string) =>
+    this.restService.request<any, void>({
+      method: 'POST',
+      url: `/api/app/word/resetprogress`,
+      params: { idlesson: idlesson },
+    },
+    { apiName: this.apiName });
+
+  updateLearnAfterAddWordByIdlesson = (idlesson: string) =>
+    this.restService.request<any, void>({
+      method: 'PUT',
+      url: `/api/app/word/updateLearnAfterAddWord`,
+      params: { idlesson: idlesson },
+    },
+    { apiName: this.apiName });
+
   constructor(private restService: RestService) {}
 }

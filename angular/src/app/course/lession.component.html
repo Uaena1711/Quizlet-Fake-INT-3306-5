@@ -6,7 +6,7 @@
 </div>
 
 <div class="SearchPage-result js-setResult" data-item-id="210854689" *ngFor="let item of lession" style="background-color: #ffffff;">
-    <div class="SetPreviewLink">
+    <div class="SetPreviewLink" (click) = "hoclesonnay(item)" >
       <div class="UILinkBox">
         <div class="UILinkBox-inner">
           <div class="SetPreview">
@@ -15,15 +15,32 @@
                 <div class="SetPreview-cardBylineCreator">
                   <div class="UserLink">
                     <div class="UserLink-inner">
-                      <div class="UserLink-content"><a class="UILink"  [routerLink]="['lession/' + item.name + '/' + item.id]" routerLinkActive="router-link-active" title="Th&#259;m h&#7891; s&#417; c&#7911;a quizlette7098644"><span class="UserLink-username">quizlette7098644</span></a></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <header class="SetPreview-cardHeader"><span class="SetPreview-cardHeaderTitle">{{item.name}}</span></header>
+              <header class="SetPreview-cardHeader"><span class="SetPreview-cardHeaderTitle">{{item.name}} </span></header>
               <div class="SetPreviewLink-metadata">
                 <div class="SetPreviewLink-priceTag">
                   <h4 class="UIHeading UIHeading--four"></h4>
+                </div>
+              </div>
+
+              
+              <div class="PreviewCardByline"><span class="SetPreview-cardBylineTermsCount">Tiến độ: {{item.progress}} %</span><span class="UIVerticalRule UIVerticalRule--onWhite"></span>
+                <div class="SetPreview-cardBylineCreator">
+                  <div class="UserLink">
+                    <div class="UserLink-inner">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="PreviewCardByline"><span class="SetPreview-cardBylineTermsCount">Words: {{item.wordnumber}}</span><span class="UIVerticalRule UIVerticalRule--onWhite"></span>
+                <div class="SetPreview-cardBylineCreator">
+                  <div class="UserLink">
+                    <div class="UserLink-inner">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
