@@ -39,11 +39,11 @@ export class LearnService {
     },
     { apiName: this.apiName });
 
-  getMyReviewByFrom = (from: number) =>
+  getMyReviewByIdcourse = (idcourse: string) =>
     this.restService.request<any, LearnDto[]>({
       method: 'GET',
       url: `/api/app/learn/myReview`,
-      params: { from: from },
+      params: { idcourse: idcourse },
     },
     { apiName: this.apiName });
 
@@ -76,6 +76,14 @@ export class LearnService {
       method: 'PUT',
       url: `/api/app/learn/levelLearningWord`,
       params: { idword: idword, b: b },
+    },
+    { apiName: this.apiName });
+
+  resetprogressByIdlesson = (idlesson: string) =>
+    this.restService.request<any, void>({
+      method: 'POST',
+      url: `/api/app/learn/resetprogress`,
+      params: { idlesson: idlesson },
     },
     { apiName: this.apiName });
 

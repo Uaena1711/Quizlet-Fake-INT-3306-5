@@ -11,5 +11,8 @@ namespace Quizlet_Fake.Lesssion
 
         public Guid CourseId { get; private set; }
         public int wordnumber { get; set; }
+
+
+        public int progress { get; set; }
     }
 }

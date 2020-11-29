@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService, PagedResultDto } from '@abp/ng.core';
-import { ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { LearnService } from '@proxy/learns';
 import { LessionService } from '@proxy/lessions';
 import { Word, WordDto, WordService } from '@proxy/words';
@@ -19,11 +19,13 @@ export class LearnComponent implements OnInit {
   conlai : number ;
   currentes: testx;
   showans : false;
+  
   constructor(//public readonly list: ListService, 
    private learnService: LearnService, 
     private wordService: WordService, 
    private route: ActivatedRoute,
-   private lessonService: LessionService
+   private lessonService: LessionService,
+   private router: Router,
     
     
   ) { }
@@ -34,13 +36,15 @@ export class LearnComponent implements OnInit {
     subscribe((data => {
      
       this.words = data;
-      //console.log(this.words);
+      console.log('ds',this.words);
      this.conlai = this.words.length;
      console.log('word1',this.words);
      this.generateQuestion();
      this.currentes = this.test[0];
+    // this.dapan1 =this.currentes.arr[0].word.en;
+     //console.log('dap an 1',this.currentes.arr[0].word.en);
      console.log('curren ', this.currentes);
-    // console.log('test o trong',this.test);
+    //console.log('test o trong',this.test);
     }));
     
     
@@ -51,19 +55,46 @@ export class LearnComponent implements OnInit {
   generateQuestion()
   {
     var len = this.words.length;
-    var i = this.randomIntFromInterval(1,3);
-
+    
+   
+   
+    
     this.words.forEach((value , index) => {
+      
+      
+     let tmp = this.words.slice();
+     tmp[index] = tmp[tmp.length -1]
+      console.log('t', tmp);
+      let tmpindex : number = 0;
+      
+    
+      tmpindex = this.randomIntFromInterval(0,tmp.length-2);
+      let w1 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 2];
+      
+      
+      tmpindex = this.randomIntFromInterval(0,tmp.length-3);
+      let w2 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 3];
+      
+      tmpindex = this.randomIntFromInterval(0,tmp.length-4);
+      let w3 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 4];
+      
+      tmpindex = this.randomIntFromInterval(0,tmp.length-5);
+      let w4 = tmp[tmpindex];
+      tmp[tmpindex] = tmp[tmp.length - 5];
+      
       var object = {
         arr: [{
-          word: this.words[(index+i+i+i)%len], ans: false
+          word: w1, ans: false
 
         },{
-          word: this.words[(index+i)%len], ans: false
+          word: w2, ans: false
         },{
-          word: this.words[(index+i+i)%len], ans: false
+          word: w3, ans: false
         },{
-          word: this.words[(index+i+i+i)%len], ans: false
+          word: w4, ans: false
         }],
         ans: value
       };
@@ -93,16 +124,25 @@ export class LearnComponent implements OnInit {
     {
       alert('dung con me roi ');
       this.learnService.updateLevelLearningWordByIdwordAndB(this.currentes.ans.id,true).subscribe( data => {
-        console.log(data);
+       // console.log(data);
       });
       console.log('ca',this.currentes.ans.id);
     }
     else{
       alert('sai con me roi ');
+      this.learnService.updateLevelLearningWordByIdwordAndB(this.currentes.ans.id,false).subscribe( data => {
+      });
     }
 
     this.conlai -=1;
     this.currentes = this.test[this.test.length -this.conlai ];
+    if(this.conlai == 0)
+    {
+      alert('Bạn đã hoàn thành bài học.')
+      let s  = this.router.url.substring(0, this.router.url.length - 5);
+      console.log('s',s);
+      this.router.navigate([s]);
+    }
     }
   
 }

@@ -10,9 +10,9 @@ namespace Quizlet_Fake.Words
     {  
         public string Name { get; set; }
        
-        public string VN { get; set; }
+        public string Vn { get; set; }
        
-        public string EN { get; set; }
+        public string En { get; set; }
 
 
         public Guid LessonId { get; private set; }

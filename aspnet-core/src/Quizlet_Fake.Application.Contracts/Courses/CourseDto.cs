@@ -12,6 +12,7 @@ namespace Quizlet_Fake.Courses
         public Guid UserId { get; private set; }
 
         public string AuthorName { set; get; }
+
         public DateTime PublishDate { get; set; }
         public int LessonNumber { get; set; }
         public float Price { get; set; }
