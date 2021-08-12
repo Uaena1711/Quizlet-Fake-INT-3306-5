@@ -1332,6 +1332,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ng-bootstrap/ng-bootstrap@^8.0.0":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-8.0.4.tgz#bb88a466b2f84ff929fbb6d727b0f9a4d8f33704"
+  integrity sha512-EdxTwOPOtlvfnwrglPniulmzdnXdXH3lTGaGAY1HrYRvdtGg6wicRvl+BvwVE/3Qik5NPkOWMVghUHpv3evIYg==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@10.2.0":
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-10.2.0.tgz#42a9aba997a69effedd7cba75d0c69756f1b7fc4"
@@ -5577,6 +5584,19 @@ just-compare@^1.3.0:
   resolved "https://registry.yarnpkg.com/just-compare/-/just-compare-1.3.0.tgz#a53c31373f150a5b238555c243af4d8a38d7a0e5"
   integrity sha512-i4QNo3mPYubDmAwPbCKQl5C2b5s0yudP5V5GDp6lGR1PM22Em4Idf7mcaIzXYcL6/RLdZtuGrAqkBe9RYM/t4w==
 
+jw-angular-pagination@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/jw-angular-pagination/-/jw-angular-pagination-1.2.0.tgz#8c7799df72a6416b280ef225857a9723bff7b0e6"
+  integrity sha512-rHkFzeOeRybUtpwImf4FJQ4MhGH/5sqW6c4Za6avaR6iZUrIZCtPGE1RyCNjyPsX4KOmJk5lyzORn5ziGKmWkw==
+  dependencies:
+    jw-paginate "^1.0.4"
+    tslib "^1.10.0"
+
+jw-paginate@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/jw-paginate/-/jw-paginate-1.0.4.tgz#c6e7dbb4a6e9d62e501c7f9562a3a2a33d77c9b9"
+  integrity sha512-W0bv782exgCoynUL/egbRpaYwf/r6T6e02H870H5u3hfSgEYrxgz5POwmFF5aApS6iPi6yhZ0VF8IbafNFsntA==
+
 karma-chrome-launcher@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/karma-chrome-launcher/-/karma-chrome-launcher-3.1.0.tgz#805a586799a4d05f4e54f72a204979f3f3066738"
@@ -6922,9 +6942,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
