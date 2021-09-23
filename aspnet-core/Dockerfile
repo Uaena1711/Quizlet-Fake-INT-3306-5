@@ -27,15 +27,10 @@ COPY . .
 
 RUN dotnet restore
 
-WORKDIR "./src/Quizlet_Fake.DbMigrator"
-
-RUN dotnet run
-
-WORKDIR "/app/src/Quizlet_Fake.HttpApi.Host"
+RUN cd src/Quizlet_Fake.DbMigrator; dotnet run; cd -
 
 EXPOSE 44340
 
-CMD [ "dotnet", "run" ]
-
+ENTRYPOINT [ "sh", "./run.sh" ]
 
 
