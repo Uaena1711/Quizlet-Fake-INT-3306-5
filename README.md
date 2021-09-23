@@ -6,16 +6,12 @@ This repository is configured and used for AspNet Core Team's development.
 
 ____________
 
-## Run back-end with docker
 
+## run project 
 - install docker and make
-- change `connectionString` at `Quizlet_Fake.DbMigrator` and `Quizlet_Fake.HttpApi.Host` with your SQL server db
-- run `make build-back-end` to build and migrate DB
-- run `make run-back-end` to run back end in localhost at port 44340
+- run `make start` to run all project
+- run `make stop` to pause process
 
-## Run front-end
-
-- Chạy xong back end tự đi mà chạy npm đòi hỏi cc. 
 
 ## Most Recent Release
 

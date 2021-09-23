@@ -54,3 +54,6 @@ start:
 
 stop:
 	docker stop $(DB_CONTAINER_NAME) $(BACK_END_NAME) $(FRONT_END_NAME)
+
+remove:
+	docker container rm -f  $(DB_CONTAINER_NAME) $(BACK_END_NAME) $(FRONT_END_NAME)

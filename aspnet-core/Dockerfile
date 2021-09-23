@@ -32,5 +32,3 @@ RUN cd src/Quizlet_Fake.DbMigrator; dotnet run; cd -
 EXPOSE 44340
 
 ENTRYPOINT [ "sh", "./run.sh" ]
-
-
