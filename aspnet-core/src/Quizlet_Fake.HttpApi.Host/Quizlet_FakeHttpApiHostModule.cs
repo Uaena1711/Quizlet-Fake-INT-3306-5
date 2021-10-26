@@ -45,6 +45,7 @@ namespace Quizlet_Fake
         {
             var configuration = context.Services.GetConfiguration();
             var hostingEnvironment = context.Services.GetHostingEnvironment();
+            context.Services.AddSameSiteCookiePolicy(); // cookie policy to deal with temporary browser incompatibilities
 
             ConfigureUrls(configuration);
             ConfigureConventionalControllers();
@@ -164,6 +165,8 @@ namespace Quizlet_Fake
             {
                 app.UseErrorPage();
             }
+            
+            app.UseCookiePolicy(); // added this, Before UseAuthentication or anything else that writes cookies.
 
             app.UseCorrelationId();
             app.UseVirtualFiles();

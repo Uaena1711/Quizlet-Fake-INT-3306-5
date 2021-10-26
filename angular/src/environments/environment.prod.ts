@@ -1,9 +1,9 @@
 import { Config } from '@abp/ng.core';
 
-const baseUrl = 'http://localhost:4200';
+const baseUrl = 'http://localhost';
 
 export const environment = {
-  production: true,
+  production: false,
   application: {
     baseUrl,
     name: 'Quizlet_Fake',
